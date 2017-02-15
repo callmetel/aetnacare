@@ -1,0 +1,77 @@
+.no-focus{
+	&:focus{
+		outline: none!important; 
+	    background: none!important;
+	    border:0!important;	
+	}
+}
+
+.is-active{
+	display: inherit;
+	opacity: 1!important;
+	@include transition(all .5s ease-in-out);
+}
+.is-inactive{
+	display: none;
+	opacity: 0;
+	@include transition(all .5s ease-in-out);
+}
+.is-visible{
+	visibility: visible;
+	opacity:1;
+	@include transition(all 1s ease-in-out);
+}
+.is-hidden{
+	opacity:0;
+	z-index: -4000;
+	@include transition(all 1s ease-in-out);
+}
+.has-not-transition{
+	@include transition(none!important);
+}
+
+.is-scrollable{
+	overflow:auto!important;
+}
+
+.is-not-scrollable{
+	overflow:hidden!important;
+}
+
+a.no-decoration, a:hover.no-decoration{
+  text-decoration: none!important;
+  border:none!important;
+}
+
+.absolute-left{
+	@include position(absolute, 50% null null 0);
+	@include transform(translateY(-50%));
+}
+
+.absolute-right{
+	@include position(absolute, 50% 0 null null);
+	@include transform(translateY(-50%));
+}
+
+.absolute-top{
+	@include position(absolute, 0 null null 50%);
+	@include transform(translateX(-50%));
+}
+
+.absolute-bottom{
+	@include position(absolute, null null 0 50%);
+	@include transform(translateX(-50%));
+}
+
+.absolute-center{
+	@include position(absolute, 50% null 0 50%);
+	@include transform(translate(-50%, -50%));
+}
+
+.is-relative{
+	position: relative;
+}
+
+.is-bold{
+	font-family: $xfsansMedium!important;
+}

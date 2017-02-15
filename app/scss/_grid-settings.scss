@@ -1,0 +1,66 @@
+@import "../bower_components/neat/app/assets/stylesheets/neat-helpers";
+
+// Adding a Visual Grid while you develop. Set to 'true.'
+$visual-grid: false;
+$visual-grid-color: #ccc;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.2;
+
+// Change the grid settings
+$column: 68px;
+$gutter: 35px;
+$grid-columns: 12;
+$max-width: 1206px;
+
+// Breakpoints
+$v-iphone-4: new-breakpoint(max-device-width 320px device-pixel-ratio 2);
+$v-iphone-5: new-breakpoint(max-device-width 320px orientation portrait);
+$v-iphone-6: new-breakpoint(max-device-width 413px orientation portrait);
+$v-iphone-6-plus: new-breakpoint(max-device-width 736px orientation portrait);
+$h-iphone-5: new-breakpoint(max-device-width 320px orientation landscape);
+$h-iphone-6: new-breakpoint(max-device-width 667px orientation landscape);
+$h-iphone: new-breakpoint(max-device-width 736px orientation landscape);
+$v-ipad-screen: new-breakpoint(max-device-width 980px orientation portrait);
+$v-ipad-max-screen: new-breakpoint(max-device-width 1080px orientation portrait);
+$h-ipad-max-screen: new-breakpoint(max-device-width 1024px orientation landscape);
+$ipad-pro: new-breakpoint(min-width 1366px min-device-height 1024px);
+$sm-desktop: new-breakpoint(max-width 1280px);
+$macbook-pro-13: new-breakpoint(min-width 1280px max-width 1366px);
+$most-common-screen: new-breakpoint(min-width 1367px max-width 1440px);
+$macbook-pro-15: new-breakpoint(min-width 1441px);
+$md-desktop: new-breakpoint(min-width 1441px max-width 1599px);
+$short-lg-desktop: new-breakpoint(min-width 1441px max-height 1125px);
+$lg-desktop: new-breakpoint(min-width 1600px max-width 2000px);
+$xl-desktop: new-breakpoint(min-width 2001px);
+$desktop: new-breakpoint(min-width 1100px);
+$xs-mobile: new-breakpoint(max-width 500px);
+$sm-mobile: new-breakpoint(max-width 768px);
+$lg-mobile: new-breakpoint(max-width 1024px);
+$mobile: new-breakpoint(max-width 992px);
+$reg-desktop: new-breakpoint(min-width 993px max-width 2000px);
+$md-mobile: new-breakpoint(max-width 880px);
+$not-mobile: new-breakpoint(min-width 769px);
+
+//height breakpoint
+
+$sm-height: new-breakpoint(min-width 800px max-height 600px);
+$sm2-height: new-breakpoint(min-width 800px max-height 650px);
+$md-height: new-breakpoint(min-width 800px max-height 768px);
+$lgsm-height: new-breakpoint(min-width 1600px max-width 1999px max-height 1000px);
+$xlsm2-height: new-breakpoint(min-width 2000px max-height 1000px);
+$xlsm-height: new-breakpoint(min-width 2000px max-height 1160px);
+$xl-height: new-breakpoint(min-width 1000px max-width 1999px min-height 1160px);
+
+$small-desktop-ratio: new-breakpoint(min-width 1100px max-height 700px);
+$narrow-desktop: new-breakpoint(max-width 768px max-height 700px);
+
+$sm-desktop-height: new-breakpoint(max-height 600px);
+
+$desktop-bp: new-breakpoint(max-width 1200px);
+// // Neat Breakpoints
+// $medium-screen: em(640);
+// $large-screen: em(1140);
+
+// $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
+// $large-screen-up: new-breakpoint(min-width $large-screen 12);
+$bg-mobile: new-breakpoint(max-width 992px);
