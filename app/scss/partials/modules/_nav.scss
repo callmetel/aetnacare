@@ -1,0 +1,45 @@
+#timeline-navigation{
+
+  @include position(fixed, null null .7vh 50%);
+  @include transform(translateX(-50%));
+
+  .nav-item{
+    display: inline-block;
+    text-align: center;
+
+    .svg-pie{
+      box-shadow: none;
+      background: $transwhite2;
+      text-align: center;
+
+      svg{
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        @include transform(rotate(-90deg));
+        background: $transwhite2;
+        text-align: center;
+
+        &:nth-child(1) { 
+          fill: $transwhite2; 
+        }
+
+        &::nth-child(2) {
+          fill: $transwhite2;
+          stroke: $transwhite;
+        }
+      }
+      .percentage{
+        display: none;
+      }
+    }
+
+    .dot{
+      width: 20%;
+      height: 20%;
+      border-radius: 50%;
+      background: white;
+      display: block;
+    }
+  }
+}

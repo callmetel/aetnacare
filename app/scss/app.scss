@@ -26,7 +26,8 @@
 /// Layouts
 /// /////////////////////////////////////// 
 
-
+	@import "partials/layouts/header";
+	@import "partials/layouts/section";
 
 /// ////////////////////////////////////////
 /// Mixins
@@ -42,6 +43,7 @@
 
 	@import "partials/modules/global";
 	@import "partials/modules/nav";
+	@import "partials/modules/video";
 
 /// ////////////////////////////////////////
 /// States

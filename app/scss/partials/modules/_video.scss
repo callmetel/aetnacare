@@ -1,0 +1,33 @@
+#videos{
+	z-index: 0;
+	width: 100vw;
+	height: 100vh;
+	@include position(fixed, 0 0 null null);
+	opacity: .27;
+
+	.video{
+		@include position(fixed, 50% 0 0 50%);
+	    min-width: 100%;
+	    width: auto;
+	    height: auto;
+	    display: inherit;
+	    @include transform(translateX(-50%) translateY(-50%));
+	    // background: url(../images/intro.png) no-repeat;
+	    background-size: cover;
+	    // @include transition(1s opacity);
+	    min-height: 100%;
+	}
+
+	.loop-video{
+		opacity:0;
+		@include transition(opacity 1s ease-in-out);
+
+		&.fade-loop-in{
+			opacity:1!important;
+		}
+	}
+}
+
+// #video-1{
+// 	z-index: -1000;
+// }

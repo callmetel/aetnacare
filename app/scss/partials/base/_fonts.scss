@@ -1,1 +1,94 @@
 // Font face imports
+
+// Domaine Font Faces
+
+	@font-face {
+		font-family: 'Domaine Text Bold';
+		src: url('../fonts/Domaine/DomaineText-Bold.woff2') format('woff2'),
+			url('../fonts/Domaine/DomaineText-Bold.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Domaine Text Black';
+		src: url('../fonts/Domaine/DomaineText-Black.woff2') format('woff2'),
+			url('../fonts/Domaine/DomaineText-Black.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Domaine Display Bold';
+		src: url('../fonts/Domaine/DomaineDisp-Bold.woff2') format('woff2'),
+			url('../fonts/Domaine/DomaineDisp-Bold.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+	}
+
+// Open Sans Font Faces
+
+	@font-face {
+		font-family: 'Open Sans Regular';
+		src: url('../fonts/Open_Sans/OpenSans.woff2') format('woff2'),
+			url('../fonts/Open_Sans/OpenSans.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Open Sans Bold';
+		src: url('../fonts/Open_Sans/OpenSans-Bold.woff2') format('woff2'),
+			url('../fonts/Open_Sans/OpenSans-Bold.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Open Sans Light';
+		src: url('../fonts/Open_Sans/OpenSans-Light.woff2') format('woff2'),
+			url('../fonts/Open_Sans/OpenSans-Light.woff') format('woff');
+		font-weight: 300;
+		font-style: normal;
+	}
+
+
+// Declare Domaine Font Families
+
+	$DTBold : 'Domaine Text Bold';
+	$DTBlack : 'Domaine Text Black';
+	$DDBold : 'Domaine Display Bold';
+
+// Declare Open Sans Families
+	
+	$OS : 'Open Sans Regular', sans-serif;
+	$OSBold : 'Open Sans Bold', sans-serif;
+	$OSLight : 'Open Sans Light', sans-serif;
+
+
+// Font Sizes
+
+$sm-headline: normal normal 700 27px/31.5px $DTBold;
+$md-headline: normal normal 700 36px/42px $DTBold;
+$headline: normal normal 700 43.2px/50.4px $DTBold;
+$lg-headline: normal normal 700 50.4px/58.8px $DTBold;
+$xl-headline: normal normal 700 57.6px/67.2px $DTBold;
+
+$sm-headline-p: normal normal 300 12px/21px $OSLight;
+$md-headline-p: normal normal 300 16px/28px $OSLight;
+$headline-p: normal normal 300 19.2px/33.6px $OSLight;
+$lg-headline-p: normal normal 300 22.4px/39.2px $OSLight;
+$xl-headline-p: normal normal 300 25.6px/44.8px $OSLight;
+
+$sm-subheadline: normal normal 700 18px/24px $DTBold;
+$md-subheadline: normal normal 700 24px/32px $DTBold;
+$subheadline: normal normal 700 28.8px/38.4px $DTBold;
+$lg-subheadline: normal normal 700 33.6px/44.8px $DTBold;
+$xl-subheadline: normal normal 700 38.4px/51.2px $DTBold;
+
+$sm-link: normal normal 300 7.5px/10.5px $OSBold;
+$md-link: normal normal 300 10px/13px $OSBold;
+$link: normal normal 300 12px/15px $OSBold;
+$lg-link: normal normal 300 14px/17px $OSBold;
+$xl-link: normal normal 300 16px/19px $OSBold;
+

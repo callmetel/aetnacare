@@ -12,3 +12,144 @@ div{
 	font-style: normal;
 	margin: 0;
 }
+
+h2.headline{
+	font: $md-headline;
+	
+	@include media($short-lg-desktop){
+		font: $headline!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-headline;
+	}
+	@include media($lg-desktop){
+		font: $lg-headline;
+	}
+	@include media($md-desktop){
+		font: $headline;
+	}
+	@include media($lg-mobile){
+		font: $headline;
+	}
+	@include media($md-mobile){
+		font: $md-headline;
+	}
+	@include media($mobile){
+		font: $md-headline;
+	}
+	@include media($sm-mobile){
+		font: $md-headline;
+	}
+	@include media($xs-mobile){
+		font: $sm-headline;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-headline;
+	}
+}
+
+p.headline-description{
+	font: $md-headline-p;
+	
+	@include media($short-lg-desktop){
+		font: $headline-p!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-headline-p;
+	}
+	@include media($lg-desktop){
+		font: $lg-headline-p;
+	}
+	@include media($md-desktop){
+		font: $headline-p;
+	}
+	@include media($lg-mobile){
+		font: $headline-p;
+	}
+	@include media($md-mobile){
+		font: $md-headline-p;
+	}
+	@include media($mobile){
+		font: $md-headline-p;
+	}
+	@include media($sm-mobile){
+		font: $md-headline-p;
+	}
+	@include media($xs-mobile){
+		font: $sm-headline-p;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-headline-p;
+	}
+}
+
+.subheadline{
+	font: $md-subheadline;
+	
+	@include media($short-lg-desktop){
+		font: $subheadline!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-subheadline;
+	}
+	@include media($lg-desktop){
+		font: $lg-subheadline;
+	}
+	@include media($md-desktop){
+		font: $subheadline;
+	}
+	@include media($lg-mobile){
+		font: $subheadline;
+	}
+	@include media($md-mobile){
+		font: $md-subheadline;
+	}
+	@include media($mobile){
+		font: $md-subheadline;
+	}
+	@include media($sm-mobile){
+		font: $md-subheadline;
+	}
+	@include media($xs-mobile){
+		font: $sm-subheadline;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-subheadline;
+	}
+}
+
+.link{
+	font: $md-link;
+	text-transform: uppercase;
+	
+	@include media($short-lg-desktop){
+		font: $link!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-link;
+	}
+	@include media($lg-desktop){
+		font: $lg-link;
+	}
+	@include media($md-desktop){
+		font: $link;
+	}
+	@include media($lg-mobile){
+		font: $link;
+	}
+	@include media($md-mobile){
+		font: $md-link;
+	}
+	@include media($mobile){
+		font: $md-link;
+	}
+	@include media($sm-mobile){
+		font: $md-link;
+	}
+	@include media($xs-mobile){
+		font: $sm-link;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-link;
+	}
+}

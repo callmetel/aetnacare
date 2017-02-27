@@ -62,6 +62,159 @@ $(document).ready(function() {
 		// 	}
 		// });
 
+	// Video Timers
+	
+		var v1Duration = 22;
+
+	// Start Video Loops 
+		
+		function startLoop1() {
+			$('#loop-1').addClass('fade-loop-in');
+		}
+
+	// Nav Timer Animation
+
+		$('.nav-item:eq(0) .svg-pie').svgPie({ 
+
+		  // easing
+		  easing: 'easeOutCubic',
+
+		  // dimension
+		  dimension: 25,
+
+		  // percentage
+		  percentage: 100,
+
+		  // animation speed
+		  duration: parseInt(v1Duration*1000),
+
+		  // callbacks
+		  onStart: function() {},
+		  onComplete: function() {startLoop1();}
+
+		});
+
+		$('.nav-item:eq(1) .svg-pie').svgPie({ 
+
+		  // easing
+		  easing: 'easeOutCubic',
+
+		  // dimension
+		  dimension: 25,
+
+		  // percentage
+		  percentage: 0,
+
+		  // animation speed
+		  duration: 2000,
+
+		  // callbacks
+		  onStart: function() {},
+		  onComplete: function() {}
+
+		});
+
+		$('.nav-item:eq(2) .svg-pie').svgPie({ 
+
+		  // easing
+		  easing: 'easeOutCubic',
+
+		  // dimension
+		  dimension: 25,
+
+		  // percentage
+		  percentage: 0,
+
+		  // animation speed
+		  duration: 2000,
+
+		  // callbacks
+		  onStart: function() {},
+		  onComplete: function() {}
+
+		});
+
+		$('.nav-item:eq(3) .svg-pie').svgPie({ 
+
+		  // easing
+		  easing: 'easeOutCubic',
+
+		  // dimension
+		  dimension: 25,
+
+		  // percentage
+		  percentage: 0,
+
+		  // animation speed
+		  duration: 2000,
+
+		  // callbacks
+		  onStart: function() {},
+		  onComplete: function() {}
+
+		});
+
+		$('.nav-item:eq(4) .svg-pie').svgPie({ 
+
+		  // easing
+		  easing: 'easeOutCubic',
+
+		  // dimension
+		  dimension: 25,
+
+		  // percentage
+		  percentage: 0,
+
+		  // animation speed
+		  duration: 2000,
+
+		  // callbacks
+		  onStart: function() {},
+		  onComplete: function() {}
+
+		});
+
+		$('.nav-item:eq(5) .svg-pie').svgPie({ 
+
+		  // easing
+		  easing: 'easeOutCubic',
+
+		  // dimension
+		  dimension: 25,
+
+		  // percentage
+		  percentage: 0,
+
+		  // animation speed
+		  duration: 2000,
+
+		  // callbacks
+		  onStart: function() {},
+		  onComplete: function() {}
+
+		});
+
+		$('.nav-item:eq(6) .svg-pie').svgPie({ 
+
+		  // easing
+		  easing: 'easeOutCubic',
+
+		  // dimension
+		  dimension: 25,
+
+		  // percentage
+		  percentage: 0,
+
+		  // animation speed
+		  duration: 2000,
+
+		  // callbacks
+		  onStart: function() {},
+		  onComplete: function() {}
+
+		});
+
+
 	// Bind Page Function
 	
 		function bindPage(){
@@ -166,6 +319,7 @@ $(document).ready(function() {
 		// $("body").on("keydown", function(event) {
 		// 	$('*').removeClass('no-focus');
 	 //    });
+
 
 });
 
