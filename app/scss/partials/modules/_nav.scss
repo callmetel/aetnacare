@@ -1,45 +1,67 @@
 #timeline-navigation{
 
-  @include position(fixed, null null .7vh 50%);
+  @include position(fixed, null null 3vh 50%);
   @include transform(translateX(-50%));
 
   .nav-item{
     display: inline-block;
     text-align: center;
+    position: relative;
 
-    .svg-pie{
-      box-shadow: none;
-      background: $transwhite2;
-      text-align: center;
+    &:last-of-type{
+      .progress{
+        margin-right: 0;
+      }
+    } 
+    
+    .progress{
+      margin-right: 1vw;
 
-      svg{
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-        @include transform(rotate(-90deg));
+      .svg-pie{
+        box-shadow: none;
         background: $transwhite2;
         text-align: center;
 
-        &:nth-child(1) { 
-          fill: $transwhite2; 
-        }
+        svg{
+          width: 100%;
+          height: 100%;
+          overflow: visible;
+          @include transform(rotate(-90deg));
+          background: $transwhite2;
+          text-align: center;
 
-        &::nth-child(2) {
-          fill: $transwhite2;
-          stroke: $transwhite;
+          &:nth-child(1) { 
+            fill: $transwhite2; 
+          }
+
+          &::nth-child(2) {
+            fill: $transwhite2;
+            stroke: $transwhite;
+          }
+        }
+        .percentage{
+          display: none;
         }
       }
-      .percentage{
-        display: none;
-      }
-    }
 
-    .dot{
-      width: 20%;
-      height: 20%;
-      border-radius: 50%;
-      background: white;
-      display: block;
+      .nav-item-label{
+        @include position(absolute, null null -1.5vh 50%);
+        @include transform(translateX(-70%));
+        opacity:0;
+        @include transition(opacity .45s ease-in-out);
+
+        &.rendered{
+          opacity: 1;
+        }
+      } 
+
+      .dot{
+        width: 20%;
+        height: 20%;
+        border-radius: 50%;
+        background: white;
+        display: block;
+      } 
     }
   }
 }

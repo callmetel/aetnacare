@@ -1,0 +1,36 @@
+.start-btn{
+	width: 1.8vw;
+	min-width: 45px;
+	vertical-align: middle;
+	cursor: pointer;
+
+	@include media($sm-mobile){
+		min-width: 35px;
+	}
+}
+#prev-next{
+	position: relative;
+	width:100vw;
+}
+.prev-btn{
+	left: 2.9vw!important;
+	width:.8vw;
+	min-width: 15px;
+	cursor: pointer;
+
+	@include media($sm-mobile){
+		width: 10px;
+		min-width: 10px;
+	}
+}
+.next-btn{
+	right: 2.9vw!important;
+	width:.8vw;
+	min-width: 15px;
+	cursor: pointer;
+	
+	@include media($sm-mobile){
+		width: 10px;
+		min-width: 10px;
+	}
+}

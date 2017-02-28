@@ -9,14 +9,39 @@ header{
 		height:100%;
 
 		.logo{
-			height: 3vh;
+			height: 2vh;
 			width: auto;
-			left: 1.8vw;
+			left: 2.9vw;
+
+			&.aetna-logo{
+				height: 2.5vh;
+			}
+			&.aetnacare-logo{
+				opacity:0;
+			}
 		}
 
 		.header-links{
+			right: 2.9vw;
 			.link{
 				vertical-align: middle;
+				&:first-of-type{
+					margin-right: 1vw;
+				}
+				&:last-of-type{
+					margin-left: 1vw;
+				}
+			}
+			.social-icon{
+				height: 2vh;
+				width: auto;
+				display: inline-block;
+				vertical-align: middle;
+				margin-left:8px;
+
+				&:first-of-type{
+					margin-left: 1vw;
+				}
 			}
 		}	
 	}

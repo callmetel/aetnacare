@@ -70,6 +70,7 @@ $(document).ready(function() {
 		
 		function startLoop1() {
 			$('#loop-1').addClass('fade-loop-in');
+
 		}
 
 	// Nav Timer Animation
@@ -89,7 +90,7 @@ $(document).ready(function() {
 		  duration: parseInt(v1Duration*1000),
 
 		  // callbacks
-		  onStart: function() {},
+		  onStart: function() {$('.nav-item-label:eq(0)').addClass('rendered');},
 		  onComplete: function() {startLoop1();}
 
 		});

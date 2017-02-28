@@ -153,3 +153,38 @@ p.headline-description{
 		font: $sm-link;
 	}
 }
+
+p.content{
+	font: $md-content-p;
+	
+	@include media($short-lg-desktop){
+		font: $content-p!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-content-p;
+	}
+	@include media($lg-desktop){
+		font: $lg-content-p;
+	}
+	@include media($md-desktop){
+		font: $content-p;
+	}
+	@include media($lg-mobile){
+		font: $content-p;
+	}
+	@include media($md-mobile){
+		font: $md-content-p;
+	}
+	@include media($mobile){
+		font: $md-content-p;
+	}
+	@include media($sm-mobile){
+		font: $md-content-p;
+	}
+	@include media($xs-mobile){
+		font: $sm-content-p;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-content-p;
+	}
+}

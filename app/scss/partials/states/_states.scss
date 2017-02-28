@@ -98,4 +98,8 @@ a.no-decoration, a:hover.no-decoration{
 }
 
 .is-bold{
+	font-family: $OSSemiBold!important;
+}
+.is-bolder{
+	font-family: $OSBold!important;
 }

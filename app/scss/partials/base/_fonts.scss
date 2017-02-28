@@ -37,6 +37,14 @@
 	}
 
 	@font-face {
+		font-family: 'Open Sans Semibold';
+		src: url('../fonts/Open_Sans/OpenSans-Semibold.woff2') format('woff2'),
+			url('../fonts/Open_Sans/OpenSans-Semibold.woff') format('woff');
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	@font-face {
 		font-family: 'Open Sans Bold';
 		src: url('../fonts/Open_Sans/OpenSans-Bold.woff2') format('woff2'),
 			url('../fonts/Open_Sans/OpenSans-Bold.woff') format('woff');
@@ -62,6 +70,7 @@
 // Declare Open Sans Families
 	
 	$OS : 'Open Sans Regular', sans-serif;
+	$OSSemiBold : 'Open Sans Semibold', sans-serif;
 	$OSBold : 'Open Sans Bold', sans-serif;
 	$OSLight : 'Open Sans Light', sans-serif;
 
@@ -92,3 +101,9 @@ $link: normal normal 300 12px/15px $OSBold;
 $lg-link: normal normal 300 14px/17px $OSBold;
 $xl-link: normal normal 300 16px/19px $OSBold;
 
+
+$sm-content-p: normal normal 300 13.5px/20px $OSLight;
+$md-content-p: normal normal 300 18px/28px $OSLight;
+$content-p: normal normal 300 21.6px/27.6px $OSLight;
+$lg-content-p: normal normal 300 25.2px/40.8px $OSLight;
+$xl-content-p: normal normal 300 28.8px/47.2px $OSLight;
