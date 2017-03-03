@@ -25,19 +25,19 @@
     }
 }
 
-@keyframes rota {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes opa {
-  0% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
+@include keyframes (pulse) {
+    0%,
+    100%,
+    30%,
+    50%,
+    60%,
+    80% {
+        transform: translateY(0)
+    }
+    40% {
+        transform: translateY(8px)
+    }
+    70% {
+        transform: translateY(5px)
+    }
 }

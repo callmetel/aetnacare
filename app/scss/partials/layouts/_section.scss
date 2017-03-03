@@ -1,5 +1,50 @@
 section{
-	@include transition(all .5s ease-in-out);
+	display: none;
+	opacity:0;
+	text-align: center;
+	height:auto;
+	
+	&.is-active{
+		display: inherit;
+	}
+	display: none;
+
+	.section-title{
+		text-align: center;
+		color:white;
+	}
+
+	&#introduction{
+		width:49.19vw;
+		@include media($lg-mobile) {
+			width: 59.19vw;
+		}
+		@include media($md-mobile) {
+			width: 69.19vw;
+		}
+		@include media($sm-mobile) {
+			width: 79.19vw;
+		}
+
+		.section-title{
+			width: 14.35vw;
+		}
+		.heading{
+			margin-top: 3.64vh;
+			margin-bottom: 11vh;
+		}
+		#journey-btn{
+			width:13vw;
+			margin-left: auto;
+			margin-right: auto;
+			cursor: pointer;
+
+			p{
+				width: 100%;
+			}
+		}
+	}
+
 	&.super{
 		z-index: 1;
 		text-align: center;
@@ -7,6 +52,7 @@ section{
 		p.headline-description{
 			color: $white;
 			margin-top: 1.5vh;
+			letter-spacing: 0.03em;
 		}
 
 		.btn{
@@ -30,11 +76,17 @@ section{
 
 	&.copy{
 		z-index: 1;
-		text-align: left!important;
+		// text-align: left!important;
+
+		.section-title{
+			color:rgba(255,255,255, 0.4)!important;
+			text-align: left!important;
+		}
 
 		p{
 			color: $white;
 			margin-top: 1.5vh;
+			letter-spacing: 0.03em;
 		}
 
 		.btn{
@@ -51,6 +103,7 @@ section{
 		text-align: left;
 		display: none;
 		width:46.12vw;
+
 		@include media($lg-mobile) {
 			width: 56.12vw;
 		}
@@ -77,17 +130,26 @@ section{
 			ul{
 				margin: 1.57vh 0 0 0;
 				padding: 0;
+				padding-left: 20px;
 
 				li{
 					margin:0;
 					padding: 0;
 					margin-left: 20px;
+					letter-spacing: 0.03em;
 				}
 			}
 		}
-		.back-btn{
+		.more-btn, .back-btn{
 			margin-bottom: 3.6vh;
 			display: block;
+
+			img{
+				width:1vw;
+				min-width:14px;
+				margin-right:1vw;
+				vertical-align: middle;
+			}
 		}
 	}
 }

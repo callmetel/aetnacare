@@ -1,35 +1,59 @@
 header{
 	width:100vw;
-	height: 8vh;
-	background: rgba(0,0,0,0.2);
+	// height: 8vh;
+	top: 3.4vh;
+	// background: rgba(0,0,0,0.2);
 	z-index: 100;
+	@include transition(all .35s ease-in-out);
 
 	.container{
 		width:100%;
 		height:100%;
 
 		.logo{
-			height: 2vh;
-			width: auto;
+			width:5vw;
+			top: 3.4vh;
 			left: 2.9vw;
 
 			&.aetna-logo{
-				height: 2.5vh;
+				width:5vw;
 			}
 			&.aetnacare-logo{
+				width:8.4vw;
 				opacity:0;
 			}
 		}
 
-		.header-links{
+		#header-links{
+			top: 3.4vh;
 			right: 2.9vw;
+			cursor: pointer;
+			#burger{
+				@include transition(all .45s $ease-in-out-quad);
+				width: 2vw;
+				display: inline-block;
+				vertical-align: middle;
+				position:absolute;
+				top: 0;
+				right: 0;
+			}
+			span{
+				opacity: 0;
+				@include transform(translateX(50%));
+				@include filter(blur(5px));
+				@include transition(all .45s $ease-in-out-quad);
+				display: inline-block;
+				vertical-align: middle;
+			}
 			.link{
+				letter-spacing: 0.06em;
 				vertical-align: middle;
 				&:first-of-type{
 					margin-right: 1vw;
 				}
 				&:last-of-type{
 					margin-left: 1vw;
+					margin-right: 0;
 				}
 			}
 			.social-icon{
@@ -41,6 +65,20 @@ header{
 
 				&:first-of-type{
 					margin-left: 1vw;
+				}
+			}
+			&.show-links{
+				#burger{
+					@include filter(blur(5px));
+					opacity:0;
+					@include transform(translateX(-50%));
+					z-index: -1;
+					// width:0;
+				}
+				span{
+					@include filter(blur(0px));
+					@include transform(translateX(0)!important);
+					opacity:1;
 				}
 			}
 		}	

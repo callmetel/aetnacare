@@ -83,6 +83,41 @@ p.headline-description{
 	}
 }
 
+p.heading{
+	font: $md-heading-p;
+	
+	@include media($short-lg-desktop){
+		font: $heading-p!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-heading-p;
+	}
+	@include media($lg-desktop){
+		font: $lg-heading-p;
+	}
+	@include media($md-desktop){
+		font: $heading-p;
+	}
+	@include media($lg-mobile){
+		font: $heading-p;
+	}
+	@include media($md-mobile){
+		font: $md-heading-p;
+	}
+	@include media($mobile){
+		font: $md-heading-p;
+	}
+	@include media($sm-mobile){
+		font: $md-heading-p;
+	}
+	@include media($xs-mobile){
+		font: $sm-heading-p;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-heading-p;
+	}
+}
+
 .subheadline{
 	font: $md-subheadline;
 	
@@ -121,6 +156,7 @@ p.headline-description{
 .link{
 	font: $md-link;
 	text-transform: uppercase;
+	letter-spacing: .1em;
 	
 	@include media($short-lg-desktop){
 		font: $link!important;

@@ -1,4 +1,4 @@
-#videos{
+#videos, #mobile-videos{
 	z-index: 0;
 	width: 100vw;
 	height: 100vh;
@@ -16,10 +16,11 @@
 	    background-size: cover;
 	    // @include transition(1s opacity);
 	    min-height: 100%;
+	    opacity:0;
 	}
 
 	.loop-video{
-		opacity:0;
+
 		@include transition(opacity 1s ease-in-out);
 
 		&.fade-loop-in{

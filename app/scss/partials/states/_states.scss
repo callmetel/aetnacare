@@ -8,8 +8,6 @@
 
 .is-active{
 	display: inherit;
-	opacity: 1!important;
-	@include transition(all .5s ease-in-out);
 }
 .is-inactive{
 	display: none;

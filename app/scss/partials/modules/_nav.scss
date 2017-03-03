@@ -1,12 +1,12 @@
 #timeline-navigation{
 
-  @include position(fixed, null null 3vh 50%);
-  @include transform(translateX(-50%));
+  @include position(fixed, null 0 3vh null);
+  width: 94.2vw;
+  display: none;
 
   .nav-item{
-    display: inline-block;
-    text-align: center;
-    position: relative;
+    display: inline-block; 
+    text-align: left;
 
     &:last-of-type{
       .progress{
@@ -15,53 +15,35 @@
     } 
     
     .progress{
-      margin-right: 1vw;
+      display: inline-block;
+      .nav-item-label{
+        display: inline-block;
+        opacity: .1;
+        letter-spacing: 0.15em;
+        margin-left: .73vw;
+        margin-right: .73vw;
+        vertical-align: middle;
+      } 
 
-      .svg-pie{
-        box-shadow: none;
-        background: $transwhite2;
-        text-align: center;
+      .bar{
+        width: 8.9vw;
+        height: 3px;
+        background: rgba(255,255,255,0.1);
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
 
-        svg{
+        span{
+          display: block;
+          position: absolute;
+          top: 0;
           width: 100%;
           height: 100%;
-          overflow: visible;
-          @include transform(rotate(-90deg));
-          background: $transwhite2;
-          text-align: center;
-
-          &:nth-child(1) { 
-            fill: $transwhite2; 
-          }
-
-          &::nth-child(2) {
-            fill: $transwhite2;
-            stroke: $transwhite;
-          }
-        }
-        .percentage{
-          display: none;
+          background: white;
+          @include transform(translateX(-101%));
         }
       }
-
-      .nav-item-label{
-        @include position(absolute, null null -1.5vh 50%);
-        @include transform(translateX(-70%));
-        opacity:0;
-        @include transition(opacity .45s ease-in-out);
-
-        &.rendered{
-          opacity: 1;
-        }
-      } 
-
-      .dot{
-        width: 20%;
-        height: 20%;
-        border-radius: 50%;
-        background: white;
-        display: block;
-      } 
     }
   }
 }
