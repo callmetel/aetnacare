@@ -42,3 +42,36 @@ a{
 		min-width: 10px;
 	}
 }
+
+#prev{
+	left: 2.9vw;
+
+	span{
+
+		&.name{
+			display: none;
+			&.is-active{
+				display:inherit!important; 
+			}
+		}
+	}
+}
+#next{
+	right: 2.9vw;
+	img{
+		margin: 0 auto;
+		text-align: center;
+		display: block;
+	}
+
+	span{
+
+		&.name{
+			display: none;
+			&.is-active{
+				display:inherit!important; 
+			}
+		}
+	}
+}
+

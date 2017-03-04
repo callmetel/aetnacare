@@ -401,6 +401,24 @@ a {
       width: 10px;
       min-width: 10px; } }
 
+#prev {
+  left: 2.9vw; }
+  #prev span.name {
+    display: none; }
+    #prev span.name.is-active {
+      display: inherit !important; }
+
+#next {
+  right: 2.9vw; }
+  #next img {
+    margin: 0 auto;
+    text-align: center;
+    display: block; }
+  #next span.name {
+    display: none; }
+    #next span.name.is-active {
+      display: inherit !important; }
+
 header {
   width: 100vw;
   top: 3.4vh;
@@ -428,12 +446,19 @@ header {
         -webkit-transition: all 0.45s cubic-bezier(0.455, 0.03, 0.515, 0.955);
         -moz-transition: all 0.45s cubic-bezier(0.455, 0.03, 0.515, 0.955);
         transition: all 0.45s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-        width: 2vw;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 5px 10px;
         display: inline-block;
         vertical-align: middle;
         position: absolute;
         top: 0;
         right: 0; }
+        header .container #header-links #burger img {
+          width: 5px;
+          height: auto;
+          display: inline-block;
+          margin-left: 3px;
+          margin-top: 1px; }
       header .container #header-links span {
         opacity: 0;
         -webkit-transform: translateX(50%);
@@ -712,7 +737,7 @@ section {
         vertical-align: middle; }
       #timeline-navigation .nav-item .progress .bar {
         width: 8.9vw;
-        height: 3px;
+        height: 1.75px;
         background: rgba(255, 255, 255, 0.1);
         display: inline-block;
         vertical-align: middle;
