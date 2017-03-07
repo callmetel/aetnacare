@@ -20,7 +20,7 @@ a{
 }
 .prev-btn{
 	left: 2.9vw!important;
-	width:.8vw;
+	width:4.4vw;
 	min-width: 15px;
 	cursor: pointer;
 	@include transition(all .35s ease-in-out);
@@ -32,7 +32,7 @@ a{
 }
 .next-btn{
 	right: 2.9vw!important;
-	width:.8vw;
+	width:4.4vw;
 	min-width: 15px;
 	cursor: pointer;
 	@include transition(all .35s ease-in-out);
@@ -45,32 +45,34 @@ a{
 
 #prev{
 	left: 2.9vw;
+	cursor: pointer;
 
+	svg{
+		text-align: center;
+		@include margin(null auto 1.3vh auto);
+		display: block;
+	}
 	span{
-
-		&.name{
-			display: none;
-			&.is-active{
-				display:inherit!important; 
-			}
+		display:block;
+		display: none;
+		&.is-active{
+			display:block!important; 
 		}
 	}
 }
 #next{
 	right: 2.9vw;
-	img{
-		margin: 0 auto;
+	cursor: pointer;
+	svg{
 		text-align: center;
+		@include margin(null auto 1.3vh auto);
 		display: block;
 	}
-
 	span{
-
-		&.name{
-			display: none;
-			&.is-active{
-				display:inherit!important; 
-			}
+		display:block;
+		display: none;
+		&.is-active{
+			display:block!important; 
 		}
 	}
 }

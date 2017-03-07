@@ -1,12 +1,15 @@
 #timeline-navigation{
 
-  @include position(fixed, null 0 3vh null);
+  @include position(fixed, null null 3vh 50%);
+  @include transform(translateX(-50%));
   width: 94.2vw;
   display: none;
 
   .nav-item{
     display: inline-block; 
-    text-align: left;
+    text-align: justify;
+    margin:0;
+    padding:0;
 
     &:last-of-type{
       .progress{
@@ -26,13 +29,32 @@
       } 
 
       .bar{
-        width: 8.9vw;
+        width: 9.5vw;
         height: 1.75px;
         background: rgba(255,255,255,0.1);
         display: inline-block;
         vertical-align: middle;
         position: relative;
         overflow: hidden;
+
+        @include media($xl-desktop){
+          width: 10.25vw;
+        }
+        @include media($lg-desktop){
+          width: 9vw;
+        }
+        @include media($md-desktop){
+          width: 9.2vw;
+        }
+        @include media($most-common-screen){
+          width: 9.75vw;
+        }
+        @include media($sm-desktop){
+          width:8.9vw;
+        }
+        @include media($xs-desktop){
+          width:8.5vw;
+        }
 
         span{
           display: block;

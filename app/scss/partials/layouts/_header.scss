@@ -14,6 +14,7 @@ header{
 			width:5vw;
 			top: 3.4vh;
 			left: 2.9vw;
+			cursor: pointer;
 
 			&.aetna-logo{
 				width:5vw;
@@ -57,13 +58,26 @@ header{
 			.link{
 				letter-spacing: 0.06em;
 				vertical-align: middle;
-				&:first-of-type{
-					margin-right: 1vw;
+
+				&.no-decoration{
+					opacity:.5;
+					@include transition(opacity .45s ease-in-out);
+					&:first-of-type{
+						margin-right: 1vw;
+					}
+					&:nth-of-type(2){
+						margin-left: 1vw;
+						margin-right: 1vw;
+					}
+					&:last-of-type{
+						margin-left: 1vw;
+						margin-right: 0;
+					}	
+					&:hover{
+						opacity:1;
+					}
 				}
-				&:last-of-type{
-					margin-left: 1vw;
-					margin-right: 0;
-				}
+				
 			}
 			.social-icon{
 				height: 2vh;

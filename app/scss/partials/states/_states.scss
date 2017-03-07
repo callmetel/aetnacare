@@ -6,9 +6,6 @@
 	}
 }
 
-.is-active{
-	display: inherit;
-}
 .is-inactive{
 	display: none;
 	opacity: 0;
@@ -100,4 +97,8 @@ a.no-decoration, a:hover.no-decoration{
 }
 .is-bolder{
 	font-family: $OSBold!important;
+}
+
+.is-desaturated{
+	@include filter(grayscale(100%));
 }

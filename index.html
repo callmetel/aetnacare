@@ -20,24 +20,22 @@
       <img src="app/images/aetnacare-logo.svg" alt="aetna logo" class="aetnacare-logo logo absolute-left hidden-logo">
       <div id="header-links" class="absolute-right">
         <p id="burger" class="link">LEARN <img src="app/images/next-arrow.svg" alt=""></p>
-        <span class="link"><a id="disclaimer-link" class="link no-decoration">Disclaimer</a> | <a id="contact-link" class="link no-decoration">Contact</a></span>
+        <span class="link"><a id="vision-link" class="link no-decoration">Vision</a> | <a id="disclaimer-link" class="link no-decoration">Disclaimer</a> | <a id="contact-link" class="link no-decoration">Contact</a></span>
       </div>
         <!-- <img src="app/images/icon-facebook.svg" alt="facebook icon" id="facebook" class="social-icon">
         <img src="app/images/icon-linkedin.svg" alt="linkedin icon" id="linkedin" class="social-icon"> -->
       </div>
     </div>
   </header>
+  <div class="dummy"></div>
   <section id="introduction" class="super absolute-center is-active">
     <img src="app/images/aetnacare-logo.svg" alt="aetna logo" class="section-title">
     <!-- <h2 class="section-title headline">AetnaCare lorem ipsum dolor sit amet, consectetur adipiscing, sed do eiusmod tempor ut labore</h2> -->
-    <p class="heading">Transforming the definition of care</p>
-    <a id="journey-btn" class="btn subheadline no-decoration"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve">
-<title>right-arrow</title>
-<rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/><p class="link absolute-center">Start the Journey</p></svg></a>
+    <p class="heading">Transforming the Definition of Care</p>
+    <a id="journey-btn" class="btn subheadline no-decoration"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/> <p class="link absolute-center">Start the Journey</p> </svg> </a>
   </section>
   
-  <section id="journey" class="super absolute-center">
+  <section id="journey" class="super absolute-center" data-category="journey" data-index="1">
     <h2 class="section-title headline">Where does the journey to<br>better health begin?</h2>
     <h2 class="headline">It starts with understanding.</h2>
     <div class="content">  
@@ -63,7 +61,7 @@
     </div>
   </section>
   
-  <section id="identify" class="super absolute-center">
+  <section id="identify" class="super absolute-center" data-category="identify" data-index="2">
     <h2 class="section-title headline">How do we identify the<br>members who need us most?</h2>
     <h2 class="headline">With real-time and predictive analytics.</h2>
     <div class="content">
@@ -84,7 +82,7 @@
     </div>
   </section>
 
-  <section id="connect" class="super absolute-center">
+  <section id="connect" class="super absolute-center" data-category="connect" data-index="3">
     <h2 class="section-title headline">How do we connect with our members?</h2>
     <h2 class="headline">With care nurses who live in their community.</h2> 
     <div class="content">
@@ -111,7 +109,7 @@
     </div>
   </section>
 
-  <section id="guide" class="super absolute-center">
+  <section id="guide" class="super absolute-center" data-category="guide" data-index="4">
     <h2 class="section-title headline">How do we advise our members?</h2>
     <h2 class="headline">With guidelines specific to each member and their condition.</h2>
     <div class="content">
@@ -131,7 +129,7 @@
     </div>
   </section>
 
-  <section id="support" class="super absolute-center">
+  <section id="support" class="super absolute-center" data-category="support" data-index="5">
     <h2 class="section-title headline">How are healthy choices made?</h2>
     <h2 class="headline">With a community of supportive resources.</h2>
     <div class="content">
@@ -151,79 +149,80 @@
     </div>
   </section>
 
-  <section id="sustain" class="super absolute-center">
+  <section id="sustain" class="super absolute-center" data-category="sustain" data-index="6">
     <h2 class="section-title headline">Confident. Focused. Active.</h2>
+    <h2 class="headline">This is AetnaCare.</h2>  
     <div class="content">
-      <h2 class="headline">This is AetnaCare.</h2>  
-      <div class="divider"></div>
-      <p class="content is-bold">No one plays a bigger role in our health journeys than we do.</p>
-      <div class="divider"></div>
-      <a class="more-btn link no-decoration"><img src="app/images/down-arrow.svg" alt=""> Learn More</a>
+      <!-- <div class="divider"></div> -->
+      <!-- <p class="content is-bold">No one plays a bigger role in our health journeys than we do.</p> -->
+      <!-- <div class="divider"></div> -->
+      <!-- <a class="more-btn link no-decoration"><img src="app/images/down-arrow.svg" alt=""> Learn More</a> -->
       <div class="learn-more">
-        <a class="back-btn link no-decoration"><img src="app/images/up-arrow.svg" alt=""> BACK</a>
+        <p class="content is-bold">No one plays a bigger role in our health journeys than we do.</p>
+        <!-- <a class="back-btn link no-decoration"><img src="app/images/up-arrow.svg" alt=""> BACK</a> -->
         <p class="content">When we can actively manage our conditions on our own taking our medications routinely, benefiting from social support and making healthy decisions, we can sustain our wellbeing.</p>
+        <div class="divider"></div>
+        <p class="content is-bold">Emphasizing education and coordination, AetnaCare helps us build our confidence, empowering us to be active participants on our health journey.</p>
+        <div class="divider"></div>
+        <!-- <a id="restart-btn" class="btn subheadline no-decoration">Restart <img src="app/images/start-btn.svg" alt="arrow" class="start-btn"></a> -->
       </div>
-      <div class="divider"></div>
-      <p class="content is-bold">Emphasizing education and coordination, AetnaCare helps us build our confidence, empowering us to be active participants on our health journey.</p>
-      <div class="divider"></div>
-      <a id="restart-btn" class="btn subheadline no-decoration">Restart <img src="app/images/start-btn.svg" alt="arrow" class="start-btn"></a>
     </div>
   </section>
 
   <div id="videos">
-      <video src="app/videos/loop-1.mp4" id="loop-0" class="loop-video video" autoplay muted loop></video>
+      <video src="app/videos/loop-1.mp4" id="loop-0" class="loop-video video is-desaturated" autoplay muted loop></video>
 
-      <video src="app/videos/video-1.mp4" id="video-1" class="scene-video video" muted></video>
-      <video src="app/videos/loop-1.mp4" id="loop-1" class="loop-video video" muted loop></video>
+      <video src="app/videos/video-1.mp4" id="video-1" class="scene-video video" data-category="journey" data-index="1" muted></video>
+      <video src="app/videos/loop-1.mp4" id="loop-1" class="loop-video video" data-category="journey" data-index="1" muted loop></video>
 
-      <video src="app/videos/video-2.mp4" id="video-2" class="scene-video video" muted></video>
-      <video src="app/videos/loop-2.mp4" id="loop-2" class="loop-video video" muted loop></video>
+      <video src="app/videos/video-2.mp4" id="video-2" class="scene-video video" data-category="identify" data-index="2" muted></video>
+      <video src="app/videos/loop-2.mp4" id="loop-2" class="loop-video video" data-category="identify" data-index="2" muted loop></video>
 
-      <video src="app/videos/video-3.mp4" id="video-3" class="scene-video video" muted></video>
-      <video src="app/videos/loop-3.mp4" id="loop-3" class="loop-video video" muted loop></video>
+      <video src="app/videos/video-3.mp4" id="video-3" class="scene-video video" data-category="connect" data-index="3" muted></video>
+      <video src="app/videos/loop-3.mp4" id="loop-3" class="loop-video video" data-category="connect" data-index="3" muted loop></video>
 
-      <video src="app/videos/video-4.mp4" id="video-4" class="scene-video video" muted></video>
-      <video src="app/videos/loop-4.mp4" id="loop-4" class="loop-video video" muted loop></video>
+      <video src="app/videos/video-4.mp4" id="video-4" class="scene-video video" data-category="guide" data-index="4" muted></video>
+      <video src="app/videos/loop-4.mp4" id="loop-4" class="loop-video video" data-category="guide" data-index="4" muted loop></video>
 
-      <video src="app/videos/video-5.mp4" id="video-5" class="scene-video video" muted></video>
-      <video src="app/videos/loop-5.mp4" id="loop-5" class="loop-video video" muted loop></video>
+      <video src="app/videos/video-5.mp4" id="video-5" class="scene-video video" data-category="support" data-index="5" muted></video>
+      <video src="app/videos/loop-5.mp4" id="loop-5" class="loop-video video" data-category="support" data-index="5" muted loop></video>
 
-      <video src="app/videos/video-6.mp4" id="video-6" class="scene-video video" muted></video>
-      <video src="app/videos/loop-6.mp4" id="loop-6" class="loop-video video" muted loop></video>
+      <video src="app/videos/video-6.mp4" id="video-6" class="scene-video video" data-category="sustain" data-index="6" muted></video>
+      <video src="app/videos/loop-6.mp4" id="loop-6" class="loop-video video" data-category="sustain" data-index="6" muted loop></video>
   </div>
 
   <nav id="timeline-navigation">
-      <a class="nav-item no-decoration">
+      <a class="nav-item no-decoration" data-category="journey" data-index="0">
           <div class="progress">
             <span class="nav-item-label link">JOURNEY</span> 
             <div class="bar"><span></span></div>
           </div>
       </a>
-      <a class="nav-item no-decoration">
+      <a class="nav-item no-decoration" data-category="identify" data-index="1">
           <div class="progress">
             <span class="nav-item-label link">IDENTIFY</span>
             <div class="bar"><span></span></div>
           </div>
       </a>
-      <a class="nav-item no-decoration">
+      <a class="nav-item no-decoration" data-category="connect" data-index="2">
           <div class="progress">
             <span class="nav-item-label link">CONNECT</span> 
             <div class="bar"><span></span></div>
           </div>
       </a>
-      <a class="nav-item no-decoration">
+      <a class="nav-item no-decoration" data-category="guide" data-index="3">
           <div class="progress">
             <span class="nav-item-label link">GUIDE</span> 
             <div class="bar"><span></span></div>
           </div>
       </a>
-      <a class="nav-item no-decoration">
+      <a class="nav-item no-decoration" data-category="support" data-index="4">
           <div class="progress">
             <span class="nav-item-label link">SUPPORT</span>
             <div class="bar"><span></span></div>
           </div>
       </a>
-      <a class="nav-item no-decoration">
+      <a class="nav-item no-decoration" data-category="sustain" data-index="5">
           <div class="progress">
             <span class="nav-item-label link">SUSTAIN</span> 
             <div class="bar"><span></span></div>
@@ -232,17 +231,41 @@
   </nav>   
 
   <div id="prev-next" class="absolute-center">
-    <div id="prev" class="fixed-left">
-      <img src="app/images/prev-arrow.svg" alt="" class="prev-btn is-inactive">
-      <span class="link name is-active">IDENTIFY</span>
-      <span class="link name">CONNECT</span>
-      <span class="link name">GUIDE</span>
-      <span class="link name">SUPPORT</span>
-      <span class="link name">SUSTAIN</span>
+    <div id="prev" class="fixed-left is-inactive">
+      <svg class="prev-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
+        <g id="2d7b02ce-dd7e-40c6-91a0-5baa6080f45a" data-name="Layer 2">
+          <g id="87ef83fb-6d88-4c03-ba7b-e8a099656c83" data-name="Layer 1">
+            <rect x="9.05074" y="9.07047" width="41.14017" height="41.14017" transform="translate(-12.2833 29.6266) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75" opacity="0.2" style="isolation: isolate"/>
+            <polyline class="prev-arrow" points="29.899 59.015 0.561 29.64 29.961 0.265" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+            <path class="icon" d="M29.4826,21.4604V19.33955l-4.88013,3.22778,4.88013,3.22772V23.48134a5.5065,5.5065,0,1,1-6.36688,5.43561,5.45577,5.45577,0,0,1,.53809-2.37842l-1.80273-.86523a7.4385,7.4385,0,0,0-.73535,3.24365A7.50928,7.50928,0,1,0,29.4826,21.4604Z" fill="#fff"/>
+          </g>
+        </g>
+      </svg>
+      <span class="link name is-active" data-category="identify" data-index="1">PREV: JOURNEY</span>
+      <span class="link name" data-category="connect" data-index="2">PREV: IDENTIFY</span>
+      <span class="link name" data-category="guide" data-index="3">PREV: CONNECT</span>
+      <span class="link name" data-category="support" data-index="4">PREV: GUIDE</span>
+      <span class="link name" data-category="sustain" data-index="5">PREV: SUPPORT</span>
+      <span class="link name">PREV: SUSTAIN</span>
     </div>
     <div id="next" class="fixed-right">
-      <img src="app/images/next-arrow.svg" alt="" class="next-btn">
-      <p><span class="link next">NEXT:</span><span class="link name is-active">IDENTIFY</span><span class="link name">CONNECT</span><span class="link name">GUIDE</span><span class="link name">SUPPORT</span><span class="link name">SUSTAIN</span></p>
+      <svg class="next-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
+        <g id="d1488e8f-7a9a-49ad-a62e-9e1e30658c15" data-name="Layer 2">
+          <g id="057968e3-af58-4d2b-84e2-8f929ce4535a" data-name="Layer 1">
+            <g>
+              <rect x="9.05074" y="9.07019" width="41.14017" height="41.14017" transform="translate(29.63458 -12.26365) rotate(45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75" opacity="0.2"/>
+              <polygon class="icon" points="27.405 37.547 36.466 30.701 27.405 23.856 27.405 37.547" fill="#fff"/>
+              <polyline class="next-arrow" points="29.311 0.265 58.711 29.64 29.373 59.015" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <span class="link name is-active" data-category="journey" data-index="0">NEXT: IDENTIFY</span>
+      <span class="link name" data-category="identify" data-index="1">NEXT: CONNECT</span>
+      <span class="link name" data-category="connect" data-index="2">NEXT: GUIDE</span>
+      <span class="link name" data-category="guide" data-index="3">NEXT: SUPPORT</span>
+      <span class="link name" data-category="support" data-index="4">NEXT: SUSTAIN</span>
+      <span class="link name" data-category="sustain" data-index="5">NEXT: LAST</span>
     </div> 
   </div> 
     
