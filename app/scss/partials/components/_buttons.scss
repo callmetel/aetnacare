@@ -53,6 +53,7 @@ a{
 		display: block;
 	}
 	span{
+		text-align: center;
 		display:block;
 		display: none;
 		&.is-active{
@@ -77,3 +78,38 @@ a{
 	}
 }
 
+#volume-warning{
+	width: 8vw;
+	text-align: center;
+	@include position(fixed, null null 7.11vh 50%);
+	@include transform(translateX(-50%));
+
+	@include media($v-iphone-6-plus){
+		width: 25vw;
+	}
+	p{
+		display: block;
+		margin:0 auto;
+		margin-bottom: 14px;
+	}
+	svg{
+		width: 4.39vw;
+		height: 2.59vh;
+
+		@include media($v-iphone-6-plus){
+			width: 10vw;
+			height: 6vw;
+		}
+
+		#sound-2{
+			@include animation-delay(.25s);
+		}
+		#sound-3{
+			@include animation-delay(.5s);
+		}
+	}
+}
+
+a, .link, .no-decoration{
+	cursor:pointer!important;
+}

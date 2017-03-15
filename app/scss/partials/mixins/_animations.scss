@@ -2,3 +2,25 @@
     @include animation(pulse 3s linear infinite);
     @include transform-origin(70% 70%);
 }
+
+.blink {
+    @include animation(blink 1.75s ease-in-out infinite);
+}
+
+.soundbar{
+    @include animation(soundbar 1s $ease-out-sine);
+    @include animation-fill-mode(forwards);
+    @include animation-iteration-count(infinite);
+}
+
+.soundbar2{
+    @include animation(soundbar2 .85s $ease-out-sine);
+    @include animation-fill-mode(forwards);
+    @include animation-iteration-count(infinite);
+}
+
+.soundbar3{
+    @include animation(soundbar3 .65s $ease-out-sine);
+    @include animation-fill-mode(forwards);
+    @include animation-iteration-count(infinite);
+}

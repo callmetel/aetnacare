@@ -1,0 +1,64 @@
+.popup{
+	width: 32.86vw;
+	height:auto;
+	background: white;
+	z-index: 6000;
+	@include position(fixed, 0 0 null null);
+	@include transform(translateX(100%));
+	padding: 4.5vh 5.7vw;
+	@include transition(all .65s ease-in-out);
+
+	a.close-btn{
+		color:$gray;
+		text-align: right;
+		float: right;
+		cursor: pointer;
+		display: block;
+	}
+
+	a{
+		color:$gray;
+	}
+
+	p{
+		color: $gray;
+		&:first-of-type{
+			margin-top: 5.6vh;
+		}
+	}
+
+	.add-margin-top{
+		margin-top: 4.5vh!important;
+	}
+
+	@include media($sm-mobile){
+		width: 50vw;
+	}
+	@include media($xs-mobile){
+		width:100vw;
+		height:100vh;
+	}
+	@include media($v-iphone-6-plus){
+		width:100vw;
+		height:100vh;
+	}
+	@include media($h-iphone){
+		width:100vw;
+		height:100vh;
+	}
+
+	&.popup-is-active{
+		@include transform(translateX(0)!important);
+	}
+
+	&#contact-popup{
+		.email-link{
+			margin-top: 0!important;
+			p{
+				margin-top: 0!important;
+			}
+		}
+	}
+
+
+}

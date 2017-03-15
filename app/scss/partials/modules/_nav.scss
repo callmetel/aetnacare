@@ -3,6 +3,7 @@
   @include position(fixed, null null 3vh 50%);
   @include transform(translateX(-50%));
   width: 94.2vw;
+  height: 1.35vh;
   display: none;
 
   .nav-item{
@@ -29,7 +30,7 @@
       } 
 
       .bar{
-        width: 9.5vw;
+        width: 6vw;
         height: 1.75px;
         background: rgba(255,255,255,0.1);
         display: inline-block;
@@ -38,22 +39,22 @@
         overflow: hidden;
 
         @include media($xl-desktop){
-          width: 10.25vw;
+          width: 6.75vw;
         }
         @include media($lg-desktop){
-          width: 9vw;
+          width: 5.5vw;
         }
         @include media($md-desktop){
-          width: 9.2vw;
+          width: 5.7vw;
         }
         @include media($most-common-screen){
-          width: 9.75vw;
+          width: 6.25vw;
         }
         @include media($sm-desktop){
-          width:8.9vw;
+          width:5.4vw;
         }
         @include media($xs-desktop){
-          width:8.5vw;
+          width:5vw;
         }
 
         span{
@@ -68,4 +69,61 @@
       }
     }
   }
+
+  #videos-time-tracker{
+    display: none;
+    // display: inline-block;
+    vertical-align: middle;
+    color: white;
+    margin-left: 10px;
+    cursor: default;
+
+  }
+
+  #play-pause{
+    width:1.1vw;
+    min-width: 16px;
+    height:1.1vw;
+    min-height: 16px;
+    margin: 0 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    #play{
+      opacity:0;
+      @include transition(opacity .35s ease-in-out);
+    }
+    #play{
+      opacity:0;
+      @include transition(opacity .35s ease-in-out);
+    }
+    &.play-active{
+      #play{
+        opacity: 1!important; 
+      }
+      #pause{
+        opacity: 0!important; 
+      }
+    }
+  }
+
+  #sound-bar{
+      height:10px;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      .bar{
+        width: 1px;
+        height: 10px;
+        background: white;
+        display: inline-block;
+        margin-right:-2px;
+
+        @include media($lg-desktop){
+          width: 1px;
+        }
+        @include media($xl-desktop){
+          width: 1px;
+        }
+      }
+    }
 }

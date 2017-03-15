@@ -186,7 +186,42 @@ p.heading{
 		font: $sm-link;
 	}
 	@include media($v-iphone-6-plus){
-		font: $sm-link;
+		font: $md-link;
+	}
+}
+
+p.small-copy{
+	font: $md-smallcopy;
+	
+	@include media($short-lg-desktop){
+		font: $smallcopy!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-smallcopy;
+	}
+	@include media($lg-desktop){
+		font: $lg-smallcopy;
+	}
+	@include media($md-desktop){
+		font: $smallcopy;
+	}
+	@include media($lg-mobile){
+		font: $smallcopy;
+	}
+	@include media($md-mobile){
+		font: $md-smallcopy;
+	}
+	@include media($mobile){
+		font: $md-smallcopy;
+	}
+	@include media($sm-mobile){
+		font: $md-smallcopy;
+	}
+	@include media($xs-mobile){
+		font: $sm-smallcopy;
+	}
+	@include media($v-iphone-6-plus){
+		font: $md-smallcopy;
 	}
 }
 
@@ -222,5 +257,75 @@ p.content{
 	}
 	@include media($v-iphone-6-plus){
 		font: $sm-content-p;
+	}
+}
+
+p.disclaimer{
+	font: $md-disclaimer;
+	
+	@include media($short-lg-desktop){
+		font: $disclaimer!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-disclaimer;
+	}
+	@include media($lg-desktop){
+		font: $lg-disclaimer;
+	}
+	@include media($md-desktop){
+		font: $disclaimer;
+	}
+	@include media($lg-mobile){
+		font: $disclaimer;
+	}
+	@include media($md-mobile){
+		font: $md-disclaimer;
+	}
+	@include media($mobile){
+		font: $md-disclaimer;
+	}
+	@include media($sm-mobile){
+		font: $md-disclaimer;
+	}
+	@include media($xs-mobile){
+		font: $sm-disclaimer;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-disclaimer;
+	}
+}
+
+h3.title{
+	font: $md-title;
+	
+	@include media($short-lg-desktop){
+		font: $title!important;
+	}
+	@include media($xl-desktop){
+		font: $xl-title;
+	}
+	@include media($lg-desktop){
+		font: $lg-title;
+	}
+	@include media($md-desktop){
+		font: $title;
+	}
+	@include media($lg-mobile){
+		font: $title;
+	}
+	@include media($md-mobile){
+		font: $md-title;
+	}
+	@include media($mobile){
+		font: $md-title;
+	}
+	@include media($sm-mobile){
+		font: $md-title;
+	}
+	@include media($xs-mobile){
+		font: $sm-title;
+	}
+	@include media($v-iphone-6-plus){
+		font: $sm-title;
 	}
 }

@@ -8,13 +8,7 @@ body{
 	overflow: hidden;
 	background: black;
     opacity:0;
-
-    // &.journey-started{
-    //     header{
-    //         top:-8vh;
-    //         opacity:0;
-    //     }
-    // }
+    // cursor: pointer!important;
 }
 
 * {
@@ -27,36 +21,16 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
-    outline: none;
-
+    // outline: none;
+    // // cursor: pointer;
+    
     &:focus{
         outline: -webkit-focus-ring-color auto 5px;
     }
 }
-
-// .dark-link{
-//     &:focus{
-//         background: rgba(0,0,0,0.2)!important;
-//     }
-// }
-
-// .tab-index{
-//     &:focus{
-//         outline: -webkit-focus-ring-color auto 5px;
-//         background: #b4e7fd;
-//         border:#7090a5 2px solid;
-//     }
-// }
 
 button{
     @include appearance(none!important);
     background: none;
     cursor: pointer;
 }
-
-// .container{
-//     width: 100%;
-//     height: 100%;
-//     background: transparent;
-// }
-

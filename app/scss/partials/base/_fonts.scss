@@ -89,11 +89,11 @@ $heading-p: normal normal 300 28.8px/34.4px $OSLight;
 $lg-heading-p: normal normal 300 33.6px/40.8px $OSLight;
 $xl-heading-p: normal normal 300 38.4px/47.2px $OSLight;
 
-$sm-headline-p: normal normal 300 12px/21px $OSLight;
-$md-headline-p: normal normal 300 16px/28px $OSLight;
-$headline-p: normal normal 300 19.2px/33.6px $OSLight;
-$lg-headline-p: normal normal 300 22.4px/39.2px $OSLight;
-$xl-headline-p: normal normal 300 25.6px/44.8px $OSLight;
+$sm-headline-p: normal normal 300 12px/17px $OSLight;
+$md-headline-p: normal normal 300 16px/24px $OSLight;
+$headline-p: normal normal 300 19.2px/29.6px $OSLight;
+$lg-headline-p: normal normal 300 22.4px/35.2px $OSLight;
+$xl-headline-p: normal normal 300 25.6px/40.8px $OSLight;
 
 $sm-subheadline: normal normal 700 18px/24px $DTBold;
 $md-subheadline: normal normal 700 24px/32px $DTBold;
@@ -107,9 +107,27 @@ $link: normal normal 300 12px/15px $OSBold;
 $lg-link: normal normal 300 14px/17px $OSBold;
 $xl-link: normal normal 300 16px/19px $OSBold;
 
+$sm-smallcopy: normal normal 300 7.5px/9.5px $OS;
+$md-smallcopy: normal normal 300 10px/12px $OS;
+$smallcopy: normal normal 300 12px/14px $OS;
+$lg-smallcopy: normal normal 300 14px/16px $OS;
+$xl-smallcopy: normal normal 300 16px/18px $OS;
 
-$sm-content-p: normal normal 300 13.5px/17px $OSLight;
-$md-content-p: normal normal 300 18px/25px $OSLight;
-$content-p: normal normal 300 21.6px/24.6px $OSLight;
-$lg-content-p: normal normal 300 25.2px/38.8px $OSLight;
-$xl-content-p: normal normal 300 28.8px/44.2px $OSLight;
+
+$sm-content-p: normal normal 300 13.5px/17px $OS;
+$md-content-p: normal normal 300 18px/25px $OS;
+$content-p: normal normal 300 21.6px/24.6px $OS;
+$lg-content-p: normal normal 300 25.2px/38.8px $OS;
+$xl-content-p: normal normal 300 28.8px/44.2px $OS;
+
+$sm-disclaimer: normal normal 300 10.5px/16px $OS;
+$md-disclaimer: normal normal 300 14px/23px $OS;
+$disclaimer: normal normal 300 16.8px/28.6px $OS;
+$lg-disclaimer: normal normal 300 19.6px/34.2px $OS;
+$xl-disclaimer: normal normal 300 22.4px/39.8px $OS;
+
+$sm-title: normal normal 700 18px/22px $DTBold;
+$md-title: normal normal 700 24px/28px $DTBold;
+$title: normal normal 700 28.8px/32.8px $DTBold;
+$lg-title: normal normal 700 33.6px/37.6px $DTBold;
+$xl-title: normal normal 700 38.4px/42.4px $DTBold;

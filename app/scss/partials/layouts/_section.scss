@@ -1,13 +1,14 @@
 section{
 	display: none;
+	visibility: hidden;
 	opacity:0;
 	text-align: center;
 	height:auto;
 	
 	&.is-active{
 		display: inherit;
+		visibility: visible;
 	}
-	display: none;
 
 	.section-title{
 		text-align: center;
@@ -28,6 +29,9 @@ section{
 
 		.section-title{
 			width: 14.35vw;
+			@include media($v-iphone-6-plus){
+				width: 50vw;
+			}
 		}
 		.heading{
 			margin-top: 3.64vh;
@@ -39,6 +43,10 @@ section{
 			margin-right: auto;
 			cursor: pointer;
 
+			@include media($v-iphone-6-plus){
+				width: 50vw;
+			}
+
 			p{
 				width: 100%;
 				@include transform(translate(-50%,-60%));
@@ -46,9 +54,67 @@ section{
 		}
 	}
 
+	&#conclusion{
+		#restart-btn{
+			width:13vw;
+			text-align: left;
+			cursor: pointer;
+
+			p{
+				width: 100%;
+				margin-top: 0!important;
+				margin: 0 auto;
+				text-align: center;
+				@include transform(translate(-50%,-60%));
+			}
+		}
+		div.content{
+			a{
+				// display: none;
+				&:nth-of-type(2){
+					p.content{
+						margin-top: 0;
+					}
+				}	
+			}
+		}
+		.divider:last-of-type{
+			margin-bottom: 4.28vh;
+		}
+	}
+
+	width:48.12vw;
+
+	@include media($lg-mobile) {
+		width: 58.12vw;
+	}
+	@include media($md-mobile) {
+		width: 68.12vw;
+	}
+	@include media($sm-mobile) {
+		width: 82.12vw;
+	}
+
 	&.super{
 		z-index: 1;
 		text-align: center;
+
+		.section-title.headline{
+			text-align: center;
+			margin-left:auto!important;
+			margin-right:auto!important;
+			width: auto;
+
+			@include media($md-mobile){
+				width: 80%;
+			}
+			@include media($sm-mobile){
+				width: 80%;
+			}
+			@include media($xs-mobile){
+				width: 80%;
+			}
+		}
 
 		p.headline-description{
 			color: $white;
@@ -103,33 +169,45 @@ section{
 	div.content{
 		text-align: left;
 		display: none;
-		width:46.12vw;
+		width:48.12vw;
 
 		@include media($lg-mobile) {
-			width: 56.12vw;
+			width: 58.12vw;
 		}
 		@include media($md-mobile) {
-			width: 66.12vw;
+			width: 68.12vw;
 		}
 		@include media($sm-mobile) {
-			width: 80.12vw;
+			width: 82.12vw;
 		}
 
 		div.divider{
 			width:100%;
 			height: 1px;
 			background: $ltgray;
-			margin-top: 2.24vh;
-			margin-bottom: 2.24vh;
-
-			&:last-of-type{
-				margin-bottom: 3.14vh;
-			}
+			margin-top: 4.28vh;
+			margin-bottom: 0;
 		}
 		.learn-more{
 			display: none;
+
+			p{
+				margin-top:2.2vh;
+				&:first-of-type{
+					margin-top:4.28vh;
+				}
+			}
+			h3{
+				color: white;
+				&.faded{
+					color: rgba(255,255,255,0.4);
+				}
+				&:last-of-type{
+					margin-top: 3px;
+				}
+			}
 			ul{
-				margin: 1.57vh 0 0 0;
+				margin: 3.38vh 0 3.38vh 0;
 				padding: 0;
 				padding-left: 20px;
 
@@ -138,6 +216,9 @@ section{
 					padding: 0;
 					margin-left: 20px;
 					letter-spacing: 0.03em;
+					p{
+						margin-top:0!important;
+					}
 				}
 			}
 		}

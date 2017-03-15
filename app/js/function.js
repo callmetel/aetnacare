@@ -53,12 +53,15 @@ $(document).ready(function() {
         };
 
     // Change Videos on Mobile
+ 
     	
-    	if(isMobile.detectMobile()){
-    		$('#videos').after('<div id="mobile-videos"><img src="app/images/loop-0.jpg" id="loop-0" class="loop-video video"></div>');
-    		$('#videos').remove();
+    	// if(isMobile.detectMobile()){
+    	// 	$('#videos').after('<div id="mobile-videos"><img src="app/images/loop-0.jpg" id="loop-0" class="loop-video video"></div>');
+    	// 	$('#videos').remove();
     		tm.to('#loop-0', 1, {alpha:1, ease:Power2.easeInOut});
-    	}
+    	// } else{
+    		$('#loop-0')[0].play();
+    	// }
 
     // Mousemove
 		
@@ -75,6 +78,20 @@ $(document).ready(function() {
 				tl.fromTo('header', .15, {alpha:1}, {alpha:.1, ease: Power1.easeInOut});
 			},1750);
 		} 
+
+	// Popup Buttons
+
+		$('#disclaimer-link').on('click', function(){
+			$('#disclaimer-popup').addClass('popup-is-active');
+		});
+
+		$('#contact-link').on('click', function(){
+			$('#contact-popup').addClass('popup-is-active');
+		});
+
+		$('.close-btn').on('click', function(){
+			$('.popup').removeClass('popup-is-active');
+		});
 	
 	// Remove Focus On Click For Tab Index 
 		
@@ -104,19 +121,6 @@ $(document).ready(function() {
 		tm.to('body', 1, {alpha:1, ease:Power2.easeInOut});
 		tm.to('#loop-0', 1, {alpha:1, ease:Power2.easeInOut});
 
-		// var	prevtxt1 = new SplitText("#prev .name:eq(0)", {type:"chars"}), 
-		//     prev1 = prevtxt1.chars,
-		//     prevtxt2 = new SplitText("#prev .name:eq(1)", {type:"chars"}), 
-		//     prev2 = prevtxt2.chars,
-		//     prevtxt3 = new SplitText("#prev .name:eq(2)", {type:"chars"}), 
-		//     prev3 = prevtxt3.chars,
-		//     prevtxt4 = new SplitText("#prev .name:eq(3)", {type:"chars"}), 
-		//     prev4 = prevtxt4.chars,
-		//     prevtxt5 = new SplitText("#prev .name:eq(4)", {type:"chars"}), 
-		//     next5 = prevtxt5.chars,
-		//     prevtxt6 = new SplitText("#prev .name:eq(5)", {type:"chars"}), 
-		//     prev6 = prevtxt6.chars;
-
 		var	nexttxt1 = new SplitText("#next .name:eq(0)", {type:"chars"}), 
 		    next1 = nexttxt1.chars,
 		    nexttxt2 = new SplitText("#next .name:eq(1)", {type:"chars"}), 
@@ -132,24 +136,16 @@ $(document).ready(function() {
 
 	// Section Timelines
 		
-		var introTL = new TimelineLite, 
-			    // titleText = new SplitText("#introduction .section-title", {type:"words"}), 
-			    // chars = titleText.words,
-			    descrText = new SplitText("#introduction .heading", {type:"words"}), 
-			    chars2 = descrText.words;
+		var introTL = new TimelineLite,
+		    descrText = new SplitText("#introduction .heading", {type:"words"}), 
+		    chars2 = descrText.words;
 
 			introTL.set('#introduction', {alpha:1}, "+=1.1");
-			introTL.fromTo('#introduction .section-title', .65, {alpha:0, y:20}, {alpha:1, y:0}, "+=1");
-			// introTL.staggerFromTo(chars, 1, {alpha:0, y:80}, {alpha:1, y:0}, 0.01, "+=0");
-			introTL.staggerFromTo(chars2, 0.5, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=.25");
+			introTL.fromTo('#introduction .section-title', .65, {alpha:0, y:20}, {alpha:1, y:0}, "+=0");
+			introTL.staggerFromTo(chars2, 0.5, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "+=0");
 			introTL.fromTo('#journey-btn', 0.5, {alpha:0, y:20}, {alpha:1, y:0}, "+=0");
-			// introTL.fromTo('#journey-btn .start-stroke', 1, {drawSVG:"100% 100%", ease: Power1.easeInOut}, {drawSVG:"0% 100%", ease: Power1.easeIn}, "-=.5");
 			introTL.fromTo('header', 0.5, {alpha:0, y:-20}, {alpha:1, x:'-50%', y:0}, "-=1.5");	
-
-
-		// document.getElementById("animate").onclick = function() {
-		//   introTL.restart();
-		// }
+			introTL.fromTo('#volume-warning', 0.5, {alpha:0}, {alpha:1}, "-=1.5");	
 
 		var journeyTL = new TimelineMax({paused:true}), 
 			journeyTL2 = new TimelineMax({paused:true}), 
@@ -161,32 +157,32 @@ $(document).ready(function() {
 		    chars12 = descrText1.words;
 
 		function startJourney() {
-			journeyTL.set(next1, {alpha:0});
-			journeyTL.set('#prev', {alpha:0});
-			journeyTL.set(next1, {alpha:1, y:0});
-			journeyTL.set('#prev-next', {display:'inherit', alpha:0});
+			journeyTL.set('#prev', {alpha:0})
+					 .set(["#next .name:not(:eq(0))",'section:not(#journey)'], {className:'-=is-active'})
+					  .set(["#next .name:eq(0)", '#journey'], {className:'+=is-active'})
+					  .set(next1, {alpha:0})
+					 .fromTo('#loop-0', .5, {alpha:1}, {alpha:0, ease:Power4.easeOut})
+					 .fromTo('.nav-item-label:eq(0)', .5, {alpha:.1}, {alpha:1, ease:Power4.easeOut},"-=.5")
+					 .fromTo(['#introduction','#volume-warning'], 1, {alpha:1}, {alpha:0, ease:Power4.easeOut},"-=1.5")
+					 .fromTo('.aetna-logo', 1, {alpha:1, y:'-50%'}, {alpha:0, y:'-70%', ease:Power4.easeOut},"-=.75")
+					 .fromTo('.aetnacare-logo', 1, {alpha:0, y:'-30%'}, {alpha:1, y:'-50%', ease:Power4.easeOut},"-=.5")
+					 .set('#introduction', {display:'none'})
+					 .fromTo('#journey', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=.5")
+					 .staggerFromTo(wrds1, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25")
+					 .fromTo(chars1, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=2.25")
+					 .staggerTo(wrds1, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			journeyTL.fromTo('#loop-0', .5, {alpha:1}, {alpha:0, ease:Power4.easeOut});
-			journeyTL.fromTo('.nav-item-label:eq(0)', .5, {alpha:.1}, {alpha:1, ease:Power4.easeOut},"-=.5");
-			journeyTL.fromTo('#introduction', 1, {alpha:1}, {alpha:0, ease:Power4.easeOut},"-=1.5");
-			journeyTL.fromTo('.aetna-logo', 1, {alpha:1, y:'-50%'}, {alpha:0, y:'-70%', ease:Power4.easeOut},"-=.75");
-			journeyTL.fromTo('.aetnacare-logo', 1, {alpha:0, y:'-30%'}, {alpha:1, y:'-50%', ease:Power4.easeOut},"-=.5");
-			journeyTL.set('#introduction', {display:'none'});
-			journeyTL.fromTo('#journey', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=.5");
-			journeyTL.staggerFromTo(wrds1, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25");
-			journeyTL.fromTo(chars1, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=2.25");
-			journeyTL.staggerTo(wrds1, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
-
-			journeyTL2.fromTo('#videos', 4, {alpha:.7}, {alpha:.27, ease: Power1.easeInOut}, "+=17");
-			journeyTL2.staggerTo(wrds1, 1, {alpha:0, y:-80}, 0.01, "-=2");
-			journeyTL2.staggerTo(chars1, 1, {alpha:0, y:-80}, 0.05, "-=.85")
-			journeyTL2.set('#journey .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25");
-			journeyTL2.set([wrds1, chars1, '#journey h2'], {height:0, margin:0});
-			journeyTL2.set('#journey div.content', {height:'auto'});
-			journeyTL2.fromTo('#journey .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut});
-			journeyTL2.fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut});
-			journeyTL2.staggerFromTo(next1, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1");
-			journeyTL2.to(['#prev','#next'], 1, {alpha:0, ease:Power1.easeOut}, "+=3");
+			journeyTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=17")
+					  .staggerTo(wrds1, 1, {alpha:0, y:-80}, 0.01, "-=2")
+					  .staggerTo(chars1, 1, {alpha:0, y:-80}, 0.05, "-=.85")
+					  .set('#journey .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+					  .set([wrds1, chars1, '#journey h2'], {height:0, margin:0})
+					  .set('#journey div.content', {height:'auto'})
+					  .fromTo('#journey .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut})
+					  .set('#prev-next', {display:'inherit', alpha:1})
+					  .fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut})
+					  .fromTo(['#prev','#next'], .5, {alpha:.1}, {alpha:1})
+					  .staggerFromTo(next1, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
 
 			journeyTL.play();
 			journeyTL2.play();
@@ -202,27 +198,28 @@ $(document).ready(function() {
 		    chars22 = descrText2.words;
 
 		function startIdentify() {
-			identifyTL.set("#next .name:not(:eq(1))", {className:'-=is-active'});
-			identifyTL.set("#next .name:eq(1)", {className:'+=is-active'});
-			identifyTL.set(next2, {alpha:0});
-			identifyTL.set('#prev', {alpha:0, className:'fixed-left is-in-use'});
-			identifyTL.set('#prev-next', {display:'inherit', alpha:1});
+			identifyTL.set(["#next .name:not(:eq(1))",'section:not(#identify)'], {className:'-=is-active'})
+					  .set(["#next .name:eq(1)", '#identify'], {className:'+=is-active'})
+					  .set(next2, {alpha:0})
+					  .set('#prev', {alpha:0, className:'fixed-left is-in-use'})
+					  .fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut})
+					  .staggerFromTo(next2, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1")
+					  .fromTo('#identify', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1")
+					  .to(['#prev','#next'], 1, {alpha:0, ease:Power1.easeOut})
+					  .staggerFromTo(wrds2, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25")
+					  .fromTo(chars2, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=4")
+					  .staggerTo(wrds2, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			identifyTL.fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut});
-			identifyTL.staggerFromTo(next2, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1");
-			identifyTL.fromTo('#identify', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1");
-			identifyTL.to(['#prev','#next'], 1, {alpha:0, ease:Power1.easeOut});
-			identifyTL.staggerFromTo(wrds2, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25");
-			identifyTL.fromTo(chars2, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=4");
-			identifyTL.staggerTo(wrds2, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
-
-			identifyTL2.fromTo('#videos', 4, {alpha:.7}, {alpha:.27, ease: Power1.easeInOut}, "+=26");
-			identifyTL2.staggerTo(wrds2, 1, {alpha:0, y:-80}, 0.01, "-=2");
-			identifyTL2.staggerTo(chars2, 1, {alpha:0, y:-80}, 0.05, "-=.85")
-			identifyTL2.set('#identify .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25");
-			identifyTL2.set([wrds2, chars2, '#identify h2'], {height:0, margin:0});
-			identifyTL2.set('#identify div.content', {height:'auto'});
-			identifyTL2.fromTo('#identify .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut});
+			identifyTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=26")
+					   .staggerTo(wrds2, 1, {alpha:0, y:-80}, 0.01, "-=2")
+					   .staggerTo(chars2, 1, {alpha:0, y:-80}, 0.05, "-=.85")
+					   .set('#identify .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+					   .set([wrds2, chars2, '#identify h2'], {height:0, margin:0})
+					   .set('#identify div.content', {height:'auto'})
+					   .fromTo('#identify .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut})
+					   .set('#prev-next', {display:'inherit', alpha:1})
+					   .fromTo(['#prev','#next'], .5, {alpha:.1}, {alpha:1})
+					   .staggerFromTo(next2, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
 
 			identifyTL.play();
 			identifyTL2.play();
@@ -236,27 +233,27 @@ $(document).ready(function() {
 		    chars3 = titleText3.words;
 
 		function startConnect() {
-			connectTL.set(["#next .name:not(:eq(2))","#prev .name:not(:eq(1))"], {className:'-=is-active'});
-			connectTL.set(["#next .name:eq(2)","#prev .name:eq(1)"], {className:'+=is-active'});
-			connectTL.set(next3, {alpha:0});
-			connectTL.set('#prev', {alpha:0, className:'fixed-left is-in-use'});
-			connectTL.set('#prev-next', {display:'inherit', alpha:1});
+			connectTL.set(["#next .name:not(:eq(2))",'section:not(#connect)'], {className:'-=is-active'})
+					 .set(["#next .name:eq(2)",'#connect'], {className:'+=is-active'})
+					 .set(next3, {alpha:0})
+					 .set('#prev', {alpha:0, className:'fixed-left is-in-use'})
+					 .fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut})
+					 .staggerFromTo(next3, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1")
+					 .fromTo('#connect', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1")
+					 .staggerFromTo(wrds3, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25")
+					 .fromTo(chars3, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=3")
+					 .staggerTo(wrds3, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			connectTL.fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut});
-			connectTL.staggerFromTo(next3, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1");
-			connectTL.fromTo('#connect', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1");
-			connectTL.staggerFromTo(wrds3, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25");
-			connectTL.fromTo(chars3, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=3");
-			connectTL.staggerTo(wrds3, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
-
-			connectTL2.fromTo('#videos', 4, {alpha:.7}, {alpha:.27, ease: Power1.easeInOut}, "+=18");
-			connectTL2.staggerTo(wrds3, 1, {alpha:0, y:-80}, 0.01, "-=2");
-			connectTL2.staggerTo(chars3, 1, {alpha:0, y:-80}, 0.05, "-=.85")
-			connectTL2.set('#connect .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25");
-			connectTL2.set([wrds3, chars3, '#connect h2'], {height:0, margin:0});
-			connectTL2.set('#connect div.content', {height:'auto'});
-			connectTL2.fromTo('#connect .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut});
-			connectTL2.staggerFromTo(next1, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
+			connectTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=18")
+					  .staggerTo(wrds3, 1, {alpha:0, y:-80}, 0.01, "-=2")
+					  .staggerTo(chars3, 1, {alpha:0, y:-80}, 0.05, "-=.85")
+					  .set('#connect .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+					  .set([wrds3, chars3, '#connect h2'], {height:0, margin:0})
+					  .set('#connect div.content', {height:'auto'})
+					  .fromTo('#connect .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut})
+					  .set('#prev-next', {display:'inherit', alpha:1})
+					  .fromTo(['#prev','#next'], .5, {alpha:.1}, {alpha:1})
+					  .staggerFromTo(next3, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
 
 			connectTL.play();
 			connectTL2.play();
@@ -270,27 +267,27 @@ $(document).ready(function() {
 		    chars4 = titleText4.words;
 
 		function startGuide() {
-			guideTL.set(["#next .name:not(:eq(3))","#prev .name:not(:eq(2))"], {className:'-=is-active'});
-			guideTL.set(["#next .name:eq(3)","#prev .name:eq(2)"], {className:'+=is-active'});
-			guideTL.set(next4, {alpha:0});
-			guideTL.set('#prev', {alpha:0, className:'fixed-left is-in-use'});
-			guideTL.set('#prev-next', {display:'inherit', alpha:1});
+			guideTL.set(["#next .name:not(:eq(3))",'section:not(#guide)'], {className:'-=is-active'})
+				   .set(["#next .name:eq(3)",'#guide'], {className:'+=is-active'})
+				   .set(next4, {alpha:0})
+				   .set('#prev', {alpha:0, className:'fixed-left is-in-use'})
+				   .fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut})
+				   .staggerFromTo(next4, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1")
+				   .fromTo('#guide', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1")
+				   .staggerFromTo(wrds4, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25")
+				   .fromTo(chars4, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=2.25")
+				   .staggerTo(wrds4, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			guideTL.fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut});
-			guideTL.staggerFromTo(next4, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1");
-			guideTL.fromTo('#guide', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1");
-			guideTL.staggerFromTo(wrds4, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25");
-			guideTL.fromTo(chars4, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=2.25");
-			guideTL.staggerTo(wrds4, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
-
-			guideTL2.fromTo('#videos', 4, {alpha:.7}, {alpha:.27, ease: Power1.easeInOut}, "+=11");
-			guideTL2.staggerTo(wrds4, 1, {alpha:0, y:-80}, 0.01, "-=2");
-			guideTL2.staggerTo(chars4, 1, {alpha:0, y:-80}, 0.05, "-=.85")
-			guideTL2.set('#guide .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25");
-			guideTL2.set([wrds4, chars4, '#guide h2'], {height:0, margin:0});
-			guideTL2.set('#guide div.content', {height:'auto'});
-			guideTL2.fromTo('#guide .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut});
-			guideTL2.staggerFromTo(next1, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
+			guideTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=11")
+					.staggerTo(wrds4, 1, {alpha:0, y:-80}, 0.01, "-=2")
+					.staggerTo(chars4, 1, {alpha:0, y:-80}, 0.05, "-=.85")
+					.set('#guide .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+					.set([wrds4, chars4, '#guide h2'], {height:0, margin:0})
+					.set('#guide div.content', {height:'auto'})
+					.fromTo('#guide .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut})
+					.set('#prev-next', {display:'inherit', alpha:1})
+					.fromTo(['#prev','#next'], .5, {alpha:.1}, {alpha:1})
+					.staggerFromTo(next4, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
 
 			guideTL.play();
 			guideTL2.play();
@@ -304,27 +301,28 @@ $(document).ready(function() {
 		    chars5 = titleText5.words;
 
 		function startSupport() {
-			supportTL.set(["#next .name:not(:eq(4))","#prev .name:not(:eq(3))"], {className:'-=is-active'});
-			supportTL.set(["#next .name:eq(4)","#prev .name:eq(3)"], {className:'+=is-active'});
-			supportTL.set(next5, {alpha:0});
-			supportTL.set('#prev', {alpha:0, className:'fixed-left is-in-use'});
-			supportTL.set('#prev-next', {display:'inherit', alpha:1});
+			supportTL.set(["#next .name:not(:eq(4))",'section:not(#support)'], {className:'-=is-active'})
+					 .set(["#next .name:eq(4)",'#support'], {className:'+=is-active'})
+					 .set(next5, {alpha:0})
+					 .set('#prev', {alpha:0, className:'fixed-left is-in-use'})
+					 .set('#prev-next', {display:'inherit', alpha:1})
+					 .fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut})
+					 .staggerFromTo(next5, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1")
+					 .fromTo('#support', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1")
+					 .staggerFromTo(wrds5, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25")
+					 .fromTo(chars5, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=4")
+					 .staggerTo(wrds5, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			supportTL.fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut});
-			supportTL.staggerFromTo(next5, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1");
-			supportTL.fromTo('#support', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1");
-			supportTL.staggerFromTo(wrds5, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25");
-			supportTL.fromTo(chars5, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=4");
-			supportTL.staggerTo(wrds5, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
-
-			supportTL2.fromTo('#videos', 4, {alpha:.7}, {alpha:.27, ease: Power1.easeInOut}, "+=24");
-			supportTL2.staggerTo(wrds5, 1, {alpha:0, y:-80}, 0.01, "-=2");
-			supportTL2.staggerTo(chars5, 1, {alpha:0, y:-80}, 0.05, "-=.85")
-			supportTL2.set('#support .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25");
-			supportTL2.set([wrds5, chars5, '#support h2'], {height:0, margin:0});
-			supportTL2.set('#support div.content', {height:'auto'});
-			supportTL2.fromTo('#support .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut});
-			supportTL2.staggerFromTo(next1, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
+			supportTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=24")
+					  .staggerTo(wrds5, 1, {alpha:0, y:-80}, 0.01, "-=2")
+					  .staggerTo(chars5, 1, {alpha:0, y:-80}, 0.05, "-=.85")
+					  .set('#support .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+					  .set([wrds5, chars5, '#support h2'], {height:0, margin:0})
+					  .set('#support div.content', {height:'auto'})
+					  .fromTo('#support .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut})
+					  .set('#prev-next', {display:'inherit', alpha:1})
+					  .fromTo(['#prev','#next'], .5, {alpha:.1}, {alpha:1})
+					  .staggerFromTo(next5, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
 			
 			supportTL.play();
 			supportTL2.play();
@@ -338,32 +336,49 @@ $(document).ready(function() {
 		    chars6 = titleText6.words;
 
 		function startSustain() {
-			sustainTL.set(["#next .name:not(:eq(5))","#prev .name:not(:eq(4))"], {className:'-=is-active'});
-			sustainTL.set(["#next .name:eq(5)","#prev .name:eq(4)"], {className:'+=is-active'});
-			sustainTL.set(next6, {alpha:0});
-			sustainTL.set('#prev', {alpha:0, className:'fixed-left is-in-use'});
-			sustainTL.set('#prev-next', {display:'inherit', alpha:1});
+			sustainTL.set(["#next .name:not(:eq(5))",'section:not(#sustain)'], {className:'-=is-active'})
+					 .set(["#next .name:eq(5)", '#sustain'], {className:'+=is-active'})
+					 .set(next6, {alpha:0})
+					 .set('#prev', {alpha:0, className:'fixed-left is-in-use'})
+					 .set('#prev-next', {display:'inherit', alpha:1})
+					 .fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut})
+					 .staggerFromTo(next6, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1")
+					 .fromTo('#sustain', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1")
+					 .staggerFromTo(wrds6, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25")
+					 .fromTo(chars6, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=2.25")
+					 .staggerTo(wrds6, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			sustainTL.fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut});
-			sustainTL.staggerFromTo(next5, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.01, "-=1");
-			sustainTL.fromTo('#sustain', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=1");
-			sustainTL.staggerFromTo(wrds6, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25");
-			sustainTL.fromTo(chars6, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=2.25");
-			sustainTL.staggerTo(wrds6, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
-
-			sustainTL2.fromTo('#videos', 4, {alpha:.7}, {alpha:.27, ease: Power1.easeInOut}, "+=16");
-			sustainTL2.staggerTo(wrds6, 1, {alpha:0, y:-80}, 0.01, "-=2");
-			sustainTL2.staggerTo(chars6, 1, {alpha:0, y:-80}, 0.05, "-=.85")
-			sustainTL2.set('#sustain .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25");
-			sustainTL2.set([wrds6, chars6, '#support h2'], {height:0, margin:0});
-			sustainTL2.set('#sustain div.content', {height:'auto'});
-			sustainTL2.fromTo('#sustain .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut});
-			sustainTL2.staggerFromTo(next1, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
+			sustainTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=16")
+					  .staggerTo(wrds6, 1, {alpha:0, y:-80}, 0.01, "-=2")
+					  .staggerTo(chars6, 1, {alpha:0, y:-80}, 0.05, "-=.85")
+					  .set('#sustain .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+					  .set([wrds6, chars6, '#support h2'], {height:0, margin:0})
+					  .set('#sustain div.content', {height:'auto'})
+					  .fromTo('#sustain .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut})
+					  .set('#prev-next', {display:'inherit', alpha:1})
+					  .fromTo(['#prev','#next'], .5, {alpha:.1}, {alpha:1})
+					  .staggerFromTo(next6, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
 			
 			sustainTL.play();
 			sustainTL2.play();
 		}
 
+		var conclusionTL = new TimelineMax({paused:true}), 
+			conclusionTL2 = new TimelineMax({paused:true});
+
+		function startConclusion() {
+			conclusionTL.set(['#prev-next'], {display:'none'})
+						.set('#conclusion', {alpha:1}, '+=1');
+
+			conclusionTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=10")
+						 .set('#conclusion .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+						 .set('#conclusion div.content', {height:'auto'})
+						 .set('#conclusion .learn-more', {display:'inherit', alpha:1, y:0})
+						 .staggerFromTo('.ct', .35, {alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeInOut}, 0.1);
+			
+			conclusionTL.play();
+			conclusionTL2.play();
+		}
 
 
 	// Button Hover Animations
@@ -376,42 +391,11 @@ $(document).ready(function() {
 			tm.fromTo(triangle, .5, {y:4, alpha:0, ease: Power1.easeInOut}, {y:0, alpha:1, ease: Power1.easeInOut, delay:.5});
 		});
 
-		$('#journey-btn').mouseenter(function(e){
+		$('#journey-btn, #restart-btn').mouseenter(function(e){
 			var stroke = $(this).find('.rect-stroke');
 			tm.fromTo(stroke, 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Sine.easeInOut});
 		});
 
-
-	// Start Video Loops 
-		
-
-		function startLoop0() {
-			tl.fromTo('#loop-0', 1, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-		}
-
-		function startLoop1() {
-			tl.fromTo('#loop-1', 1, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-		}
-
-		function startLoop2() {
-			tl.fromTo('#loop-2', 1, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-		}
-
-		function startLoop3() {
-			tl.fromTo('#loop-3', 1, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-		}
-
-		function startLoop4() {
-			tl.fromTo('#loop-4', 1, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-		}
-
-		function startLoop5() {
-			tl.fromTo('#loop-5', 1, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-		}
-
-		function startLoop6() {
-			tl.fromTo('#loop-6', 1, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-		}
 
 	// Start Video Scenes
 		
@@ -444,93 +428,139 @@ $(document).ready(function() {
 			$('#video-6')[0].currentTime = 0;
 			$('#video-6')[0].play();
 		}
+
+		function startVideo7() {
+			$('#video-7')[0].currentTime = 0;
+			$('#video-7')[0].play();
+		}
 		
 	// Video Ended Function
 
-		function checkTimeVideo1(){
-		
-			if($('#video-1')[0].currentTime >= $('#video-1')[0].duration-.5){
-				tl.fromTo('#video-1', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
-				tl.fromTo('#loop-1', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-				$('#video-1')[0].removeEventListener('timeupdate', checkTimeVideo1);
-				$('#loop-1')[0].play();
 
-				console.log('video1 is finished');
-			}else{
-				console.log('video1 is still playing');
-			}	
+		function checkTimeVideo1(){
+			if(!isMobile.detectMobile()){
+				if($('#video-1')[0].currentTime >= $('#video-1')[0].duration-.5){
+					tl.fromTo('#video-1', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
+					tl.fromTo('#loop-1', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
+					$('#video-1')[0].removeEventListener('timeupdate', checkTimeVideo1);
+					$('#loop-1')[0].play();
+					$('#loop-1').attr('loop',1);
+
+					console.log('video1 is finished');
+				}else{
+					console.log('video1 is still playing');
+				};	
+			}
 		}
 
 		function checkTimeVideo2(){
-		
-			if($('#video-2')[0].currentTime >= $('#video-2')[0].duration-.5){
-				tl.fromTo('#video-2', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
-				tl.fromTo('#loop-2', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-				$('#video-2')[0].removeEventListener('timeupdate', checkTimeVideo2);
-				$('#loop-2')[0].play();
-				console.log('video2 is finished');
-			}else{
-				console.log('video2 is still playing');
+			if(!isMobile.detectMobile()){
+				if($('#video-2')[0].currentTime >= $('#video-2')[0].duration-.5){
+					tl.fromTo('#video-2', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
+					tl.fromTo('#loop-2', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
+					$('#video-2')[0].removeEventListener('timeupdate', checkTimeVideo2);
+					$('#loop-2')[0].play();
+					$('#loop-2').attr('loop',1);
+					console.log('video2 is finished');
+				}else{
+					console.log('video2 is still playing');
+				};
 			}
 		}
 
 		function checkTimeVideo3(){
-		
-			if($('#video-3')[0].currentTime >= $('#video-3')[0].duration-.5){
-				tl.fromTo('#video-3', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
-				tl.fromTo('#loop-3', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-				$('#video-3')[0].removeEventListener('timeupdate', checkTimeVideo3);
-				$('#loop-3')[0].play();
-				console.log('video3 is finished');
-			}else{
-				console.log('video3 is still playing');
-			}
+			if(!isMobile.detectMobile()){
+				if($('#video-3')[0].currentTime >= $('#video-3')[0].duration-.5){
+					tl.fromTo('#video-3', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
+					tl.fromTo('#loop-3', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
+					$('#video-3')[0].removeEventListener('timeupdate', checkTimeVideo3);
+					$('#loop-3')[0].play();
+					$('#loop-3').attr('loop',1);
+					console.log('video3 is finished');
+				}else{
+					console.log('video3 is still playing');
+				}
+			};
 		}
 
 		function checkTimeVideo4(){
-		
-			if($('#video-4')[0].currentTime >= $('#video-4')[0].duration-.5){
-				tl.fromTo('#video-4', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
-				tl.fromTo('#loop-4', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-				$('#video-4')[0].removeEventListener('timeupdate', checkTimeVideo4);
-				$('#loop-4')[0].play();
-				console.log('video4 is finished');
-			}else{
-				console.log('video4 is still playing');
-			}
+			if(!isMobile.detectMobile()){
+				if($('#video-4')[0].currentTime >= $('#video-4')[0].duration-.5){
+					tl.fromTo('#video-4', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
+					tl.fromTo('#loop-4', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
+					$('#video-4')[0].removeEventListener('timeupdate', checkTimeVideo4);
+					$('#loop-4')[0].play();
+					$('#loop-4').attr('loop',1);
+					console.log('video4 is finished');
+				}else{
+					console.log('video4 is still playing');
+				}
+			};
 		}
 
 		function checkTimeVideo5(){
-		
-			if($('#video-5')[0].currentTime >= $('#video-5')[0].duration-.5){
-				tl.fromTo('#video-5', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
-				tl.fromTo('#loop-5', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-				$('#video-5')[0].removeEventListener('timeupdate', checkTimeVideo5);
-				$('#loop-5')[0].play();
-				console.log('video5 is finished');
-			}else{
-				console.log('video5 is still playing');
-			}
+			if(!isMobile.detectMobile()){
+				if($('#video-5')[0].currentTime >= $('#video-5')[0].duration-.5){
+					tl.fromTo('#video-5', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
+					tl.fromTo('#loop-5', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
+					$('#video-5')[0].removeEventListener('timeupdate', checkTimeVideo5);
+					$('#loop-5')[0].play();
+					$('#loop-5').attr('loop',1);
+					console.log('video5 is finished');
+				}else{
+					console.log('video5 is still playing');
+				}
+			};
 		}
 
 		function checkTimeVideo6(){
-		
-			if($('#video-6')[0].currentTime >= $('#video-6')[0].duration-.5){
-				tl.fromTo('#video-6', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
-				tl.fromTo('#loop-6', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
-				$('#video-6')[0].removeEventListener('timeupdate', checkTimeVideo6);
-				$('#loop-6')[0].play();
-				console.log('video6 is finished');
-			}else{
-				console.log('video6 is still playing');
-			}
+			if(!isMobile.detectMobile()){
+				if($('#video-6')[0].currentTime >= $('#video-6')[0].duration-.5){
+					tl.fromTo('#video-6', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
+					tl.fromTo('#loop-6', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
+					$('#video-6')[0].removeEventListener('timeupdate', checkTimeVideo6);
+					$('#loop-6')[0].play();
+					$('#loop-6').attr('loop',1);
+					console.log('video6 is finished');
+				}else{
+					console.log('video6 is still playing');
+				}
+			};
+		}
+
+		function checkTimeVideo7(){
+			if(!isMobile.detectMobile()){
+				if($('#video-7')[0].currentTime >= $('#video-7')[0].duration-.5){
+					tl.fromTo('#video-7', 1, {alpha:1}, {alpha:0, ease:Power1.easeInOut, delay:.5});
+					tl.fromTo('#loop-7', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut});
+					$('#video-7')[0].removeEventListener('timeupdate', checkTimeVideo7);
+					$('#loop-7')[0].play();
+					$('#loop-7').attr('loop',1);
+					console.log('video7 is finished');
+				}else{
+					console.log('video7 is still playing');
+				}
+			};
+		}
+
+		var	dataAttr, activeVideo, activeEvL, activeTL;
+
+		function getActiveVideo(){
+			dataAttr = $('section.is-active').attr('data-index');
+			activeVideo = $('#video-' + dataAttr)[0];
+			activeEvL = 'checkTimeVideo' + dataAttr;
+		}
+
+		function addEvL(){
+			getActiveVideo();
+			console.log('activeVideo: ' + '#video-' + dataAttr);
+			activeVideo.addEventListener('timeupdate', activeEvL);
+			activeVideo.play();
 		}
 
 		function removeEvL(){
-			var	dataAttr = $('section.is-active').attr('data-index');
-			var activeVideo = $('#video-' + dataAttr)[0];
-			var activeEvL = 'checkTimeVideo' + dataAttr;
-			// var vidid = $('.scene-video.is-active').attr('id');
+			getActiveVideo();
+			console.log('activeVideo: ' + '#video-' + dataAttr);
 			activeVideo.removeEventListener('timeupdate', activeEvL);
 			$('#video-1')[0].pause();
 			$('#video-2')[0].pause();
@@ -538,9 +568,103 @@ $(document).ready(function() {
 			$('#video-4')[0].pause();
 			$('#video-5')[0].pause();
 			$('#video-6')[0].pause();
-			// activeVideo.currentTime=0;
-			// alert('hey');
+			$('#video-7')[0].pause();
 		}
+
+		function pauseActiveTL(){
+			console.log('called');
+			if(journeyTL.isActive()) {
+				activeTL = 1;
+				journeyTL.pause();
+				journeyTL2.pause();
+				console.log('used');
+			}
+			else if(identifyTL.isActive()) {
+				activeTL = 2;
+				identifyTL.pause();
+				identifyTL2.pause();
+			}
+			else if(connectTL.isActive()) {
+				activeTL = 3;
+				connectTL.pause();
+				connectTL2.pause();
+			}
+			else if(guideTL.isActive()) {
+				activeTL = 4;
+				guideTL.pause();
+				guideTL2.pause();
+			}
+			else if(supportTL.isActive()) {
+				activeTL = 5;
+				supportTL.pause();
+				supportTL2.pause();
+			}
+			else if(sustainTL.isActive()) {
+				activeTL = 6;
+				sustainTL.pause();
+				sustainTL2.pause();
+			}
+			else if(conclusionTL.isActive()) {
+				activeTL = 7;
+				conclusionTL.pause();
+				conclusionTL2.pause();
+			}
+		}
+
+		function playActiveTL(){
+			if(activeTL == 1) {
+				activeTL = 0;
+				journeyTL.play();
+				journeyTL2.play();
+			}
+			else if(activeTL == 2) {
+				activeTL = 0;
+				identifyTL.play();
+				identifyTL2.play();
+			}
+			else if(activeTL == 3) {
+				activeTL = 0;
+				connectTL.play();
+				connectTL2.play();
+			}
+			else if(activeTL == 4) {
+				activeTL = 0;
+				guideTL.play();
+				guideTL2.play();
+			}
+			else if(activeTL == 5) {
+				activeTL = 0;
+				supportTL.play();
+				supportTL2.play();
+			}
+			else if(activeTL == 6) {
+				activeTL = 0;
+				sustainTL.play();
+				sustainTL2.play();
+			}
+			else if(activeTL == 7) {
+				activeTL = 0;
+				conclusionTL.play();
+				conclusionTL2.play();
+			}
+		}
+
+	// Play Pause Button
+		
+		$('#play-pause').on('click', function(){
+			if(!$(this).hasClass('play-active')){
+				$('#play-pause').addClass('play-active');
+				removeEvL();
+				activeVideo.pause();
+				pauseActiveTL();
+			} else{
+				$('#play-pause').removeClass('play-active');
+				addEvL();
+				getActiveVideo();
+				activeVideo.play();
+				playActiveTL();
+			}
+		});
 
 	// To Timelines 
 		
@@ -553,9 +677,17 @@ $(document).ready(function() {
 
 			ffTL1.add('end',.5)
 				 .fromTo('#video-1', .25, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo1()}, 'end')
+				 .set('.loop-video', {alpha:0}, 'end')
+				 .set('.scene-video:not(#video-1)', {alpha:0}, 'end')
 				 .to('.nav-item:eq(0) .bar > span', v1Dur, {x:0, onComplete:startJourney()}, 'end')
-				 .fromTo('#videos', .5, {alpha:.27}, {alpha:.7, ease: Power1.easeInOut}, 'end')
-				 .to(['#prev-next img','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set('.nav-item:eq(0) .bar > span', {alpha:1}, 'end')
+				 .set('.nav-item:not(:eq(0)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
+				 .fromTo('.nav-item-label:not(:eq(0))', .5, {alpha:1}, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .fromTo('.nav-item-label:eq(0)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
+				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set(['#prev-next #prev'], {alpha:0}, 'end')
+				 .set(['#prev-next'], {display:'none'}, 'end')
 				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
 				 .set('#introduction', {className:'-=is-active'}, 'end')
 				 .set(['#journey','#video-1'], {className:'+=is-active'}, 'end')
@@ -572,16 +704,20 @@ $(document).ready(function() {
 			var v2Dur = parseInt($('#video-2')[0].duration);
 
 			ffTL2.add('end',.5)
-				 .fromTo('#video-2', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo2()}, 'end')
-				 .fromTo('#loop-1', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startIdentify()}, 'end')
-				 .fromTo('#journey .learn-more', .5, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
+				 .fromTo('#video-2', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo2()}, 'end')
+				 .fromTo('#loop-1', .15, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startIdentify()}, 'end')
+				 .set('.loop-video:not(#loop-1)', {alpha:0}, 'end')
+				 .set('.scene-video:not(#video-2)', {alpha:0}, 'end')
+				 .set('#journey .learn-more', {alpha:0}, 'end')
 				 .set('.nav-item:eq(1) .bar > span', {alpha:1}, 'end')
 				 .to('.nav-item:eq(1) .bar > span', v2Dur, {x:0}, 'end')
 				 .set('.nav-item:not(:eq(1)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
 				 .fromTo('.nav-item-label:not(:eq(1))', .5, {alpha:1}, {alpha:.1, ease: Power1.easeInOut}, 'end')
 				 .fromTo('.nav-item-label:eq(1)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('#videos', .5, {alpha:.27}, {alpha:.7, ease: Power1.easeInOut}, 'end')
-				 .to(['#prev-next img','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set('#videos', {alpha:.6}, 'end')
+				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set(['#prev-next'], {display:'none'}, 'end')
+				 .set(['#prev-next #prev'], {alpha:0}, 'end')
 				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
 				 .set('section:not(#identify)', {className:'-=is-active', display:'none'}, 'end')
 				 .set(['#identify','#video-2'], {className:'+=is-active', display:'inherit'}, 'end')
@@ -602,14 +738,18 @@ $(document).ready(function() {
 			ffTL3.add('end',.5)
 				 .fromTo('#video-3', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo3()}, 'end')
 				 .fromTo('#loop-2', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startConnect()}, 'end')
+				 .set('.loop-video:not(#loop-2)', {alpha:0}, 'end')
+				 .set('.scene-video:not(#video-3)', {alpha:0}, 'end')
 				 .fromTo('#identify .learn-more', .5, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
 				 .set('.nav-item:eq(2) .bar > span', {alpha:1}, 'end')
 				 .to('.nav-item:eq(2) .bar > span', v3Dur, {x:0}, 'end')
 				 .set('.nav-item:not(:eq(2)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
 				 .fromTo('.nav-item-label:not(:eq(2))', .5, {alpha:1}, {alpha:.2, ease: Power1.easeInOut}, 'end')
 				 .fromTo('.nav-item-label:eq(2)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('#videos', .5, {alpha:.27}, {alpha:.7, ease: Power1.easeInOut}, 'end')
-				 .to(['#prev-next img','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set(['#prev-next #prev'], {alpha:0}, 'end')
+				 .set(['#prev-next'], {display:'none'}, 'end')
 				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
 				 .set('section:not(#connect)', {className:'-=is-active', display:'none'}, 'end')
 				 .set(['#connect','#video-3'], {className:'+=is-active', display:'inherit'}, 'end')
@@ -631,14 +771,18 @@ $(document).ready(function() {
 			ffTL4.add('end',.5)
 				 .fromTo('#video-4', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo4()}, 'end')
 				 .fromTo('#loop-3', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startGuide()}, 'end')
+				 .set('.loop-video:not(#loop-3)', {alpha:0}, 'end')
+				 .set('.scene-video:not(#video-4)', {alpha:0}, 'end')
 				 .fromTo('#connect .learn-more', .5, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
 				 .set('.nav-item:eq(3) .bar > span', {alpha:1}, 'end')
 				 .to('.nav-item:eq(3) .bar > span', v4Dur, {x:0}, 'end')
 				 .set('.nav-item:not(:eq(3)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
 				 .fromTo('.nav-item-label:not(:eq(3))', .5, {alpha:1}, {alpha:.2, ease: Power1.easeInOut}, 'end')
 				 .fromTo('.nav-item-label:eq(3)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('#videos', .5, {alpha:.27}, {alpha:.7, ease: Power1.easeInOut}, 'end')
-				 .to(['#prev-next img','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set(['#prev-next #prev'], {alpha:0}, 'end')
+				 .set(['#prev-next'], {display:'none'}, 'end')
 				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
 				 .set('section:not(#guide)', {className:'-=is-active', display:'none'}, 'end')
 				 .set(['#guide','#video-4'], {className:'+=is-active', display:'inherit'}, 'end')
@@ -659,14 +803,18 @@ $(document).ready(function() {
 			ffTL5.add('end',.5)
 				 .fromTo('#video-5', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo5()}, 'end')
 				 .fromTo('#loop-4', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startSupport()}, 'end')
+				 .set('.loop-video:not(#loop-4)', {alpha:0}, 'end')
+				 .set('.scene-video:not(#video-5)', {alpha:0}, 'end')
 				 .fromTo('#guide .learn-more', .5, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
 				 .set('.nav-item:eq(4) .bar > span', {alpha:1}, 'end')
 				 .to('.nav-item:eq(4) .bar > span', v5Dur, {x:0}, 'end')
 				 .set('.nav-item:not(:eq(4)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
 				 .fromTo('.nav-item-label:not(:eq(4))', .5, {alpha:1}, {alpha:.2, ease: Power1.easeInOut}, 'end')
 				 .fromTo('.nav-item-label:eq(4)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('#videos', .5, {alpha:.27}, {alpha:.7, ease: Power1.easeInOut}, 'end')
-				 .to(['#prev-next img','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set(['#prev-next #prev'], {alpha:0}, 'end')
+				 .set(['#prev-next'], {display:'none'}, 'end')
 				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
 				 .set('section:not(#support)', {className:'-=is-active' ,display:'none'}, 'end')
 				 .set(['#support','#video-5'], {className:'+=is-active', display:'inherit'}, 'end')
@@ -687,14 +835,18 @@ $(document).ready(function() {
 			ffTL6.add('end',.5)
 				 .fromTo('#video-6', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo6()}, 'end')
 				 .fromTo('#loop-5', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startSustain()}, 'end')
+				 .set('.loop-video:not(#loop-5)', {alpha:0}, 'end')
+				 .set('.scene-video:not(#video-6)', {alpha:0}, 'end')
 				 .fromTo('#support .learn-more', .5, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
 				 .set('.nav-item:eq(5) .bar > span', {alpha:1}, 'end')
 				 .to('.nav-item:eq(5) .bar > span', v6Dur, {x:0}, 'end')
 				 .set('.nav-item:not(:eq(5)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
 				 .fromTo('.nav-item-label:not(:eq(5))', .5, {alpha:1}, {alpha:.2, ease: Power1.easeInOut}, 'end')
 				 .fromTo('.nav-item-label:eq(5)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('#videos', .5, {alpha:.27}, {alpha:.7, ease: Power1.easeInOut}, 'end')
-				 .to(['#prev-next img','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .set(['#prev-next #prev'], {alpha:0}, 'end')
+				 .set(['#prev-next'], {display:'none'}, 'end')
 				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
 				 .set('section:not(#sustain)', {className:'-=is-active' ,display:'none'}, 'end')
 				 .set(['#sustain','#video-6'], {className:'+=is-active', display:'inherit'}, 'end')
@@ -705,7 +857,51 @@ $(document).ready(function() {
 			}, 200);
 		}
 
+		var ffTL7 = new TimelineMax({paused:true});
+
+		function FFtoConclusion(){
+			$('#loop-6').removeAttr('loop');
+			$('#video-7')[0].addEventListener('timeupdate', checkTimeVideo6);
+			var v7Dur = parseInt($('#video-7')[0].duration);
+
+			ffTL7.add('end',.5)
+				 .fromTo('#video-7', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo7()}, 'end')
+				 .fromTo('#loop-6', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startConclusion()}, 'end')
+				 .set('.loop-video:not(#loop-6)', {alpha:0}, 'end')
+				 .set('.scene-video:not(#video-7)', {alpha:0}, 'end')
+				 .fromTo('#conclusion .learn-more', .5, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
+				 .set('.nav-item:eq(6) .bar > span', {alpha:1}, 'end')
+				 .to('.nav-item:eq(6) .bar > span', v7Dur, {x:0}, 'end')
+				 .set('.nav-item:not(:eq(6)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
+				 .fromTo('.nav-item-label:not(:eq(6))', .5, {alpha:1}, {alpha:.2, ease: Power1.easeInOut}, 'end')
+				 .fromTo('.nav-item-label:eq(6)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
+				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next'], .5, {display:'none', ease: Power1.easeInOut}, 'end')
+				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
+				 .set('section:not(#conclusion)', {className:'-=is-active' ,display:'none'}, 'end')
+				 .set(['#conclusion','#video-7'], {className:'+=is-active', display:'inherit'}, 'end')
+				 .set('.scene-video:not(#video-7)', {className:'-=is-active'}, 'end');
+
+			setTimeout(function(){
+				ffTL7.play();
+			}, 200);
+		}
+
 	// Skip Functions
+
+		function skipJourney(){
+			var dur2 = parseInt(journeyTL2.duration() - 4);
+			if(journeyTL.isActive()){
+				$('#video-1')[0].currentTime = $('#video-1')[0].duration-4;
+				journeyTL.seek(journeyTL.duration(), false);
+				journeyTL2.seek(dur2, false);
+				tl.to('.dummy', 4, {alpha:1,onComplete:ffJourney});
+
+			} else{
+				ffJourney();
+			}
+		}
 
 		function skipJourney(){
 			var dur2 = parseInt(journeyTL2.duration() - 4);
@@ -799,6 +995,24 @@ $(document).ready(function() {
 			$('#video-5')[0].removeEventListener('timeupdate', checkTimeVideo5);
 		}
 
+		function skipSustain(){
+			var dur2 = parseInt(sustainTL2.duration() - 4);
+			if(sustainTL.isActive()){
+				var timeline = new TimelineMax({onComplete:ffSustain});
+				$('#video-6')[0].currentTime = $('#video-6')[0].duration-4;
+				sustainTL.seek(sustainTL.duration(), false);
+				sustainTL2.seek(dur2, false);
+
+			} else{
+				ffSustain();
+			}
+		}
+
+		function ffSustain(){
+			FFtoConclusion();
+			$('#video-6')[0].removeEventListener('timeupdate', checkTimeVideo6);
+		}
+
 	// Skip Timeout
 		
 		var skipTimer=0;
@@ -809,6 +1023,16 @@ $(document).ready(function() {
 				skipTimer = 0;
 			},4000);
 		} 
+
+		function hideChanges(){
+
+			tl.to('body', .5, {alpha:0, ease:Power1.easeOut});
+			tl.to(['#videos','section'], .5, {alpha:0, ease:Power1.easeOut});
+			tl.set(['section','#prev-next', '#prev', '#next'], {alpha:0});
+			tl.set('#videos', {alpha:.6, ease:Power1.easeOut, delay:.6});
+			tl.set('section.is-active', {alpha:1, delay:.6});
+			tl.to('body', 1, {alpha:1, ease:Power1.easeOut, delay:1});
+		}
 
 
 
@@ -838,15 +1062,94 @@ $(document).ready(function() {
 				}
 				else if($('#support').hasClass('is-active')){
 					skipSupport();		
+				}
+				else if($('#sustain').hasClass('is-active')){
+					skipSustain();		
 				};
 				skipTimeout();
 			};
 			
 		});
 
+		$('#prev').on('click', function(){
+			hideChanges();
+			if($('#journey').hasClass('is-active')){
+				ffTL1.seek(0, false).pause(0).clear();
+				journeyTL.seek(0, false).pause(0).clear(); journeyTL2.seek(0, false).pause(0).clear();
+				setTimeout(function(){
+					FFtoJourney();	
+				}, 200);	
+			}
+			else if($('#identify').hasClass('is-active')){
+				ffTL2.seek(0, false).pause(0).clear();
+				identifyTL.seek(0, false).pause(0).clear(); identifyTL2.seek(0, false).pause(0).clear();
+				setTimeout(function(){
+					FFtoIdentify();
+				}, 200);
+			}
+			else if($('#connect').hasClass('is-active')){
+				ffTL3.seek(0, false).pause(0).clear();
+				connectTL.seek(0, false).pause(0).clear(); connectTL2.seek(0, false).pause(0).clear();
+				setTimeout(function(){
+					FFtoConnect();
+				}, 200);
+			}
+			else if($('#guide').hasClass('is-active')){
+				ffTL4.seek(0, false).pause(0).clear();
+				guideTL.seek(0, false).pause(0).clear(); guideTL2.seek(0, false).pause(0).clear();
+				setTimeout(function(){	
+					FFtoGuide();
+				}, 200);
+			}
+			else if($('#support').hasClass('is-active')){
+				ffTL5.seek(0, false).pause(0).clear();
+				supportTL.seek(0, false).pause(0).clear(); supportTL2.seek(0, false).pause(0).clear();
+				setTimeout(function(){		
+					FFtoSupport();
+				}, 200);
+			}
+			else if($('#sustain').hasClass('is-active')){
+				ffTL6.seek(0, false).pause(0).clear();
+				sustainTL.seek(0, false).pause(0).clear(); sustainTL2.seek(0, false).pause(0).clear();
+				setTimeout(function(){	
+					FFtoSustain();
+				}, 200);
+			};
+		});
+
 		$('.nav-item:eq(0)').on('click', function(){
+			console.log('clicked 1');
 			if(skipTimer === 0){
 				skipTimeout();
+				console.log('clicked 2');
+
+				if($('#journey').hasClass('is-active') ){
+					// do nothing
+				} else{
+					hideChanges();
+					journeyTL.seek(0, false).pause(0).clear(); journeyTL2.seek(0, false).pause(0).clear();
+					identifyTL.seek(0, false).pause(0).clear(); identifyTL2.seek(0, false).pause(0).clear();
+					connectTL.seek(0, false).pause(0).clear(); connectTL2.seek(0, false).pause(0).clear();
+					guideTL.seek(0, false).pause(0).clear(); guideTL2.seek(0, false).pause(0).clear();
+					supportTL.seek(0, false).pause(0).clear(); supportTL2.seek(0, false).pause(0).clear();
+					sustainTL.seek(0, false).pause(0).clear(); sustainTL2.seek(0, false).pause(0).clear();
+					conclusionTL.seek(0, false).pause(0).clear(); conclusionTL2.seek(0, false).pause(0).clear();
+
+					ffTL1.seek(0, false).pause(0).clear();
+					ffTL2.seek(0, false).pause(0).clear();
+					ffTL3.seek(0, false).pause(0).clear();
+					ffTL4.seek(0, false).pause(0).clear();
+					ffTL5.seek(0, false).pause(0).clear();
+					ffTL6.seek(0, false).pause(0).clear();
+					ffTL7.seek(0, false).pause(0).clear();
+
+					removeEvL();
+
+					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
+					tl.set(['section:not(#journey)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});
+					
+					FFtoJourney();
+				}
 			};
 		});
 		$('.nav-item:eq(1)').on('click', function(){
@@ -858,23 +1161,27 @@ $(document).ready(function() {
 				else if($('#identify').hasClass('is-active')){
 					// do nothing
 				} else{
-					identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
-					connectTL.pause(0).clear(); connectTL2.pause(0).clear();
-					guideTL.pause(0).clear(); guideTL2.pause(0).clear();
-					supportTL.pause(0).clear(); supportTL2.pause(0).clear();
-					sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
+					hideChanges();
+					setTimeout(function(){
+						identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
+						connectTL.pause(0).clear(); connectTL2.pause(0).clear();
+						guideTL.pause(0).clear(); guideTL2.pause(0).clear();
+						supportTL.pause(0).clear(); supportTL2.pause(0).clear();
+						sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
 
-					ffTL2.pause(0).clear();
-					ffTL3.pause(0).clear();
-					ffTL4.pause(0).clear();
-					ffTL5.pause(0).clear();
-					ffTL6.pause(0).clear();
+						ffTL2.pause(0).clear();
+						ffTL3.pause(0).clear();
+						ffTL4.pause(0).clear();
+						ffTL5.pause(0).clear();
+						ffTL6.pause(0).clear();
 
-					removeEvL();
+						removeEvL();
 
-					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
-					FFtoIdentify();
+						tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
 					
+						tl.set(['section:not(#identify)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});
+						FFtoIdentify();
+					},400);
 				};	
 			};
 			
@@ -884,19 +1191,19 @@ $(document).ready(function() {
 			if(skipTimer === 0){
 				skipTimeout();
 				if($('#journey').hasClass('is-active') ){
+					hideChanges();
 					removeEvL();
-					ffTL1.pause(0).seek(ffTL2.duration(), false);
-					ffTL2.pause(0).seek(ffTL2.duration(), false);
-					journeyTL.pause(0).seek(journeyTL.duration(), false); 
-					journeyTL2.pause(0).seek(journeyTL2.duration(), false);
-					identifyTL.pause(0).seek(identifyTL.duration(), false); 
-					identifyTL2.pause(0).seek(identifyTL2.duration(), false);
+					setTimeout(function(){
+						ffTL1.pause(0).seek(ffTL2.duration(), false);
+						ffTL2.pause(0).seek(ffTL2.duration(), false);
+						journeyTL.pause(0).seek(journeyTL.duration(), false); 
+						journeyTL2.pause(0).seek(journeyTL2.duration(), false);
+						identifyTL.pause(0).seek(identifyTL.duration(), false); 
+						identifyTL2.pause(0).seek(identifyTL2.duration(), false);
 
-					tl.to('#videos', 1, {alpha:0, ease:Power1.easeOut});
-					tl.set('section', {alpha:0});
-					tl.to('#videos', 1, {alpha:.7, ease:Power1.easeOut, delay:2});
-					tl.to('section.is-active', 1, {alpha:1, ease:Power1.easeOut, delay:2});
-					FFtoConnect();
+						tl.set(['section:not(#connect)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});
+						FFtoConnect();
+					},400);
 					
 				} 
 				else if($('#identify').hasClass('is-active')){
@@ -924,26 +1231,24 @@ $(document).ready(function() {
 					FFtoConnect();
 					
 				} else{
-					identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
-					connectTL.pause(0).clear(); connectTL2.pause(0).clear();
-					guideTL.pause(0).clear(); guideTL2.pause(0).clear();
-					supportTL.pause(0).clear(); supportTL2.pause(0).clear();
-					sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
-
-					ffTL3.pause(0).clear();
-					ffTL4.pause(0).clear();
-					ffTL5.pause(0).clear();
-					ffTL6.pause(0).clear();
-
-					removeEvL();
-
+					hideChanges();
 					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
-					tl.to('#videos', 1, {alpha:0, ease:Power1.easeOut});
-					tl.set('section', {alpha:0});
-					tl.to('#videos', 1, {alpha:.7, ease:Power1.easeOut, delay:2});
-					tl.to('section.is-active', 1, {alpha:1, ease:Power1.easeOut, delay:2});
-					
-					FFtoConnect();
+					setTimeout(function(){
+						identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
+						connectTL.pause(0).clear(); connectTL2.pause(0).clear();
+						guideTL.pause(0).clear(); guideTL2.pause(0).clear();
+						supportTL.pause(0).clear(); supportTL2.pause(0).clear();
+						sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
+
+						ffTL3.pause(0).clear();
+						ffTL4.pause(0).clear();
+						ffTL5.pause(0).clear();
+						ffTL6.pause(0).clear();
+
+						removeEvL();
+						tl.set(['section:not(#connect)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});	
+						FFtoConnect();
+					},400);
 				};
 			};
 		});
@@ -952,22 +1257,23 @@ $(document).ready(function() {
 			if(skipTimer === 0){
 				skipTimeout();
 				if($('#journey').hasClass('is-active') || $('#identify').hasClass('is-active')){
-					removeEvL();
-					ffTL1.pause(0).seek(ffTL2.duration(), false);
-					ffTL2.pause(0).seek(ffTL2.duration(), false);
-					ffTL3.pause(0).seek(ffTL3.duration(), false);
-					journeyTL.pause(0).seek(journeyTL.duration(), false); 
-					journeyTL2.pause(0).seek(journeyTL2.duration(), false);
-					identifyTL.pause(0).seek(identifyTL.duration(), false); 
-					identifyTL2.pause(0).seek(identifyTL2.duration(), false);
-					connectTL.pause(0).seek(connectTL.duration(), false); 
-					connectTL2.pause(0).seek(connectTL2.duration(), false);
+					hideChanges();
+					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
+					setTimeout(function(){
+						removeEvL();
+						ffTL1.pause(0).seek(ffTL2.duration(), false);
+						ffTL2.pause(0).seek(ffTL2.duration(), false);
+						ffTL3.pause(0).seek(ffTL3.duration(), false);
+						journeyTL.pause(0).seek(journeyTL.duration(), false); 
+						journeyTL2.pause(0).seek(journeyTL2.duration(), false);
+						identifyTL.pause(0).seek(identifyTL.duration(), false); 
+						identifyTL2.pause(0).seek(identifyTL2.duration(), false);
+						connectTL.pause(0).seek(connectTL.duration(), false); 
+						connectTL2.pause(0).seek(connectTL2.duration(), false);
 
-					tl.to('#videos', 1, {alpha:0, ease:Power1.easeOut});
-					tl.set('section', {alpha:0});
-					tl.to('#videos', 1, {alpha:.7, ease:Power1.easeOut, delay:2});
-					tl.to('section.is-active', 1, {alpha:1, ease:Power1.easeOut, delay:2});
-					FFtoGuide();
+						tl.set(['section:not(#journey)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});
+						FFtoGuide();
+					},400);
 				}
 				else if($('#connect').hasClass('is-active')){
 					skipConnect();
@@ -982,32 +1288,28 @@ $(document).ready(function() {
 					ffTL6.pause(0).clear();
 
 					removeEvL();
-
-					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
 					
 					FFtoGuide();	
 				}
 				else{
-					identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
-					connectTL.pause(0).clear(); connectTL2.pause(0).clear();
-					guideTL.pause(0).clear(); guideTL2.pause(0).clear();
-					supportTL.pause(0).clear(); supportTL2.pause(0).clear();
-					sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
-
-					ffTL3.pause(0).clear();
-					ffTL4.pause(0).clear();
-					ffTL5.pause(0).clear();
-					ffTL6.pause(0).clear();
-
-					removeEvL();
-
+					hideChanges();
 					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
-					tl.to('#videos', 1, {alpha:0, ease:Power1.easeOut});
-					tl.set('section', {alpha:0});
-					tl.to('#videos', 1, {alpha:.7, ease:Power1.easeOut, delay:2});
-					tl.to('section.is-active', 1, {alpha:1, ease:Power1.easeOut, delay:2});
-					
-					FFtoGuide();
+					setTimeout(function(){
+						identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
+						connectTL.pause(0).clear(); connectTL2.pause(0).clear();
+						guideTL.pause(0).clear(); guideTL2.pause(0).clear();
+						supportTL.pause(0).clear(); supportTL2.pause(0).clear();
+						sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
+
+						ffTL3.pause(0).clear();
+						ffTL4.pause(0).clear();
+						ffTL5.pause(0).clear();
+						ffTL6.pause(0).clear();
+
+						removeEvL();
+						tl.set(['section:not(#guide)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});
+						FFtoGuide();
+					},400);
 				};
 			};
 		});
@@ -1016,6 +1318,7 @@ $(document).ready(function() {
 			if(skipTimer === 0){
 				skipTimeout();
 				if($('#sustain').hasClass('is-active')){
+					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
 					identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
 					connectTL.pause(0).clear(); connectTL2.pause(0).clear();
 					guideTL.pause(0).clear(); guideTL2.pause(0).clear();
@@ -1028,13 +1331,7 @@ $(document).ready(function() {
 					ffTL6.pause(0).clear();
 
 					removeEvL();
-
-					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
-					tl.to('#videos', 1, {alpha:0, ease:Power1.easeOut});
-					tl.set('section', {alpha:0});
-					tl.to('#videos', 1, {alpha:.7, ease:Power1.easeOut, delay:2});
-					tl.to('section.is-active', 1, {alpha:1, ease:Power1.easeOut, delay:2});
-					
+					tl.set(['section:not(#support)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});
 					FFtoSupport();
 				}
 				else if($('#guide').hasClass('is-active')){
@@ -1044,25 +1341,25 @@ $(document).ready(function() {
 					// do nothing
 				}
 				else{
-					removeEvL();
-					ffTL1.pause(0).seek(ffTL2.duration(), false);
-					ffTL2.pause(0).seek(ffTL2.duration(), false);
-					ffTL3.pause(0).seek(ffTL3.duration(), false);
-					ffTL4.pause(0).seek(ffTL4.duration(), false);
-					journeyTL.pause(0).seek(journeyTL.duration(), false); 
-					journeyTL2.pause(0).seek(journeyTL2.duration(), false);
-					identifyTL.pause(0).seek(identifyTL.duration(), false); 
-					identifyTL2.pause(0).seek(identifyTL2.duration(), false);
-					connectTL.pause(0).seek(connectTL.duration(), false); 
-					connectTL2.pause(0).seek(connectTL2.duration(), false);
-					guideTL.pause(0).seek(guideTL.duration(), false); 
-					guideTL2.pause(0).seek(guideTL2.duration(), false);
+					hideChanges();
+					setTimeout(function(){
+						tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
+						removeEvL();
+						connectTL.pause(0).seek(connectTL.duration(), false); 
+						connectTL2.pause(0).seek(connectTL2.duration(), false);
+						ffTL1.pause(0).seek(ffTL1.duration(), false);
+						ffTL2.pause(0).seek(ffTL2.duration(), false);
+						ffTL3.pause(0).seek(ffTL3.duration(), false);
+						ffTL4.pause(0).seek(ffTL4.duration(), false);
+						guideTL.pause(0).seek(guideTL.duration(), false); 
+						guideTL2.pause(0).seek(guideTL2.duration(), false);
+						identifyTL.pause(0).seek(identifyTL.duration(), false); 
+						identifyTL2.pause(0).seek(identifyTL2.duration(), false);
+						journeyTL.pause(0).seek(journeyTL.duration(), false); 
+						journeyTL2.pause(0).seek(journeyTL2.duration(), false);
 
-					tl.to('#videos', 1, {alpha:0, ease:Power1.easeOut});
-					tl.set('section', {alpha:0});
-					tl.to('#videos', 1, {alpha:.7, ease:Power1.easeOut, delay:2});
-					tl.to('section.is-active', 1, {alpha:1, ease:Power1.easeOut, delay:2});
-					FFtoSupport();
+						FFtoSupport();
+					},400);
 				};
 			};
 		});
@@ -1091,13 +1388,40 @@ $(document).ready(function() {
 				else if($('#sustain').hasClass('is-active')){
 					// do nothing
 				} else{
+					hideChanges();
+					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
+
+					setTimeout(function(){
+						identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
+						connectTL.pause(0).clear(); connectTL2.pause(0).clear();
+						guideTL.pause(0).clear(); guideTL2.pause(0).clear();
+						supportTL.pause(0).clear(); supportTL2.pause(0).clear();
+						sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
+
+						ffTL2.pause(0).clear();
+						ffTL3.pause(0).clear();
+						ffTL4.pause(0).clear();
+						ffTL5.pause(0).clear();
+						ffTL6.pause(0).clear();
+
+						tl.set(['section:not(#sustain)', 'section:not(#introduction)'], {display:'none', clearProps:'transform'});				
+						removeEvL();
+						FFtoSustain();
+					},400);
+				};	
+			};
+		});
+
+		$('.nav-item:eq(6)').on('click', function(){
+			if(skipTimer === 0){
+				skipTimeout();
+				if($('#sustain').hasClass('is-active')){
 					identifyTL.pause(0).clear(); identifyTL2.pause(0).clear();
 					connectTL.pause(0).clear(); connectTL2.pause(0).clear();
 					guideTL.pause(0).clear(); guideTL2.pause(0).clear();
 					supportTL.pause(0).clear(); supportTL2.pause(0).clear();
 					sustainTL.pause(0).clear(); sustainTL2.pause(0).clear();
 
-					ffTL2.pause(0).clear();
 					ffTL3.pause(0).clear();
 					ffTL4.pause(0).clear();
 					ffTL5.pause(0).clear();
@@ -1106,10 +1430,47 @@ $(document).ready(function() {
 					removeEvL();
 
 					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
-					FFtoSustain();
 					
+					FFtoConclusion();
+				}
+				else if($('#conclusion').hasClass('is-active')){
+					// do nothing
+				} else{
+					hideChanges();
+					tl.to('.loop-video:not(#loop-0)', .5, {alpha:0});
+					
+					setTimeout(function(){
+						removeEvL();
+						connectTL.pause(0).seek(connectTL.duration(), false); 
+						connectTL2.pause(0).seek(connectTL2.duration(), false);
+						ffTL1.pause(0).seek(ffTL1.duration(), false);
+						ffTL2.pause(0).seek(ffTL2.duration(), false);
+						ffTL3.pause(0).seek(ffTL3.duration(), false);
+						ffTL4.pause(0).seek(ffTL4.duration(), false);
+						ffTL5.pause(0).seek(ffTL5.duration(), false);
+						ffTL6.pause(0).seek(ffTL6.duration(), false);
+						ffTL7.pause(0).seek(ffTL6.duration(), false);
+						guideTL.pause(0).seek(guideTL.duration(), false); 
+						guideTL2.pause(0).seek(guideTL2.duration(), false);
+						identifyTL.pause(0).seek(identifyTL.duration(), false); 
+						identifyTL2.pause(0).seek(identifyTL2.duration(), false);
+						journeyTL.pause(0).seek(journeyTL.duration(), false); 
+						journeyTL2.pause(0).seek(journeyTL2.duration(), false);
+						supportTL.pause(0).seek(supportTL.duration(), false); 
+						supportTL2.pause(0).seek(supportTL2.duration(), false);
+						sustainTL.pause(0).seek(sustainTL.duration(), false); 
+						sustainTL2.pause(0).seek(sustainTL2.duration(), false);
+						conclusionTL.pause(0).seek(0, false); 
+						conclusionTL2.pause(0).seek(0, false);
+
+						ffSustain();
+					},400);
 				};	
 			};
+		});
+
+		$('.aetnacare-logo, #restart-btn').on('click', function(e){
+			location.reload();
 		});
 
 	// Learn More Button
@@ -1125,13 +1486,38 @@ $(document).ready(function() {
 
 	// Show Links
 		
-		$('#header-links').mouseover(function() {
-		  	$(this).addClass('show-links');
-		  	mouseTimeout();
-		}).mouseout(function() {
-		  	$(this).removeClass('show-links');
-		  	mouseTimeout();
+		// $('#header-links').mouseover(function() {
+		//   	if(!$('#introduction').hasClass('is-active') || !$('#conclusion').hasClass('is-active') || $('#videos').css('opacity') > .2){
+		// 	  	mouseTimeout();	
+		// 	};
+		// }).mouseout(function() {
+		//   	if(!$('#introduction').hasClass('is-active') || !$('#conclusion').hasClass('is-active') || $('#videos').css('opacity') > .2){
+		//   		mouseTimeout();
+		//   	};
+		// });
+
+		$('#burger').on('click', function(){
+			if($('#header-links').hasClass('show-links')){
+				$('#header-links').removeClass('show-links');
+				$('#burger').attr('src','app/images/burger.svg');
+			} else{
+				$('#header-links').addClass('show-links');
+				$('#burger').attr('src','app/images/close.svg');
+			}
 		});
+
+		$('#sound-bar').on('click',function(){
+			if($('#sound-bar .bar:eq(0)').hasClass('soundbar')){
+				$('#sound-bar .bar').removeClass('soundbar soundbar2 soundbar3');
+				$('audio, video').attr('muted', 0);
+			} else {
+				$('#sound-bar .bar:eq(0)').addClass('soundbar');
+				$('#sound-bar .bar:eq(1), #sound-bar .bar:eq(4)').addClass('soundbar2');
+				$('#sound-bar .bar:eq(2), #sound-bar .bar:eq(3)').addClass('soundbar3');
+				$('audio, video').attr('muted', 1);
+			}
+		});
+
 
 	// Mousemove
 		
@@ -1140,9 +1526,10 @@ $(document).ready(function() {
 			// console.log('event page: ' + event.pageX);
 			// event.stopPropagation();
 			var distance = parseInt($('body').innerWidth() / 3);
-			clearTimeout(movementTimer);
-			if(!$('#introduction').hasClass('is-active') && mousestatus == 0){
+			
+			if(!$('#introduction').hasClass('is-active') && $('#videos').css('opacity') > .2 && mousestatus == 0){
 				// console.log('moving');
+				clearTimeout(movementTimer);
 				tl.fromTo('header', .15, {alpha:.1}, {alpha:1, ease: Power1.easeInOut});
 
 		    	movementTimer = setTimeout(function()
@@ -1166,145 +1553,13 @@ $(document).ready(function() {
 			        tl.to('#next', .5, {alpha:1, ease:Power1.easeOut});
 			        mouseTimeout();
 			    }
+			} else if($('#conclusion').hasClass('is-active') || $('#videos').css('opacity') <= .2){
+				tl.to('header', .15, {alpha:1, ease: Power1.easeInOut});
+				tl.to('#prev-next', .5, {alpha:1, ease:Power1.easeOut});
+				tl.to(['#next','#prev'], .5, {alpha:1, ease:Power1.easeOut});
 			};
 			
 		});
-		// 
-
-	// Bind Page Function
-	
-		function bindPage(){
-			scrollstart=1;
-			checkClicked = false;
-
-			setTimeout(function(){
-				var status=0,
-					touchReg = false,
-					keypress = false;
-
-				if( isMobile.detectMobile() ){
-					var ts;
-			        $('body').bind('touchstart', function (event){
-			           ts = event.originalEvent.touches[0].clientY;
-			        });
-
-
-			        $('body').bind('touchmove', function (event){
-
-			           var te = event.originalEvent.changedTouches[0].clientY;
-
-			           if (touchReg == false && status === 0) {
-
-			                $(this).on('touchend touchcancel', function(){
-			                    touchReg = false;
-			                });
-
-			                if (ts > te+175){
-			                	
-
-			                    touchReg = true;
-			                    status = 1;
-			                    counterSlide = 1;
-
-
-			                    setTimeout(function(){
-			                        status=0;
-			                        scrollstart=0;
-			                    },850);
-
-			                } else if (ts < te-175) {
-
-			                  touchReg = true;
-			                  status = 1;
-
-			                  setTimeout(function(){
-			                    status=0;
-			                    scrollstart=0;
-			                  },850);
-
-			               }
-			            
-			            } else if (status > 0){
-			                //do nothing
-			                console.log('waiting');
-			            }
-			        });
-	            } else{
-	            	$('body').bind('mousewheel', function(e) {
-						console.log('working');
-						var currentY = e.deltaY;
-
-	                    if (status === 0) {
-	                        
-	                        if(currentY < 0) {
-	                            console.log(e.deltaY);
-	                            status=1;
-	                            
-	                            // if($('#journey').hasClass('is-active') && $('#journey .learn-more').css('display') == 'none'){
-	                            // 	journeyScrollDown();
-	                            // };
-
-	                            setTimeout(function(){
-	                                status=0;
-	                            },2000);
-
-	                        } else if(e.deltaY > 0){
-
-	                            status = 1;
-
-	                            // if($('#journey').hasClass('is-active') && $('#journey .learn-more').css('display') !== 'none'){
-	                            // 	journeyScrollUp();
-	                            // };
-	                           
-	                            setTimeout(function(){
-
-	                                status=0;
-	                            },2000);
-
-	                        }
-	                        return false;
-
-	                    } else if (status > 0){
-	                        //do nothing
-	                        // console.log('waiting');
-	                    }
-	            	});
-	            }
-			}, 500);
-		}
-
-		bindPage();
-
-	// function journeyScrollDown() {
-	// 	tm.staggerFromTo(wrds1, 1, {alpha:1, y:0}, {alpha:0, y:-30}, 0.01);
-	// 	tm.staggerFromTo(chars1, 1, {alpha:1, y:0}, {alpha:0, y:-30, delay:.15}, 0.01);
-	// 	tm.staggerFromTo(chars12, 1, {alpha:1, y:0}, {alpha:0, y:-30, delay:.3}, 0.01);
-	// 	tl.fromTo('#journey .divider:eq(0)', 1, {alpha:1, y:0}, {alpha:0, y:-30, delay:.45});
-	// 	tl.fromTo('#journey .divider:eq(1)', 1, {alpha:1, y:0}, {alpha:0, y:-30, delay:.6});
-	// 	tl.fromTo('.more-btn', 1, {alpha:1, y:0}, {alpha:0, y:-30, delay:.75});
-	// 	tl.set(['.more-btn', wrds1, chars1, chars12, '#journey .divider:eq(0)', '#journey .divider:eq(1)', '#journey div.content p.content:eq(0)'], {height:0, margin:0, delay:1.75});
-	// 	tl.set('#journey div.content', {height:'60vh', overflowY:'auto', delay:1.75});
-	// 	tl.fromTo('.learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut, delay:2});
-	// }
-
-	// function journeyScrollUp() {
-	// 	tl.fromTo('.learn-more', 1, {alpha:1, y:0}, {alpha:0, y:30, ease:Power1.easeOut});
-	// 	tl.set(['.learn-more', '.more-btn', '#journey .divider:eq(0)', '#journey .divider:eq(1)', '#journey div.content p.content:eq(0)'], {clearProps:'display,margin,height', delay:1});
-	// 	tl.set([wrds1, chars1, chars12], {clearProps:'margin,height', delay:1});
-	// 	tl.set('#journey div.content:eq(0)', {height:journeyContentHeight, delay:1});
-	// 	tl.fromTo('.more-btn', 1, {alpha:0, y:-30}, {alpha:1, y:0, ease:Power1.easeOut, delay:1.15});
-	// 	tl.fromTo('#journey .divider:eq(1)', 1, {alpha:0, y:-30}, {alpha:1, y:0, ease:Power1.easeOut, delay:1.3});
-	// 	tl.fromTo('#journey p.content:eq(0)', 1, {alpha:0, y:-30}, {alpha:1, y:0, delay:1.45});
-	// 	tl.fromTo('#journey .divider:eq(0)', 1, {alpha:0, y:-30}, {alpha:1, y:0, delay:1.6});
-	// 	tm.staggerFromTo(chars12, 1, {alpha:0, y:-30}, {alpha:1, y:0, delay:.45, delay:1.6}, 0.01);
-	// 	tm.staggerFromTo(chars1, 1, {alpha:0, y:-30}, {alpha:1, y:0, delay:1.75}, 0.01);
-	// 	tm.staggerFromTo(wrds1, 1, {alpha:0, y:-30}, {alpha:1, y:0, delay:1.9}, 0.01);
-		
-	// 	// tl.set(['.more-btn', wrds1, chars1, chars12, '#journey .divider:eq(0)', '#journey .divider:eq(1), #journey div.content p.content:eq(0)'], {height:0, margin:0, delay:1.75});
-	// 	// tl.set('#journey div.content', {height:'60vh', overflowY:'auto', delay:1.75});
-	// }
-
-
 
 	// Hide Pages from Aria
 		

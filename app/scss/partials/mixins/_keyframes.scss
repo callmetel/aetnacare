@@ -41,3 +41,51 @@
         transform: translateY(5px)
     }
 }
+
+@include keyframes (blink) {
+    0%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+       opacity: 0;
+    }
+}
+
+@include keyframes (soundbar) {
+    0% {
+        height: 1px;
+    }
+    90% {
+        height: 10px;
+    }
+    100% {
+        height: 10px;
+    }
+}
+
+@include keyframes (soundbar2) {
+    0% {
+        height: 6px;
+    }
+    10% {
+        height: 6px;
+    }
+    100% {
+        height: 2px;
+    }
+}
+
+@include keyframes (soundbar3) {
+    0% {
+        height: 8px;
+    }
+    50%{
+        height: 10px;
+    }
+    100% {
+        height: 4px;
+    }
+}

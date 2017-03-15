@@ -92,6 +92,9 @@ a.no-decoration, a:hover.no-decoration{
 	position: relative;
 }
 
+.is-normal{
+	font-family: $OS!important;
+}
 .is-bold{
 	font-family: $OSSemiBold!important;
 }
