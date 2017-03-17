@@ -736,19 +736,28 @@ section {
   section.super {
     z-index: 1;
     text-align: center; }
-    section.super .section-title.headline {
+    section.super .headline {
       text-align: center;
       margin-left: auto !important;
       margin-right: auto !important;
-      width: auto; }
+      width: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 80vw; }
       @media screen and (max-width: 880px) {
-        section.super .section-title.headline {
+        section.super .headline {
           width: 80%; } }
       @media screen and (max-width: 768px) {
-        section.super .section-title.headline {
+        section.super .headline {
           width: 80%; } }
       @media screen and (max-width: 500px) {
-        section.super .section-title.headline {
+        section.super .headline {
           width: 80%; } }
     section.super p.headline-description {
       color: #ffffff;

@@ -14,7 +14,7 @@ section{
 		text-align: center;
 		color:white;
 	}
-
+	
 	&#introduction{
 		width:49.19vw;
 		@include media($lg-mobile) {
@@ -99,11 +99,14 @@ section{
 		z-index: 1;
 		text-align: center;
 
-		.section-title.headline{
+		.headline{
 			text-align: center;
 			margin-left:auto!important;
 			margin-right:auto!important;
 			width: auto;
+			@include position(absolute, 50% null null 50%);
+			@include transform(translate(-50%,-50%));
+			width: 80vw;
 
 			@include media($md-mobile){
 				width: 80%;

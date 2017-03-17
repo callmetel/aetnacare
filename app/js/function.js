@@ -168,21 +168,24 @@ $(document).ready(function() {
 					 .fromTo('.aetnacare-logo', 1, {alpha:0, y:'-30%'}, {alpha:1, y:'-50%', ease:Power4.easeOut},"-=.5")
 					 .set('#introduction', {display:'none'})
 					 .fromTo('#journey', .5, {alpha:0, display:'inherit',x:'-50%',y:'-30%'}, {alpha:1,x:'-50%',y:'-50%', ease:Power4.easeIn},"-=.5")
-					 .staggerFromTo(wrds1, 1, {alpha:0, y:20}, {alpha:1, y:-20}, 0.01, "+=2.25")
-					 .fromTo(chars1, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=2.25")
-					 .staggerTo(wrds1, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
+					 .staggerFromTo(wrds1, 1, {alpha:0, y:20}, {alpha:1, y:0}, 0.02, "+=10")
+					 .to('#videos', 1, {alpha:.65}, "-=1")
+					 .to(wrds1, 1.7, {y:-75, alpha:.4, ease: Power1.easeInOut}, "+=3")
+					 .fromTo(chars1, 1.5, {alpha:0, y:50}, {alpha:1,y:0, ease: Power1.easeOut},"-=1.1");
 
-			journeyTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=17")
+			journeyTL2.fromTo('#videos', 4, {alpha:.65}, {alpha:.2, ease: Power1.easeInOut}, "+=18")
 					  .staggerTo(wrds1, 1, {alpha:0, y:-80}, 0.01, "-=2")
-					  .staggerTo(chars1, 1, {alpha:0, y:-80}, 0.05, "-=.85")
-					  .set('#journey .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
+					  .staggerTo(chars1, 1, {alpha:0, y:-40}, 0.01, "-=1.5")
+					  .set('#journey .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1})
 					  .set([wrds1, chars1, '#journey h2'], {height:0, margin:0})
 					  .set('#journey div.content', {height:'auto'})
 					  .fromTo('#journey .learn-more', 1, {display:'inherit', alpha:0, y:30}, {alpha:1, y:0, ease:Power1.easeOut})
-					  .set('#prev-next', {display:'inherit', alpha:1})
+					  .set('#prev-next', {display:'inherit'})
+					  .to('#prev-next', .25, {alpha:0}, {alpha:1})
+					  .to('#prev', .5, {alpha:0}, {alpha:.1})
+					  .to('#next', .5, {alpha:0}, {alpha:1},'-=.5')
 					  .fromTo('.next-arrow', 1, {drawSVG:"0% 0%"}, {drawSVG:"0% 100%", ease: Power1.easeInOut})
-					  .fromTo(['#prev','#next'], .5, {alpha:.1}, {alpha:1})
-					  .staggerFromTo(next1, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01);
+					  .staggerFromTo(next1, .5, {alpha:0, y:10}, {alpha:1, y:0}, 0.01,"-=1");
 
 			journeyTL.play();
 			journeyTL2.play();
@@ -198,7 +201,7 @@ $(document).ready(function() {
 		    chars22 = descrText2.words;
 
 		function startIdentify() {
-			identifyTL.set(["#next .name:not(:eq(1))",'section:not(#identify)'], {className:'-=is-active'})
+			identifyTL.set(["#next .name:not(:eq(1))",'section:not(#identify)'], {className:'-=is-active'},'+=1')
 					  .set(["#next .name:eq(1)", '#identify'], {className:'+=is-active'})
 					  .set(next2, {alpha:0})
 					  .set('#prev', {alpha:0, className:'fixed-left is-in-use'})
@@ -210,7 +213,7 @@ $(document).ready(function() {
 					  .fromTo(chars2, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=4")
 					  .staggerTo(wrds2, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			identifyTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=26")
+			identifyTL2.to('#videos', 4, {alpha:.2, ease: Power1.easeInOut}, "+=26")
 					   .staggerTo(wrds2, 1, {alpha:0, y:-80}, 0.01, "-=2")
 					   .staggerTo(chars2, 1, {alpha:0, y:-80}, 0.05, "-=.85")
 					   .set('#identify .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
@@ -233,7 +236,7 @@ $(document).ready(function() {
 		    chars3 = titleText3.words;
 
 		function startConnect() {
-			connectTL.set(["#next .name:not(:eq(2))",'section:not(#connect)'], {className:'-=is-active'})
+			connectTL.set(["#next .name:not(:eq(2))",'section:not(#connect)'], {className:'-=is-active'},'+=1')
 					 .set(["#next .name:eq(2)",'#connect'], {className:'+=is-active'})
 					 .set(next3, {alpha:0})
 					 .set('#prev', {alpha:0, className:'fixed-left is-in-use'})
@@ -244,7 +247,7 @@ $(document).ready(function() {
 					 .fromTo(chars3, 1.5, {alpha:0, y:-40}, {alpha:1}, "+=3")
 					 .staggerTo(wrds3, 1.75, {y:-50, alpha:.4, ease: Power1.easeInOut}, 0.01, "-=2.5");
 
-			connectTL2.fromTo('#videos', 4, {alpha:.6}, {alpha:.2, ease: Power1.easeInOut}, "+=18")
+			connectTL2.to('#videos', 4, {alpha:.2, ease: Power1.easeInOut}, "+=21")
 					  .staggerTo(wrds3, 1, {alpha:0, y:-80}, 0.01, "-=2")
 					  .staggerTo(chars3, 1, {alpha:0, y:-80}, 0.05, "-=.85")
 					  .set('#connect .content:eq(0)', {display:'inherit', height:'auto', autoAlpha:1}, "+=.25")
@@ -402,16 +405,19 @@ $(document).ready(function() {
 		function startVideo1() {
 			$('#video-1')[0].currentTime = 0;
 			$('#video-1')[0].play();
+
 		}
 
 		function startVideo2() {
 			$('#video-2')[0].currentTime = 0;
 			$('#video-2')[0].play();
+			startIdentify();
 		}
 
 		function startVideo3() {
 			$('#video-3')[0].currentTime = 0;
 			$('#video-3')[0].play();
+			startConnect();
 		}
 
 		function startVideo4() {
@@ -448,7 +454,8 @@ $(document).ready(function() {
 
 					console.log('video1 is finished');
 				}else{
-					console.log('video1 is still playing');
+					// console.log('video1 is still playing');
+					console.log('video time:' + $('#video-1')[0].currentTime);
 				};	
 			}
 		}
@@ -673,7 +680,7 @@ $(document).ready(function() {
 		function FFtoJourney(){
 			$('#loop-0').removeAttr('loop');
 			$('#video-1')[0].addEventListener('timeupdate', checkTimeVideo1);
-			var v1Dur = parseInt($('#video-1')[0].duration);
+			var v1Dur = parseInt($('#video-1')[0].duration) + 4;
 
 			ffTL1.add('end',.5)
 				 .fromTo('#video-1', .25, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo1()}, 'end')
@@ -684,7 +691,7 @@ $(document).ready(function() {
 				 .set('.nav-item:not(:eq(0)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
 				 .fromTo('.nav-item-label:not(:eq(0))', .5, {alpha:1}, {alpha:.1, ease: Power1.easeInOut}, 'end')
 				 .fromTo('.nav-item-label:eq(0)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
+				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.85, ease: Power1.easeInOut}, 'end')
 				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
 				 .set(['#prev-next #prev'], {alpha:0}, 'end')
 				 .set(['#prev-next'], {display:'none'}, 'end')
@@ -700,28 +707,28 @@ $(document).ready(function() {
 
 		function FFtoIdentify(){
 			$('#loop-1').removeAttr('loop');
+			$('#loop-1')[0].currentTime = $('#loop-1')[0].duration;
 			$('#video-2')[0].addEventListener('timeupdate', checkTimeVideo2);
-			var v2Dur = parseInt($('#video-2')[0].duration);
+			var v2Dur = parseInt($('#video-2')[0].duration) + 4;
 
-			ffTL2.add('end',.5)
-				 .fromTo('#video-2', .15, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo2()}, 'end')
-				 .fromTo('#loop-1', .15, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startIdentify()}, 'end')
-				 .set('.loop-video:not(#loop-1)', {alpha:0}, 'end')
+			ffTL2.add('end',.01)
+				 .fromTo('#video-2', 3, {alpha:0}, {alpha:1, ease:Power1.easeInOut}, 'end')
+				 .fromTo('#loop-1', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut}, 'end')
 				 .set('.scene-video:not(#video-2)', {alpha:0}, 'end')
-				 .set('#journey .learn-more', {alpha:0}, 'end')
+				 .set(['#video-2'], {className:'+=is-active', display:'inherit'}, 'end')
+				 .fromTo('#journey .learn-more', .75, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
+				 .fromTo('nav', .25, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next', '#prev', '#next'], .75, {alpha:0, ease:Power1.easeOut}, 'end')
+				 .to(['header'], .5, {alpha:.1, ease:Power1.easeInOut}, 'end')
+				 .fromTo('#videos', 2, {alpha:.2}, {alpha:.65, ease: Power1.easeInOut}, '+=.5')
+				 .set(['#prev-next'], {display:'none'}, '-=1.75')
+				 .to('.loop-video:not(#loop-1)', .5, {alpha:0, onComplete:startVideo2()}, '-=1')
+				 .set('.scene-video:not(#video-2)', {className:'-=is-active'}, 'end')
 				 .set('.nav-item:eq(1) .bar > span', {alpha:1}, 'end')
 				 .to('.nav-item:eq(1) .bar > span', v2Dur, {x:0}, 'end')
 				 .set('.nav-item:not(:eq(1)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
-				 .fromTo('.nav-item-label:not(:eq(1))', .5, {alpha:1}, {alpha:.1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('.nav-item-label:eq(1)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .set('#videos', {alpha:.6}, 'end')
-				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
-				 .set(['#prev-next'], {display:'none'}, 'end')
-				 .set(['#prev-next #prev'], {alpha:0}, 'end')
-				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .set('section:not(#identify)', {className:'-=is-active', display:'none'}, 'end')
-				 .set(['#identify','#video-2'], {className:'+=is-active', display:'inherit'}, 'end')
-				 .set('.scene-video:not(#video-2)', {className:'-=is-active'}, 'end');
+				 .fromTo('.nav-item-label:not(:eq(1))', .5, {alpha:1}, {alpha:.2, ease: Power1.easeInOut}, 'end')
+				 .fromTo('.nav-item-label:eq(1)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end');
 
 			setTimeout(function(){
 				ffTL2.play();
@@ -732,28 +739,28 @@ $(document).ready(function() {
 
 		function FFtoConnect(){
 			$('#loop-2').removeAttr('loop');
+			$('#loop-2')[0].currentTime = $('#loop-2')[0].duration;
 			$('#video-3')[0].addEventListener('timeupdate', checkTimeVideo3);
-			var v3Dur = parseInt($('#video-3')[0].duration);
+			var v3Dur = parseInt($('#video-3')[0].duration) + 4;
 
-			ffTL3.add('end',.5)
-				 .fromTo('#video-3', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo3()}, 'end')
-				 .fromTo('#loop-2', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut, onComplete:startConnect()}, 'end')
-				 .set('.loop-video:not(#loop-2)', {alpha:0}, 'end')
+			ffTL3.add('end',.01)
+				 .fromTo('#video-3', 3, {alpha:0}, {alpha:1, ease:Power1.easeInOut}, 'end')
+				 .fromTo('#loop-2', .5, {alpha:1}, {alpha:0, ease:Power1.easeInOut}, 'end')
 				 .set('.scene-video:not(#video-3)', {alpha:0}, 'end')
-				 .fromTo('#identify .learn-more', .5, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
+				 .set(['#video-3'], {className:'+=is-active', display:'inherit'}, 'end')
+				 .fromTo('#identify .learn-more', .75, {alpha:1, y:0}, {alpha:0, y:-30, ease:Power1.easeOut}, 'end')
+				 .fromTo('nav', .25, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
+				 .to(['#prev-next', '#prev', '#next'], .75, {alpha:0, ease:Power1.easeOut}, 'end')
+				 .to(['header'], .5, {alpha:.1, ease:Power1.easeInOut}, 'end')
+				 .fromTo('#videos', 2, {alpha:.2}, {alpha:.65, ease: Power1.easeInOut}, '+=.5')
+				 .set(['#prev-next'], {display:'none'}, '-=1.75')
+				 .to('.loop-video:not(#loop-2)', .5, {alpha:0, onComplete:startVideo3()}, '-=1')
+				 .set('.scene-video:not(#video-3)', {className:'-=is-active'}, 'end')
 				 .set('.nav-item:eq(2) .bar > span', {alpha:1}, 'end')
 				 .to('.nav-item:eq(2) .bar > span', v3Dur, {x:0}, 'end')
 				 .set('.nav-item:not(:eq(2)) .bar > span', {alpha:.2, clearProps:'transform'}, 'end')
 				 .fromTo('.nav-item-label:not(:eq(2))', .5, {alpha:1}, {alpha:.2, ease: Power1.easeInOut}, 'end')
-				 .fromTo('.nav-item-label:eq(2)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .fromTo('#videos', .5, {alpha:.2}, {alpha:.6, ease: Power1.easeInOut}, 'end')
-				 .to(['#prev-next #next','header'], .5, {alpha:.1, ease: Power1.easeInOut}, 'end')
-				 .set(['#prev-next #prev'], {alpha:0}, 'end')
-				 .set(['#prev-next'], {display:'none'}, 'end')
-				 .fromTo('nav', 0.5, {alpha:0, display:'block'}, {alpha:1, ease: Power1.easeInOut}, 'end')
-				 .set('section:not(#connect)', {className:'-=is-active', display:'none'}, 'end')
-				 .set(['#connect','#video-3'], {className:'+=is-active', display:'inherit'}, 'end')
-				 .set('.scene-video:not(#video-3)', {className:'-=is-active'}, 'end');
+				 .fromTo('.nav-item-label:eq(2)', .5, {alpha:.1}, {alpha:1, ease: Power1.easeInOut}, 'end');
 
 			setTimeout(function(){
 				ffTL3.play();
@@ -766,7 +773,7 @@ $(document).ready(function() {
 		function FFtoGuide(){
 			$('#loop-3').removeAttr('loop');
 			$('#video-4')[0].addEventListener('timeupdate', checkTimeVideo4);
-			var v4Dur = parseInt($('#video-4')[0].duration);
+			var v4Dur = parseInt($('#video-4')[0].duration) + 4;
 
 			ffTL4.add('end',.5)
 				 .fromTo('#video-4', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo4()}, 'end')
@@ -798,7 +805,7 @@ $(document).ready(function() {
 		function FFtoSupport(){
 			$('#loop-4').removeAttr('loop');
 			$('#video-5')[0].addEventListener('timeupdate', checkTimeVideo5);
-			var v5Dur = parseInt($('#video-5')[0].duration);
+			var v5Dur = parseInt($('#video-5')[0].duration) + 4;
 
 			ffTL5.add('end',.5)
 				 .fromTo('#video-5', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo5()}, 'end')
@@ -830,7 +837,7 @@ $(document).ready(function() {
 		function FFtoSustain(){
 			$('#loop-5').removeAttr('loop');
 			$('#video-6')[0].addEventListener('timeupdate', checkTimeVideo6);
-			var v6Dur = parseInt($('#video-6')[0].duration);
+			var v6Dur = parseInt($('#video-6')[0].duration) + 4;
 
 			ffTL6.add('end',.5)
 				 .fromTo('#video-6', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo6()}, 'end')
@@ -862,7 +869,7 @@ $(document).ready(function() {
 		function FFtoConclusion(){
 			$('#loop-6').removeAttr('loop');
 			$('#video-7')[0].addEventListener('timeupdate', checkTimeVideo6);
-			var v7Dur = parseInt($('#video-7')[0].duration);
+			var v7Dur = parseInt($('#video-7')[0].duration) + 4;
 
 			ffTL7.add('end',.5)
 				 .fromTo('#video-7', .5, {alpha:0}, {alpha:1, ease:Power1.easeInOut, onComplete:startVideo7()}, 'end')
@@ -1032,6 +1039,9 @@ $(document).ready(function() {
 			tl.set('#videos', {alpha:.6, ease:Power1.easeOut, delay:.6});
 			tl.set('section.is-active', {alpha:1, delay:.6});
 			tl.to('body', 1, {alpha:1, ease:Power1.easeOut, delay:1});
+			tl.to(['#prev-next', '#prev', '#next'], .75, {alpha:0, ease:Power1.easeOut}, 'end')
+			tl.to(['header'], .5, {alpha:.1, ease:Power1.easeInOut}, 'end')
+			tl.set(['#prev-next'], {display:'none', delay:.85});
 		}
 
 
