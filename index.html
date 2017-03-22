@@ -14,330 +14,356 @@
 </head>
 
 <body class="is-relative">
-  <header class="fixed-top">
-    <div class="container is-relative">
-      <img src="app/images/aetna-logo.svg" alt="aetna logo" class="aetna-logo logo absolute-left">
-      
-      <img src="app/images/aetnacare-logo.svg" alt="aetna logo" class="aetnacare-logo logo absolute-left hidden-logo">
-      
-      <div id="header-links" class="absolute-right">
-
-        <span class="link"><a href="#" id="vision-link" class="link no-decoration">Vision</a> | <a href="#" id="disclaimer-link" class="link no-decoration">Disclaimer</a> | <a href="#" id="contact-link" class="link no-decoration">Contact</a></span>
-        <img src="app/images/burger.svg" alt="" id="burger">
-      </div
+  <main class="is-relative" role="main">
+    <header class="fixed-top" role="banner">
+      <div class="container is-relative">
+        <a href="http://aetna.com" target="_blank" class="aetna-logo logo absolute-left"><img src="app/images/aetna-logo.svg" alt="Aetna logo"></a>
+        <button class="aetnacare-logo logo absolute-left hidden-logo"><img src="app/images/aetnacare-logo.svg" alt="AetnaCare logo"></button>
+        
+        <div id="header-links" class="absolute-right">
+          <button id="burger">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+              <rect x="0.609375" y="0.5625" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" width="28.859375" height="28.859375" class="rect-stroke" />
+              <g class="burger">
+                <line fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" x1="7.515501" y1="10.2127819" x2="22.5168877" y2="10.2127819"/>
+                <line fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" x1="7.515501" y1="15.5181503" x2="22.5168877" y2="15.5181503"/>
+                <line fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" x1="7.515501" y1="20.8692551" x2="22.5168877" y2="20.8692551"/>
+              </g>
+              <g class="close is-inactive">
+                <line x1="9.47803" y1="10.02686" x2="20.08561" y2="20.63444" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+                <line x1="9.47803" y1="20.63444" x2="20.08561" y2="10.02686" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+              </g>
+            </svg>
+          </button>
+          <span class="link"><button id="vision-link" class="link no-decoration">Vision</button> | <button id="disclaimer-link" class="link no-decoration">Disclaimer</button> | <button id="contact-link" class="link no-decoration">Contact</button></span>
+        </div>
+        </div>
       </div>
+    </header>
+    <div class="dummy"></div>
+    <section id="introduction" class="super absolute-center is-active">
+      <img src="app/images/aetnacare-logo.svg" alt="AetnaCare logo" class="section-title">
+      <p class="heading">Curating Health and Wellness</p>
+      
+      <button id="journey-btn" class="btn subheadline no-decoration"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/> <p class="link absolute-center">Start the Journey</p> </svg></button>
+
+    </section>
+
+    <div id="volume-warning">
+      <p class="small-copy">Turn up volume for best experience</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.67148 19.16683">
+        <g id="a4bac8ab-c5ca-4314-be30-6adcf37456cb" data-name="Layer 2">
+          <g id="9dc5d897-6168-401b-a353-03d071a17131" data-name="Layer 1">
+            <g id="sound-1" class="blink">
+              <path d="M10.00612,19.16683c-2.26074-1.98943-3.33643-4.06952-3.19727-6.18227.21045-3.19125,3.1167-5.25029,3.24072-5.33622l.62109.68964c-.02686.01891-2.68408,1.91166-2.86377,4.70545-.11914,1.84892.85889,3.69956,2.90625,5.50122Z" fill="#fff"/>
+              <path d="M42.66536,19.16683c2.26074-1.98943,3.33643-4.06952,3.19727-6.18227-.21045-3.19125-3.1167-5.25029-3.24072-5.33622l-.62109.68964c.02686.01891,2.68408,1.91166,2.86377,4.70545.11914,1.84892-.85889,3.69956-2.90625,5.50122Z" fill="#fff"/>
+            </g>
+            <g id="sound-2" class="blink">
+              <path d="M6.22047,19.08906c-2.23437-1.96623-3.29785-4.018-3.16064-6.098.207-3.14269,3.07129-5.17165,3.19287-5.2563l.46582.51734C6.69118,8.271,3.992,10.19077,3.80788,13.03527c-.12158,1.882.86865,3.76187,2.94287,5.58716Z" fill="#fff"/>
+              <path d="M46.451,19.08906c2.23438-1.96623,3.29785-4.018,3.16064-6.098-.207-3.14269-3.07129-5.17165-3.19287-5.2563L45.953,8.252c.02734.01891,2.72656,1.93873,2.91064,4.78322.12158,1.882-.86865,3.76187-2.94287,5.58716Z" fill="#fff"/>
+            </g>
+            <g id="sound-3" class="blink">
+              <path d="M3.136,19.01128c-2.208-1.943-3.25928-3.9664-3.12451-6.01383.2041-3.09371,3.02588-5.093,3.146-5.17638l.31055.34461C3.4402,8.185.699,10.1319.51051,13.0271c-.12451,1.91509.87744,3.82374,2.979,5.67309Z" fill="#fff"/>
+              <path d="M49.53548,19.01128c2.208-1.943,3.25928-3.9664,3.12451-6.01383-.2041-3.09371-3.02588-5.093-3.146-5.17638l-.31055.34461c.02783.01934,2.769,1.96623,2.95752,4.86142.12451,1.91509-.87744,3.82374-2.979,5.67309Z" fill="#fff"/>
+            </g>
+            <path d="M35.66139,17.31791,35.55788,8.408l-.01849.00016C35.47505,7.24256,34.73463,0,26.35963,0c-9.06006,0-9.1875,8.49267-9.1875,8.57817l.01111.00005.10217,8.75343,1.5-.01375-.104-8.90989h-.00275a7.16822,7.16822,0,0,1,7.681-7.088c7.55566,0,7.68555,6.966,7.6875,7.26249l.01263-.00005.10162,8.74924Z" fill="#fff"/>
+            <path d="M15.97487,9.89413a4.2135,4.2135,0,0,0-2.50444,3.7188,4.21341,4.21341,0,0,0,2.50444,3.71873Z" fill="#fff"/>
+            <path d="M36.7763,17.33166a4.2135,4.2135,0,0,0,2.50444-3.7188A4.21341,4.21341,0,0,0,36.7763,9.89413Z" fill="#fff"/>
+          </g>
+        </g>
+      </svg>
     </div>
-  </header>
-  <div class="dummy"></div>
-  <section id="introduction" class="super absolute-center is-active">
-    <img src="app/images/aetnacare-logo.svg" alt="aetna logo" class="section-title">
-    <!-- <h2 class="section-title headline">AetnaCare lorem ipsum dolor sit amet, consectetur adipiscing, sed do eiusmod tempor ut labore</h2> -->
-    <p class="heading">Curating Health and Wellness</p>
     
-    <a href="#" id="journey-btn" class="btn subheadline no-decoration"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/> <p class="link absolute-center">Start the Journey</p> </svg></a>
-
-  </section>
-
-  <div id="volume-warning">
-    <p class="small-copy">Turn up volume for best experience</p>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.67148 19.16683">
-      <g id="a4bac8ab-c5ca-4314-be30-6adcf37456cb" data-name="Layer 2">
-        <g id="9dc5d897-6168-401b-a353-03d071a17131" data-name="Layer 1">
-          <g id="sound-1" class="blink">
-            <path d="M10.00612,19.16683c-2.26074-1.98943-3.33643-4.06952-3.19727-6.18227.21045-3.19125,3.1167-5.25029,3.24072-5.33622l.62109.68964c-.02686.01891-2.68408,1.91166-2.86377,4.70545-.11914,1.84892.85889,3.69956,2.90625,5.50122Z" fill="#fff"/>
-            <path d="M42.66536,19.16683c2.26074-1.98943,3.33643-4.06952,3.19727-6.18227-.21045-3.19125-3.1167-5.25029-3.24072-5.33622l-.62109.68964c.02686.01891,2.68408,1.91166,2.86377,4.70545.11914,1.84892-.85889,3.69956-2.90625,5.50122Z" fill="#fff"/>
-          </g>
-          <g id="sound-2" class="blink">
-            <path d="M6.22047,19.08906c-2.23437-1.96623-3.29785-4.018-3.16064-6.098.207-3.14269,3.07129-5.17165,3.19287-5.2563l.46582.51734C6.69118,8.271,3.992,10.19077,3.80788,13.03527c-.12158,1.882.86865,3.76187,2.94287,5.58716Z" fill="#fff"/>
-            <path d="M46.451,19.08906c2.23438-1.96623,3.29785-4.018,3.16064-6.098-.207-3.14269-3.07129-5.17165-3.19287-5.2563L45.953,8.252c.02734.01891,2.72656,1.93873,2.91064,4.78322.12158,1.882-.86865,3.76187-2.94287,5.58716Z" fill="#fff"/>
-          </g>
-          <g id="sound-3" class="blink">
-            <path d="M3.136,19.01128c-2.208-1.943-3.25928-3.9664-3.12451-6.01383.2041-3.09371,3.02588-5.093,3.146-5.17638l.31055.34461C3.4402,8.185.699,10.1319.51051,13.0271c-.12451,1.91509.87744,3.82374,2.979,5.67309Z" fill="#fff"/>
-            <path d="M49.53548,19.01128c2.208-1.943,3.25928-3.9664,3.12451-6.01383-.2041-3.09371-3.02588-5.093-3.146-5.17638l-.31055.34461c.02783.01934,2.769,1.96623,2.95752,4.86142.12451,1.91509-.87744,3.82374-2.979,5.67309Z" fill="#fff"/>
-          </g>
-          <path d="M35.66139,17.31791,35.55788,8.408l-.01849.00016C35.47505,7.24256,34.73463,0,26.35963,0c-9.06006,0-9.1875,8.49267-9.1875,8.57817l.01111.00005.10217,8.75343,1.5-.01375-.104-8.90989h-.00275a7.16822,7.16822,0,0,1,7.681-7.088c7.55566,0,7.68555,6.966,7.6875,7.26249l.01263-.00005.10162,8.74924Z" fill="#fff"/>
-          <path d="M15.97487,9.89413a4.2135,4.2135,0,0,0-2.50444,3.7188,4.21341,4.21341,0,0,0,2.50444,3.71873Z" fill="#fff"/>
-          <path d="M36.7763,17.33166a4.2135,4.2135,0,0,0,2.50444-3.7188A4.21341,4.21341,0,0,0,36.7763,9.89413Z" fill="#fff"/>
-        </g>
-      </g>
-    </svg>
-  </div>
-  
-  <section id="journey" class="super absolute-center" data-category="journey" data-index="1">
-    <h2 class="section-title headline">Where does the journey to<br>better health begin?</h2>
-    <h2 class="headline">It starts with understanding.</h2>
-    <div class="content">
-      <div class="learn-more">
-        <h3 class="title faded">Where does the journey to better health begin?</h3>
-        <h3 class="title">It starts with understanding.</h3>
-        <div class="divider"></div>
-        <p class="content">In the care system most of us have come to know, we can all have trouble understanding how to manage our conditions.</p>
-        <p class="content">AetnaCare completely reimagines the approach to care. It’s a personal, coordinated program that accounts for everything that impacts our&nbsp;health:</p>
-        <ul>
-          <li><p class="content">Advanced analytics that identify when someone’s at-risk</p></li>
-          <li><p class="content">Local nurses who provide one-on-one support</p></li>
-          <li><p class="content">Evidence-based guidelines to best manage conditions</p></li>
-          <li><p class="content">Innovative, community-based resources to support good health</p></li>
-        </ul>
-        <p class="content">With AetnaCare, we can gain the knowledge, skills and confidence we need to take an active role in our health&nbsp;journeys.</p>
-        <div class="divider"></div>
+    <section id="journey" class="super absolute-center" data-category="journey" data-index="1">
+      <h2 class="section-title headline">Where does the journey to better health&nbsp;begin?</h2>
+      <h2 class="headline">It starts with understanding.</h2>
+      <div class="content">
+        <div class="learn-more">
+          <h3 class="title faded">Where does the journey to better health begin?</h3>
+          <h3 class="title">It starts with understanding.</h3>
+          <div class="divider"></div>
+          <p class="content">In the care system most of us have come to know, we can all have trouble understanding how to manage our conditions.</p>
+          <p class="content">AetnaCare completely reimagines the approach to care. It’s a personal, coordinated program that accounts for everything that impacts our&nbsp;health:</p>
+          <ul>
+            <li><p class="content">Advanced analytics that identify when someone’s at-risk</p></li>
+            <li><p class="content">Local nurses who provide one-on-one support</p></li>
+            <li><p class="content">Evidence-based guidelines to best manage conditions</p></li>
+            <li><p class="content">Innovative, community-based resources to support good health</p></li>
+          </ul>
+          <p class="content">With AetnaCare, we can gain the knowledge, skills and confidence we need to take an active role in our health&nbsp;journeys.</p>
+          <div class="divider"></div>
+        </div>
       </div>
+    </section>
+    
+    <section id="identify" class="super absolute-center" data-category="identify" data-index="2">
+      <h2 class="section-title headline">How do we identify the members who need us&nbsp;most?</h2>
+      <h2 class="headline">With real-time and predictive analytics.</h2>
+      <div class="content">
+        <div class="learn-more">
+          <h3 class="title faded">How do we identify the members<br>who need us most?</h3>
+          <h3 class="title">With real-time and predictive analytics.</h3>
+          <div class="divider"></div>
+          <p class="content">When we need support, we might ask for help. But more often than not, we need someone to pinpoint those of us who most need guidance.</p>
+          <p class="content">AetnaCare leverages advanced algorithms and comprehensive patient data to identify those who are disengaged. Our system anticipates when our conditions could progress. And it proactively alerts our nurses if we’re at risk to become hospitalized in the near&nbsp;future.</p>
+          <p class="content">With these insights, AetnaCare nurses are able to work with our doctors. And together, they can give us the support we&nbsp;need.</p>
+          <div class="divider"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect" class="super absolute-center" data-category="connect" data-index="3">
+      <h2 class="section-title headline">How do we connect with our members?</h2>
+      <h2 class="headline">With care nurses who live in their community.</h2> 
+      <div class="content">
+        <div class="learn-more">
+          <h3 class="title faded">How do we connect with our members?</h3>
+          <h3 class="title">With care nurses who live in their community.</h3>
+          <div class="divider"></div>
+          <p class="content">If we’re struggling to manage our health, we need someone who can put us on a better path. Local AetnaCare nurses are our guides and advocates. They work with our doctors, families and the many collaborators in the health ecosystem to ensure the coordination of our care.</p>
+          <p class="content">From visiting us at home to accompanying us to our doctor’s appointments, AetnaCare&nbsp;nurses:</p>
+          <ul>
+            <li><p class="content">Assess our needs and opportunities for improvement</p></li>
+            <li><p class="content">Educate us to better manage our conditions</p></li>
+            <li><p class="content">Motivate us to take a more active role in our health</p></li>
+          </ul>
+          <p class="content">With this collaborative approach, AetnaCare ensures that our care is simple, clear and organized. And it helps us become more active in our health journeys.</p>
+          <div class="divider"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide" class="super absolute-center" data-category="guide" data-index="4">
+      <h2 class="section-title headline">How do we advise our members?</h2>
+      <h2 class="headline">With guidelines specific to each member and their&nbsp;condition.</h2>
+      <div class="content">
+        <div class="learn-more">
+          <h3 class="title faded">How do we advise our members?</h3>
+          <h3 class="title">With guidelines specific to each member and their condition.</h3>
+          <div class="divider"></div>
+          <p class="content">No two patients are the same, yet care is often one-size-fits-all. Not with AetnaCare.</p>
+          <p class="content">We follow structured, evidence-based guidelines that are both condition-specific and personalized to our individual needs. Our AetnaCare nurses use them to guide us throughout our journeys. And they can set tailored health goals to help us manage our conditions on our own.</p>
+          <p class="content">Structure and guidance give us the confidence we need to make healthy choices, whether taking our medications consistently or taking advantage of social services in our communities.</p>
+          <div class="divider"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="super absolute-center" data-category="support" data-index="5">
+      <h2 class="section-title headline">How are healthy choices made?</h2>
+      <h2 class="headline">With a community of supportive resources.</h2>
+      <div class="content">
+        <div class="learn-more">
+          <h3 class="title faded">How are healthy choices made?</h3>
+          <h3 class="title">With a community of supportive resources.</h3>
+          <div class="divider"></div>
+          <p class="content">We need far more than a doctor’s visit to maintain our health.<br>We need an entire support system.</p>
+          <p class="content">AetnaCare works with collaborators that impact our health to provide support in every area that affects our wellbeing. And with their help, we can make better lifestyle choices. From following our treatments to exercising and eating the right foods, we need the support to actively manage our health.</p>
+          <div class="divider"></div>
+        </div>
+        <div id="support-link">
+          <div class="right-arrow"></div>
+          <div class="support-icon"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sustain" class="super absolute-center" data-category="sustain" data-index="6">
+      <h2 class="section-title headline">Confident. Focused. Active.</h2>
+      <h2 class="headline">This is AetnaCare.</h2>  
+      <div class="content">
+        <div class="learn-more">
+          <h3 class="title faded">Confident. Focused. Active.</h3>
+          <h3 class="title">This is AetnaCare.</h3>
+          <div class="divider"></div>
+          <p class="content">No one plays a bigger role in our health journeys than we do.</p>
+          <p class="content">When we can actively manage our conditions on our own taking our medications routinely, benefiting from social support and making healthy decisions, we can sustain our wellbeing.</p>
+          <p class="content">Emphasizing education and coordination, AetnaCare helps us build our confidence, empowering us to be active participants on our health journey.</p>
+          <div class="divider"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="super absolute-center" data-category="conclusion" data-index="7" role="contentinfo">
+      <div class="content">
+        <div class="learn-more">
+          <h3 class="title ct">Contact us if you’d like to learn more about how AetnaCare&nbsp;works.</h3>
+          <div class="divider ct"></div>
+          <a href="tel:2154241332" target="_blank" class="contact-link no-decoration"><img src="" alt="Phone" id="phone-icon"> <p class="content">(215) 424-1332</p></a>
+          <a href="mailto:loremipsum@aetnacare.com" target="_blank" class="contact-link no-decoration"><img src="" alt="Email" id="email-icon"> <p class="content ct">loremipsum@aetnacare.com</p></a>
+          <a href="http://maps.google.com" target="_blank" class="no-decoration"><p class="content ct">1234 Broad Street, Suite 100,  Philadelphia, PA 19107</p></a>
+          <div class="divider ct"></div>
+          <button id="restart-btn" aria-label="Restart" class="btn no-decoration ct"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/><p class="link absolute-center">Restart the Journey</p></svg></button>
+          <p class="disclaimer content ct">Disclaimer: Aetna is the brand name used for products and services provided by one or more of the Aetna group of subsidiary companies, including Aetna Life Insurance Company and its affiliates (Aetna). | 90.36.920.1 (3/17)</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="videos" tabindex="-1">
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-0.mp4" id="loop-0" class="loop-video video is-desaturated" role="presentation" autoplay muted loop></video>
+
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-1.mp4" id="video-1" class="scene-video video" role="presentation" controls data-category="journey" data-index="1"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-1.mp4" id="loop-1" class="loop-video video" role="presentation" data-category="journey" data-index="1" muted loop></video>
+
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-2.mp4" id="video-2" class="scene-video video" role="presentation" controls data-category="identify" data-index="2"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-2.mp4" id="loop-2" class="loop-video video" role="presentation" data-category="identify" data-index="2" muted loop></video>
+
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-3.mp4" id="video-3" class="scene-video video" role="presentation" controls data-category="connect" data-index="3"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-3.mp4" id="loop-3" class="loop-video video" role="presentation" data-category="connect" data-index="3" muted loop></video>
+
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-4.mp4" id="video-4" class="scene-video video" role="presentation" controls data-category="guide" data-index="4"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-4.mp4" id="loop-4" class="loop-video video" role="presentation" data-category="guide" data-index="4" muted loop></video>
+
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-5.mp4" id="video-5" class="scene-video video" role="presentation" controls data-category="support" data-index="5"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-5.mp4" id="loop-5" class="loop-video video" role="presentation" data-category="support" data-index="5" muted loop></video>
+
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-6.mp4" id="video-6" class="scene-video video" role="presentation" controls data-category="sustain" data-index="6"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-6.mp4" id="loop-6" class="loop-video video" role="presentation" data-category="sustain" data-index="6" muted loop></video>
+
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-7.mp4" id="video-7" class="scene-video video" role="presentation" controls data-category="conclusion" data-index="7"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-7.mp4" id="loop-7" class="loop-video video" role="presentation" data-category="conclusion" data-index="7" muted loop></video>
     </div>
-  </section>
-  
-  <section id="identify" class="super absolute-center" data-category="identify" data-index="2">
-    <h2 class="section-title headline">How do we identify the<br>members who need us most?</h2>
-    <h2 class="headline">With real-time and predictive analytics.</h2>
-    <div class="content">
-      <div class="learn-more">
-        <h3 class="title faded">How do we identify the members<br>who need us most?</h3>
-        <h3 class="title">With real-time and predictive analytics.</h3>
-        <div class="divider"></div>
-        <p class="content">When we need support, we might ask for help. But more often than not, we need someone to pinpoint those of us who most need guidance.</p>
-        <p class="content">AetnaCare leverages advanced algorithms and comprehensive patient data to identify those who are disengaged. Our system anticipates when our conditions could progress. And it proactively alerts our nurses if we’re at risk to become hospitalized in the near&nbsp;future.</p>
-        <p class="content">With these insights, AetnaCare nurses are able to work with our doctors. And together, they can give us the support we&nbsp;need.</p>
-        <div class="divider"></div>
-      </div>
-    </div>
-  </section>
 
-  <section id="connect" class="super absolute-center" data-category="connect" data-index="3">
-    <h2 class="section-title headline">How do we connect with our members?</h2>
-    <h2 class="headline">With care nurses who live in their community.</h2> 
-    <div class="content">
-      <div class="learn-more">
-        <h3 class="title faded">How do we connect with our members?</h3>
-        <h3 class="title">With care nurses who live in their community.</h3>
-        <div class="divider"></div>
-        <p class="content">If we’re struggling to manage our health, we need someone who can put us on a better path. Local AetnaCare nurses are our guides and advocates. They work with our doctors, families and the many collaborators in the health ecosystem to ensure the coordination of our care.</p>
-        <p class="content">From visiting us at home to accompanying us to our doctor’s appointments, AetnaCare&nbsp;nurses:</p>
-        <ul>
-          <li><p class="content">Assess our needs and opportunities for improvement</p></li>
-          <li><p class="content">Educate us to better manage our conditions</p></li>
-          <li><p class="content">Motivate us to take a more active role in our health</p></li>
-        </ul>
-        <p class="content">With this collaborative approach, AetnaCare ensures that our care is simple, clear and organized. And it helps us become more active in our health journeys.</p>
-        <div class="divider"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="guide" class="super absolute-center" data-category="guide" data-index="4">
-    <h2 class="section-title headline">How do we advise our members?</h2>
-    <h2 class="headline">With guidelines specific to each member and their condition.</h2>
-    <div class="content">
-      <div class="learn-more">
-        <h3 class="title faded">How do we advise our members?</h3>
-        <h3 class="title">With guidelines specific to each member and their condition.</h3>
-        <div class="divider"></div>
-        <p class="content">No two patients are the same, yet care is often one-size-fits-all. Not with AetnaCare.</p>
-        <p class="content">We follow structured, evidence-based guidelines that are both condition-specific and personalized to our individual needs. Our AetnaCare nurses use them to guide us throughout our journeys. And they can set tailored health goals to help us manage our conditions on our own.</p>
-        <p class="content">Structure and guidance give us the confidence we need to make healthy choices, whether taking our medications consistently or taking advantage of social services in our communities.</p>
-        <div class="divider"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="support" class="super absolute-center" data-category="support" data-index="5">
-    <h2 class="section-title headline">How are healthy choices made?</h2>
-    <h2 class="headline">With a community of supportive resources.</h2>
-    <div class="content">
-      <div class="learn-more">
-        <h3 class="title faded">How are healthy choices made?</h3>
-        <h3 class="title">With a community of supportive resources.</h3>
-        <div class="divider"></div>
-        <p class="content">We need far more than a doctor’s visit to maintain our health.<br>We need an entire support system.</p>
-        <p class="content">AetnaCare works with collaborators that impact our health to provide support in every area that affects our wellbeing. And with their help, we can make better lifestyle choices. From following our treatments to exercising and eating the right foods, we need the support to actively manage our health.</p>
-        <div class="divider"></div>
-      </div>
-      <div id="support-link">
-        <div class="right-arrow"></div>
-        <div class="support-icon"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="sustain" class="super absolute-center" data-category="sustain" data-index="6">
-    <h2 class="section-title headline">Confident. Focused. Active.</h2>
-    <h2 class="headline">This is AetnaCare.</h2>  
-    <div class="content">
-      <div class="learn-more">
-        <h3 class="title faded">Confident. Focused. Active.</h3>
-        <h3 class="title">This is AetnaCare.</h3>
-        <div class="divider"></div>
-        <p class="content">No one plays a bigger role in our health journeys than we do.</p>
-        <p class="content">When we can actively manage our conditions on our own taking our medications routinely, benefiting from social support and making healthy decisions, we can sustain our wellbeing.</p>
-        <p class="content">Emphasizing education and coordination, AetnaCare helps us build our confidence, empowering us to be active participants on our health journey.</p>
-        <div class="divider"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="conclusion" class="super absolute-center" data-category="conclusion" data-index="7">
-    <div class="content">
-      <div class="learn-more">
-        <h3 class="title ct">Contact us if you’d like to learn more about how AetnaCare&nbsp;works.</h3>
-        <div class="divider ct"></div>
-        <a href="tel:2154241332" target="_blank" class="contact-link no-decoration"><img src="" alt="" id="phone-icon"> <p class="content">(215) 424-1332</p></a>
-        <a href="mailto:loremipsum@aetnacare.com" target="_blank" class="contact-link no-decoration"><img src="" alt="" id="email-icon"> <p class="content ct">loremipsum@aetnacare.com</p></a>
-        <a href="javascript:void(0)" target="_blank" class="no-decoration"><p class="content ct">1234 Broad Street, Suite 100,  Philadelphia, PA 19107</p></a>
-        <div class="divider ct"></div>
-        <a id="restart-btn" class="btn no-decoration ct"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/> <p class="link absolute-center">Restart the Journey</p> </svg> </a>
-        <p class="disclaimer content ct">Disclaimer: Aetna is the brand name used for products and services provided by one or more of the Aetna group of subsidiary companies, including Aetna Life Insurance Company and its affiliates (Aetna).    |    90.36.920.1 (3/17)</p>
-      </div>
-    </div>
-  </section>
-
-  <div id="videos">
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-0.mp4" id="loop-0" class="loop-video video is-desaturated" autoplay muted loop></video>
-
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/video-1.mp4" id="video-1" class="scene-video video" data-category="journey" data-index="1"></video>
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-1.mp4" id="loop-1" class="loop-video video" data-category="journey" data-index="1" muted loop></video>
-
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/video-2.mp4" id="video-2" class="scene-video video" data-category="identify" data-index="2"></video>
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-2.mp4" id="loop-2" class="loop-video video" data-category="identify" data-index="2" muted loop></video>
-
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/video-3.mp4" id="video-3" class="scene-video video" data-category="connect" data-index="3"></video>
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-3.mp4" id="loop-3" class="loop-video video" data-category="connect" data-index="3" muted loop></video>
-
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/video-4.mp4" id="video-4" class="scene-video video" data-category="guide" data-index="4"></video>
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-4.mp4" id="loop-4" class="loop-video video" data-category="guide" data-index="4" muted loop></video>
-
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/video-5.mp4" id="video-5" class="scene-video video" data-category="support" data-index="5"></video>
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-5.mp4" id="loop-5" class="loop-video video" data-category="support" data-index="5" muted loop></video>
-
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/video-6.mp4" id="video-6" class="scene-video video" data-category="sustain" data-index="6"></video>
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-6.mp4" id="loop-6" class="loop-video video" data-category="sustain" data-index="6" muted loop></video>
-
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/video-7.mp4" id="video-7" class="scene-video video" data-category="conclusion" data-index="7"></video>
-      <video src="http://d3vpoxi6sr63u.cloudfront.net/loop-7.mp4" id="loop-7" class="loop-video video" data-category="conclusion" data-index="7" muted loop></video>
-  </div>
-
-  <nav id="timeline-navigation">
-      <a class="nav-item no-decoration" data-category="journey" data-index="0">
-          <div class="progress">
-            <span class="nav-item-label link">JOURNEY</span> 
-            <div class="bar"><span></span></div>
-          </div>
-      </a>
-      <a class="nav-item no-decoration" data-category="identify" data-index="1">
-          <div class="progress">
-            <span class="nav-item-label link">IDENTIFY</span>
-            <div class="bar"><span></span></div>
-          </div>
-      </a>
-      <a class="nav-item no-decoration" data-category="connect" data-index="2">
-          <div class="progress">
-            <span class="nav-item-label link">CONNECT</span> 
-            <div class="bar"><span></span></div>
-          </div>
-      </a>
-      <a class="nav-item no-decoration" data-category="guide" data-index="3">
-          <div class="progress">
-            <span class="nav-item-label link">GUIDE</span> 
-            <div class="bar"><span></span></div>
-          </div>
-      </a>
-      <a class="nav-item no-decoration" data-category="support" data-index="4">
-          <div class="progress">
-            <span class="nav-item-label link">SUPPORT</span>
-            <div class="bar"><span></span></div>
-          </div>
-      </a>
-      <a class="nav-item no-decoration" data-category="sustain" data-index="5">
-          <div class="progress">
-            <span class="nav-item-label link">SUSTAIN</span> 
-            <div class="bar"><span></span></div>
-          </div>
-      </a>
-      <a class="nav-item no-decoration" data-category="conclusion" data-index="5">
-          <div class="progress">
-            <span class="nav-item-label link">CONCLUSION</span> 
-            <div class="bar"><span></span></div>
-          </div>
-      </a>
-      <p id="videos-time-tracker" class="link">0:00</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.55273 29.55273" id="play-pause">
-        <g id="47f24493-7272-4b55-917a-6c85a65f8046" data-name="Layer 2">
-          <g id="c14771d1-b7f4-4f73-a1b5-07d89a66fac8" data-name="Layer 1">
-            <g id="pause" data-name="pause">
-              <line x1="12.12368" y1="19.89695" x2="12.12368" y2="9.65579" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
-              <line x1="17.42905" y1="19.89695" x2="17.42905" y2="9.65579" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+    <nav id="timeline-navigation">
+        <button class="nav-item no-decoration" data-category="journey" data-index="0" type="button">
+            <div class="progress">
+              <span class="nav-item-label link">JOURNEY</span> 
+              <div class="bar"><span></span></div>
+            </div>
+        </button>
+        <button class="nav-item no-decoration" data-category="identify" data-index="1" type="button">
+            <div class="progress">
+              <span class="nav-item-label link">IDENTIFY</span>
+              <div class="bar"><span></span></div>
+            </div>
+        </button>
+        <button class="nav-item no-decoration" data-category="connect" data-index="2" type="button">
+            <div class="progress">
+              <span class="nav-item-label link">CONNECT</span> 
+              <div class="bar"><span></span></div>
+            </div>
+        </button>
+        <button class="nav-item no-decoration" data-category="guide" data-index="3" type="button">
+            <div class="progress">
+              <span class="nav-item-label link">GUIDE</span> 
+              <div class="bar"><span></span></div>
+            </div>
+        </button>
+        <button class="nav-item no-decoration" data-category="support" data-index="4" type="button">
+            <div class="progress">
+              <span class="nav-item-label link">SUPPORT</span>
+              <div class="bar"><span></span></div>
+            </div>
+        </button>
+        <button class="nav-item no-decoration" data-category="sustain" data-index="5" type="button">
+            <div class="progress">
+              <span class="nav-item-label link">SUSTAIN</span> 
+              <div class="bar"><span></span></div>
+            </div>
+        </button>
+        <button class="nav-item no-decoration" data-category="conclusion" data-index="6" type="button">
+            <div class="progress">
+              <span class="nav-item-label link">CONCLUSION</span> 
+              <div class="bar"><span></span></div>
+            </div>
+        </button>
+        <button id="skip-back-btn"><img src="app/images/skip.svg" alt="Skip Backwards" id="skip-backward"></button>
+        
+        <button id="play-pause-btn" aria-label="Play / Pause">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.57121 29.24029" id="play-pause">
+            <g id="3d7ec389-8ef2-4ada-9305-0db905c00d6d" data-name="Layer 2">
+              <g id="b2da4421-b72a-404d-b3db-90ab8d86c94c" data-name="Layer 1">
+                <g id="pause" data-name="pause">
+                  <rect x="15.96875" width="1.59375" height="29.24023" fill="#fff"/>
+                  <rect width="1.59375" height="29.24023" fill="#fff"/>
+                </g>
+                <polygon id="play" data-name="play" points="0.006 29.24 0.006 0.001 17.571 14.382 0.006 29.24" fill="#fff"/>
+              </g>
             </g>
-            <polygon id="play" data-name="play" points="12.867 19.897 12.867 9.656 19.019 14.693 12.867 19.897" fill="#fff"/>
-            <circle cx="14.77637" cy="14.77637" r="14.40137" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75" opacity="0.2" style="isolation: isolate"/>
-          </g>
-        </g>
-      </svg>
-      <div id="sound-bar">
-        <span class="bar soundbar"></span>
-        <span class="bar soundbar2"></span>
-        <span class="bar soundbar3"></span>
-        <span class="bar soundbar3"></span>
-        <span class="bar soundbar2"></span>
-      </div>
-  </nav>   
+          </svg>
+        </button>
 
-  <div id="prev-next" class="absolute-center">
-    <div id="prev" class="fixed-left">
-      <svg class="prev-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
-        <g id="2d7b02ce-dd7e-40c6-91a0-5baa6080f45a" data-name="Layer 2">
-          <g id="87ef83fb-6d88-4c03-ba7b-e8a099656c83" data-name="Layer 1">
-            <rect x="9.05074" y="9.07047" width="41.14017" height="41.14017" transform="translate(-12.2833 29.6266) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75" opacity="0.2" style="isolation: isolate"/>
-            <polyline class="prev-arrow" points="29.899 59.015 0.561 29.64 29.961 0.265" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
-            <path class="icon" d="M29.4826,21.4604V19.33955l-4.88013,3.22778,4.88013,3.22772V23.48134a5.5065,5.5065,0,1,1-6.36688,5.43561,5.45577,5.45577,0,0,1,.53809-2.37842l-1.80273-.86523a7.4385,7.4385,0,0,0-.73535,3.24365A7.50928,7.50928,0,1,0,29.4826,21.4604Z" fill="#fff"/>
-          </g>
-        </g>
-      </svg>
-      <span class="link name is-active" data-category="identify" data-index="1">REPLAY</span>
-    </div>
-    <div id="next" class="fixed-right">
-      <svg class="next-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
-        <g id="d1488e8f-7a9a-49ad-a62e-9e1e30658c15" data-name="Layer 2">
-          <g id="057968e3-af58-4d2b-84e2-8f929ce4535a" data-name="Layer 1">
-            <g>
-              <rect x="9.05074" y="9.07019" width="41.14017" height="41.14017" transform="translate(29.63458 -12.26365) rotate(45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75" opacity="0.2"/>
-              <polygon class="icon" points="27.405 37.547 36.466 30.701 27.405 23.856 27.405 37.547" fill="#fff"/>
-              <polyline class="next-arrow" points="29.311 0.265 58.711 29.64 29.373 59.015" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.75"/>
+        <button id="skip-forward-btn"><img src="app/images/skip.svg" alt="Skip Forward" id="skip-forward"></button>
+        <button id="sound-btn" aria-label="Volume">
+          <div id="sound-bar">
+            <span class="bar soundbar"></span>
+            <span class="bar soundbar2"></span>
+            <span class="bar soundbar3"></span>
+            <span class="bar soundbar3"></span>
+            <span class="bar soundbar2"></span>
+          </div>  
+        </button>
+        
+    </nav>
+
+    <button id="play-pause-fs" aria-label="Play / Pause"></button>
+
+    <div id="prev-next" class="absolute-center">
+      <button id="prev" class="fixed-left">
+        <svg class="prev-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
+          <g id="2d7b02ce-dd7e-40c6-91a0-5baa6080f45a" data-name="Layer 2">
+            <g id="87ef83fb-6d88-4c03-ba7b-e8a099656c83" data-name="Layer 1">
+              <rect x="9.05074" y="9.07047" width="41.14017" height="41.14017" transform="translate(-12.2833 29.6266) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1" opacity="0.2" style="isolation: isolate"/>
+              <polyline class="prev-arrow" points="29.899 59.015 0.561 29.64 29.961 0.265" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+              <path class="icon" d="M29.4826,21.4604V19.33955l-4.88013,3.22778,4.88013,3.22772V23.48134a5.5065,5.5065,0,1,1-6.36688,5.43561,5.45577,5.45577,0,0,1,.53809-2.37842l-1.80273-.86523a7.4385,7.4385,0,0,0-.73535,3.24365A7.50928,7.50928,0,1,0,29.4826,21.4604Z" fill="#fff"/>
             </g>
           </g>
-        </g>
-      </svg>
-      <span class="link name is-active" data-category="journey" data-index="0">NEXT: IDENTIFY</span>
-      <span class="link name" data-category="identify" data-index="1">NEXT: CONNECT</span>
-      <span class="link name" data-category="connect" data-index="2">NEXT: GUIDE</span>
-      <span class="link name" data-category="guide" data-index="3">NEXT: SUPPORT</span>
-      <span class="link name" data-category="support" data-index="4">NEXT: SUSTAIN</span>
-      <span class="link name" data-category="sustain" data-index="5">NEXT: CONCLUSION</span>
+        </svg>
+        <span class="link name is-active" data-category="identify" data-index="1">REPLAY</span>
+      </button>
+      <button id="next" class="fixed-right">
+        <svg class="next-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
+          <g id="d1488e8f-7a9a-49ad-a62e-9e1e30658c15" data-name="Layer 2">
+            <g id="057968e3-af58-4d2b-84e2-8f929ce4535a" data-name="Layer 1">
+              <g>
+                <rect x="9.05074" y="9.07019" width="41.14017" height="41.14017" transform="translate(29.63458 -12.26365) rotate(45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1" opacity="0.2"/>
+                <polygon class="icon" points="27.405 37.547 36.466 30.701 27.405 23.856 27.405 37.547" fill="#fff"/>
+                <polyline class="next-arrow" points="29.311 0.265 58.711 29.64 29.373 59.015" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span class="link name is-active" data-category="journey" data-index="0">NEXT: IDENTIFY</span>
+        <span class="link name" data-category="identify" data-index="1">NEXT: CONNECT</span>
+        <span class="link name" data-category="connect" data-index="2">NEXT: GUIDE</span>
+        <span class="link name" data-category="guide" data-index="3">NEXT: SUPPORT</span>
+        <span class="link name" data-category="support" data-index="4">NEXT: SUSTAIN</span>
+        <span class="link name" data-category="sustain" data-index="5">NEXT: CONCLUSION</span>
+      </button> 
     </div> 
-  </div> 
 
-  <div id="disclaimer-popup" class="popup">
-    <a class="close-btn link">CLOSE</a>
-    <p class="headline-description is-normal">Health benefits and health insurance plans contain exclusions and limitations.</p>
-    <p class="is-bold headline-description add-margin-top">Disclaimer:</p>
-    <p class="headline-description is-normal">Aetna is the brand name used for products and services provided by one or more of the Aetna group of subsidiary companies, including Aetna Life Insurance Company and its affiliates (Aetna).</p>
-    <p>
-    <a href="www.loremipsumdolor.com" target="_blank"><p class="headline-description is-normal">www.loremipsumdolor.com</p></a>
-    <p class="headline-description is-normal">90.36.920.1 (3/17)</p>
-  </div>
+    <div id="vision-popup" role="dialog">
+      <video src="https://d1er2yqj1gxa5k.cloudfront.net/aetnacare-full.mp4" id="aetnacare-full-video"></video>
+      <button id="close-fs-video"></button>
+    </div>
 
-  <div id="contact-popup" class="popup">
-    <a class="close-btn link">CLOSE</a>
-    <p class="headline-description is-normal is-bold">Contact Us:</p>
-    <p class="headline-description">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <a href="tel:215000000" target="_blank" class="phone-link"><p class="add-margin-top headline-description"><span class="is-bold">Phone:</span> (215) 000 - 0000</p></a>
-    <a href="mailto:loremipsum@dolor.com" target="_blank" class="email-link"><p class="headline-description"><span class="is-bold">Email:</span> loremipsum@dolor.com</p></a>
-    <p class="headline-description add-margin-top">1234 Broad Street<br>Suite 100<br>Philadelphia, PA  19107</p>
-  </div>
-    
+    <div id="disclaimer-popup" class="popup" role="dialog" aria-labelledby="disclaimer">
+      <a class="close-btn link">CLOSE</a>
+      <p class="headline-description is-normal">Health benefits and health insurance plans contain exclusions and limitations.</p>
+      <p id="disclaimer" class="is-bold headline-description add-margin-top">Disclaimer:</p>
+      <p class="headline-description is-normal">Aetna is the brand name used for products and services provided by one or more of the Aetna group of subsidiary companies, including Aetna Life Insurance Company and its affiliates (Aetna).</p>
+      <p>
+      <a href="www.loremipsumdolor.com" target="_blank"><p class="headline-description is-normal">www.loremipsumdolor.com</p></a>
+      <p class="headline-description is-normal">90.36.920.1 (3/17)</p>
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-<script src="app/js/plugins/SplitText.min.js"></script>
-<script src="app/js/plugins/DrawSVGPlugin.min.js"></script>
-<script src="app/js/function.js"></script>
-<script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.14.0.js'><\/script>".replace("HOST", location.hostname));
-//]]></script>
+    <div id="contact-popup" class="popup" role="dialog" aria-labelledby="contact">
+      <a class="close-btn link">CLOSE</a>
+      <p id="contact" class="headline-description is-normal is-bold">Contact Us:</p>
+      <p class="headline-description">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="tel:215000000" target="_blank" class="phone-link"><p class="add-margin-top headline-description"><span class="is-bold">Phone:</span> (215) 000 - 0000</p></a>
+      <a href="mailto:loremipsum@dolor.com" target="_blank" class="email-link"><p class="headline-description"><span class="is-bold">Email:</span> loremipsum@dolor.com</p></a>
+      <p class="headline-description add-margin-top">1234 Broad Street<br>Suite 100<br>Philadelphia, PA  19107</p>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="app/js/plugins/SplitText.min.js"></script>
+  <script src="app/js/plugins/DrawSVGPlugin.min.js"></script>
+  <!-- <script src="http://vjs.zencdn.net/5.18.4/video.js"></script> -->
+  <script src="app/js/function.js"></script>
+  <script id="__bs_script__">//<![CDATA[
+      document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.14.0.js'><\/script>".replace("HOST", location.hostname));
+  //]]></script>
 </body>
 </html>

@@ -1,3 +1,9 @@
+button{
+	border: 0;
+	appearance: none!important;
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
+}
 a{
 	cursor: pointer!important;
 }
@@ -46,6 +52,11 @@ a{
 #prev{
 	left: 2.9vw;
 	cursor: pointer;
+	@include transition(all .35s ease-in-out);
+	border: 0;
+	appearance: none!important;
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
 
 	svg{
 		text-align: center;
@@ -56,14 +67,23 @@ a{
 		text-align: center;
 		display:block;
 		display: none;
+		color: white; 
 		&.is-active{
 			display:block!important; 
 		}
+	}
+
+	&:hover{
+		opacity:1!important;
 	}
 }
 #next{
 	right: 2.9vw;
 	cursor: pointer;
+	border: 0;
+	appearance: none!important;
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
 	svg{
 		text-align: center;
 		@include margin(null auto 1.3vh auto);
@@ -84,6 +104,9 @@ a{
 	@include position(fixed, null null 7.11vh 50%);
 	@include transform(translateX(-50%));
 
+	@include media($xs-mobile){
+		width: 25vw;
+	}
 	@include media($v-iphone-6-plus){
 		width: 25vw;
 	}
@@ -96,6 +119,10 @@ a{
 		width: 4.39vw;
 		height: 2.59vh;
 
+		@include media($xs-mobile){
+			width: 10vw;
+			height: 6vw;
+		}
 		@include media($v-iphone-6-plus){
 			width: 10vw;
 			height: 6vw;
@@ -112,4 +139,21 @@ a{
 
 a, .link, .no-decoration{
 	cursor:pointer!important;
+}
+
+#play-pause-fs{
+	width: 100vw;
+	height:100vh;
+	@include position(fixed, 0 0 0 0);
+	z-index:1;
+	cursor: pointer;
+	display: none;
+	border: 0;
+	appearance: none!important;
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
+
+	.active{
+		display: block!important;
+	} 
 }

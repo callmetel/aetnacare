@@ -4,7 +4,7 @@
 	background: white;
 	z-index: 6000;
 	@include position(fixed, 0 0 null null);
-	@include transform(translateX(100%));
+	@include transform(translateX(110%));
 	padding: 4.5vh 5.7vw;
 	@include transition(all .65s ease-in-out);
 
@@ -59,6 +59,29 @@
 			}
 		}
 	}
+}
 
+#vision-popup{
+	display: none;
+	@include position(fixed, 0 0 0 0);
+	z-index: 9000;
 
+	#close-fs-video{
+		display: none;
+		@include position(fixed, 3.4vh 2.9vw null null);
+		z-index: 9001;
+		appearance: none!important;
+	    -webkit-appearance: none!important;
+	    -moz-appearance: none!important;
+	    border:none;
+	    width:2vw;
+		height:2vw;
+		background-image:url('../images/close-icon.svg');
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		&.is-active{
+			display: block!important;
+		}
+	}
 }

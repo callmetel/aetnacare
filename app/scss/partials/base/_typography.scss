@@ -15,6 +15,7 @@ div{
 
 h2.headline{
 	font: $md-headline;
+	letter-spacing: -0.01em;
 	
 	@include media($short-lg-desktop){
 		font: $headline!important;
@@ -183,7 +184,7 @@ p.heading{
 		font: $md-link;
 	}
 	@include media($xs-mobile){
-		font: $sm-link;
+		font: $md-link;
 	}
 	@include media($v-iphone-6-plus){
 		font: $md-link;
@@ -218,7 +219,7 @@ p.small-copy{
 		font: $md-smallcopy;
 	}
 	@include media($xs-mobile){
-		font: $sm-smallcopy;
+		font: $md-smallcopy;
 	}
 	@include media($v-iphone-6-plus){
 		font: $md-smallcopy;

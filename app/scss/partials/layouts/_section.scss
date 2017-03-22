@@ -29,27 +29,45 @@ section{
 
 		.section-title{
 			width: 14.35vw;
+			min-width:189px;
+			// @include media($xs-mobile){
+			// 	width: 40vw;
+			// }
 			@include media($v-iphone-6-plus){
 				width: 50vw;
 			}
 		}
 		.heading{
 			margin-top: 3.64vh;
-			margin-bottom: 11vh;
+			margin-bottom: 4.74vh;
+			display: block;
 		}
 		#journey-btn{
 			width:13vw;
+			height: 3.45vw;
+			min-width: 180px;
+			min-height: 48px;
 			margin-left: auto;
 			margin-right: auto;
 			cursor: pointer;
+			color: white;
+			border: 0;
+			appearance: none!important;
+		    -webkit-appearance: none!important;
+		    -moz-appearance: none!important;
 
+			@include media($xs-mobile){
+				width: 180px;
+				height: 48px;
+			}
 			@include media($v-iphone-6-plus){
 				width: 50vw;
+				min-height: 52px;
 			}
 
 			p{
 				width: 100%;
-				@include transform(translate(-50%,-60%));
+				@include transform(translate(-50%,-50%));
 			}
 		}
 	}
@@ -83,16 +101,16 @@ section{
 		}
 	}
 
-	width:48.12vw;
+	width:50.12vw;
 
 	@include media($lg-mobile) {
-		width: 58.12vw;
+		width: 60.12vw;
 	}
 	@include media($md-mobile) {
-		width: 68.12vw;
+		width: 70.12vw;
 	}
 	@include media($sm-mobile) {
-		width: 82.12vw;
+		width: 84.12vw;
 	}
 
 	&.super{
