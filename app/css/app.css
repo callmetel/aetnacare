@@ -787,7 +787,7 @@ section {
         section#introduction #journey-btn {
           width: 50vw;
           min-height: 52px; } }
-      section#introduction #journey-btn p {
+      section#introduction #journey-btn span {
         width: 100%;
         -webkit-transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
@@ -798,7 +798,7 @@ section {
     width: 13vw;
     text-align: left;
     cursor: pointer; }
-    section#conclusion #restart-btn p {
+    section#conclusion #restart-btn span {
       width: 100%;
       margin-top: 0 !important;
       margin: 0 auto;
@@ -807,9 +807,21 @@ section {
       -moz-transform: translate(-50%, -60%);
       -ms-transform: translate(-50%, -60%);
       -o-transform: translate(-50%, -60%);
-      transform: translate(-50%, -60%); }
-  section#conclusion div.content a:nth-of-type(2) p.content {
-    margin-top: 0; }
+      transform: translate(-50%, -60%);
+      color: white; }
+  section#conclusion div.content a {
+    display: block; }
+    section#conclusion div.content a img {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px; }
+      section#conclusion div.content a img#phone-icon {
+        margin-top: 4.28vh; }
+    section#conclusion div.content a p {
+      display: inline-block;
+      vertical-align: middle; }
+    section#conclusion div.content a:nth-of-type(2) p.content {
+      margin-top: 0; }
   section#conclusion .divider:last-of-type {
     margin-bottom: 4.28vh; }
   @media screen and (max-width: 1024px) {
@@ -1180,7 +1192,8 @@ section {
         letter-spacing: 0.15em;
         margin-left: .73vw;
         margin-right: .73vw;
-        vertical-align: middle; }
+        vertical-align: middle;
+        color: white; }
       #timeline-navigation .nav-item .progress .bar {
         width: 6vw;
         height: 1.75px;

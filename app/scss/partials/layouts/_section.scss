@@ -65,7 +65,7 @@ section{
 				min-height: 52px;
 			}
 
-			p{
+			span{
 				width: 100%;
 				@include transform(translate(-50%,-50%));
 			}
@@ -78,17 +78,33 @@ section{
 			text-align: left;
 			cursor: pointer;
 
-			p{
+			span{
 				width: 100%;
 				margin-top: 0!important;
 				margin: 0 auto;
 				text-align: center;
 				@include transform(translate(-50%,-60%));
+				color: white;
 			}
 		}
 		div.content{
 			a{
 				// display: none;
+				display: block;
+
+				img{
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					// height: 25px;
+					&#phone-icon{
+						margin-top: 4.28vh;
+					}
+				}
+				p{
+					display: inline-block;
+					vertical-align: middle;
+				}
 				&:nth-of-type(2){
 					p.content{
 						margin-top: 0;

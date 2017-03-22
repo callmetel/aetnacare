@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="keywords" content="Aetna, IOTAM, It Only Takes A Minute, Healthcare, Connection, Confidence, Freedom, Happiness, Depression, Peace of Mind, Substance Abuse">
@@ -14,8 +14,8 @@
 </head>
 
 <body class="is-relative">
-  <main class="is-relative" role="main">
-    <header class="fixed-top" role="banner">
+  <main class="is-relative">
+    <header class="fixed-top">
       <div class="container is-relative">
         <a href="http://aetna.com" target="_blank" class="aetna-logo logo absolute-left"><img src="app/images/aetna-logo.svg" alt="Aetna logo"></a>
         <button class="aetnacare-logo logo absolute-left hidden-logo"><img src="app/images/aetnacare-logo.svg" alt="AetnaCare logo"></button>
@@ -37,23 +37,24 @@
           </button>
           <span class="link"><button id="vision-link" class="link no-decoration">Vision</button> | <button id="disclaimer-link" class="link no-decoration">Disclaimer</button> | <button id="contact-link" class="link no-decoration">Contact</button></span>
         </div>
-        </div>
       </div>
     </header>
     <div class="dummy"></div>
     <section id="introduction" class="super absolute-center is-active">
-      <img src="app/images/aetnacare-logo.svg" alt="AetnaCare logo" class="section-title">
+      <h1><img src="app/images/aetnacare-logo.svg" alt="AetnaCare logo" class="section-title"></h1>
       <p class="heading">Curating Health and Wellness</p>
       
-      <button id="journey-btn" class="btn subheadline no-decoration"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/> <p class="link absolute-center">Start the Journey</p> </svg></button>
-
+      <button id="journey-btn" class="btn subheadline no-decoration is-relative">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/></svg>
+        <span class="link absolute-center">Start the Journey</span>
+      </button>
     </section>
 
     <div id="volume-warning">
       <p class="small-copy">Turn up volume for best experience</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.67148 19.16683">
-        <g id="a4bac8ab-c5ca-4314-be30-6adcf37456cb" data-name="Layer 2">
-          <g id="9dc5d897-6168-401b-a353-03d071a17131" data-name="Layer 1">
+        <g>
+          <g>
             <g id="sound-1" class="blink">
               <path d="M10.00612,19.16683c-2.26074-1.98943-3.33643-4.06952-3.19727-6.18227.21045-3.19125,3.1167-5.25029,3.24072-5.33622l.62109.68964c-.02686.01891-2.68408,1.91166-2.86377,4.70545-.11914,1.84892.85889,3.69956,2.90625,5.50122Z" fill="#fff"/>
               <path d="M42.66536,19.16683c2.26074-1.98943,3.33643-4.06952,3.19727-6.18227-.21045-3.19125-3.1167-5.25029-3.24072-5.33622l-.62109.68964c.02686.01891,2.68408,1.91166,2.86377,4.70545.11914,1.84892-.85889,3.69956-2.90625,5.50122Z" fill="#fff"/>
@@ -184,95 +185,98 @@
       </div>
     </section>
 
-    <section id="conclusion" class="super absolute-center" data-category="conclusion" data-index="7" role="contentinfo">
+    <section id="conclusion" class="super absolute-center" data-category="conclusion" data-index="7">
       <div class="content">
         <div class="learn-more">
           <h3 class="title ct">Contact us if you’d like to learn more about how AetnaCare&nbsp;works.</h3>
           <div class="divider ct"></div>
-          <a href="tel:2154241332" target="_blank" class="contact-link no-decoration"><img src="" alt="Phone" id="phone-icon"> <p class="content">(215) 424-1332</p></a>
-          <a href="mailto:loremipsum@aetnacare.com" target="_blank" class="contact-link no-decoration"><img src="" alt="Email" id="email-icon"> <p class="content ct">loremipsum@aetnacare.com</p></a>
+          <a href="tel:2154241332" target="_blank" class="contact-link no-decoration"><img src="app/images/phone-icon.png" alt="Phone" id="phone-icon"> <p class="content">(215) 424-1332</p></a>
+          <a href="mailto:loremipsum@aetnacare.com" target="_blank" class="contact-link no-decoration"><img src="app/images/email-icon.png" alt="Email" id="email-icon"> <p class="content ct">loremipsum@aetnacare.com</p></a>
           <a href="http://maps.google.com" target="_blank" class="no-decoration"><p class="content ct">1234 Broad Street, Suite 100,  Philadelphia, PA 19107</p></a>
           <div class="divider ct"></div>
-          <button id="restart-btn" aria-label="Restart" class="btn no-decoration ct"><svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/><p class="link absolute-center">Restart the Journey</p></svg></button>
+          <button id="restart-btn" aria-label="Restart" class="btn no-decoration ct">
+            <svg class="is-relative" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 180 48" enable-background="new 0 0 180 48" xml:space="preserve"> <rect class="rect-stroke" x="0.5296224" y="0.5524089" opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" width="178.9791718" height="46.8847656"/></svg>
+            <span class="link absolute-center">Restart the Journey</span>
+          </button>
           <p class="disclaimer content ct">Disclaimer: Aetna is the brand name used for products and services provided by one or more of the Aetna group of subsidiary companies, including Aetna Life Insurance Company and its affiliates (Aetna). | 90.36.920.1 (3/17)</p>
         </div>
       </div>
     </section>
 
     <div id="videos" tabindex="-1">
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-0.mp4" id="loop-0" class="loop-video video is-desaturated" role="presentation" autoplay muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-0.mp4" id="loop-0" class="loop-video video is-desaturated" autoplay muted loop></video>
 
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-1.mp4" id="video-1" class="scene-video video" role="presentation" controls data-category="journey" data-index="1"></video>
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-1.mp4" id="loop-1" class="loop-video video" role="presentation" data-category="journey" data-index="1" muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-1.mp4" id="video-1" class="scene-video video" controls data-category="journey" data-index="1"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-1.mp4" id="loop-1" class="loop-video video" data-category="journey" data-index="1" muted loop></video>
 
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-2.mp4" id="video-2" class="scene-video video" role="presentation" controls data-category="identify" data-index="2"></video>
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-2.mp4" id="loop-2" class="loop-video video" role="presentation" data-category="identify" data-index="2" muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-2.mp4" id="video-2" class="scene-video video" controls data-category="identify" data-index="2"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-2.mp4" id="loop-2" class="loop-video video" data-category="identify" data-index="2" muted loop></video>
 
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-3.mp4" id="video-3" class="scene-video video" role="presentation" controls data-category="connect" data-index="3"></video>
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-3.mp4" id="loop-3" class="loop-video video" role="presentation" data-category="connect" data-index="3" muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-3.mp4" id="video-3" class="scene-video video" controls data-category="connect" data-index="3"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-3.mp4" id="loop-3" class="loop-video video" data-category="connect" data-index="3" muted loop></video>
 
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-4.mp4" id="video-4" class="scene-video video" role="presentation" controls data-category="guide" data-index="4"></video>
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-4.mp4" id="loop-4" class="loop-video video" role="presentation" data-category="guide" data-index="4" muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-4.mp4" id="video-4" class="scene-video video" controls data-category="guide" data-index="4"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-4.mp4" id="loop-4" class="loop-video video" data-category="guide" data-index="4" muted loop></video>
 
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-5.mp4" id="video-5" class="scene-video video" role="presentation" controls data-category="support" data-index="5"></video>
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-5.mp4" id="loop-5" class="loop-video video" role="presentation" data-category="support" data-index="5" muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-5.mp4" id="video-5" class="scene-video video" controls data-category="support" data-index="5"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-5.mp4" id="loop-5" class="loop-video video" data-category="support" data-index="5" muted loop></video>
 
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-6.mp4" id="video-6" class="scene-video video" role="presentation" controls data-category="sustain" data-index="6"></video>
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-6.mp4" id="loop-6" class="loop-video video" role="presentation" data-category="sustain" data-index="6" muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-6.mp4" id="video-6" class="scene-video video" controls data-category="sustain" data-index="6"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-6.mp4" id="loop-6" class="loop-video video" data-category="sustain" data-index="6" muted loop></video>
 
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-7.mp4" id="video-7" class="scene-video video" role="presentation" controls data-category="conclusion" data-index="7"></video>
-        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-7.mp4" id="loop-7" class="loop-video video" role="presentation" data-category="conclusion" data-index="7" muted loop></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/video-7.mp4" id="video-7" class="scene-video video" controls data-category="conclusion" data-index="7"></video>
+        <video src="https://d1er2yqj1gxa5k.cloudfront.net/loop-7.mp4" id="loop-7" class="loop-video video" data-category="conclusion" data-index="7" muted loop></video>
     </div>
 
     <nav id="timeline-navigation">
         <button class="nav-item no-decoration" data-category="journey" data-index="0" type="button">
-            <div class="progress">
+            <span class="progress">
               <span class="nav-item-label link">JOURNEY</span> 
-              <div class="bar"><span></span></div>
-            </div>
+              <span class="bar"><span></span></span>
+            </span>
         </button>
         <button class="nav-item no-decoration" data-category="identify" data-index="1" type="button">
-            <div class="progress">
+            <span class="progress">
               <span class="nav-item-label link">IDENTIFY</span>
-              <div class="bar"><span></span></div>
-            </div>
+              <span class="bar"><span></span></span>
+            </span>
         </button>
         <button class="nav-item no-decoration" data-category="connect" data-index="2" type="button">
-            <div class="progress">
+            <span class="progress">
               <span class="nav-item-label link">CONNECT</span> 
-              <div class="bar"><span></span></div>
-            </div>
+              <span class="bar"><span></span></span>
+            </span>
         </button>
         <button class="nav-item no-decoration" data-category="guide" data-index="3" type="button">
-            <div class="progress">
+            <span class="progress">
               <span class="nav-item-label link">GUIDE</span> 
-              <div class="bar"><span></span></div>
-            </div>
+              <span class="bar"><span></span></span>
+            </span>
         </button>
         <button class="nav-item no-decoration" data-category="support" data-index="4" type="button">
-            <div class="progress">
+            <span class="progress">
               <span class="nav-item-label link">SUPPORT</span>
-              <div class="bar"><span></span></div>
-            </div>
+              <span class="bar"><span></span></span>
+            </span>
         </button>
         <button class="nav-item no-decoration" data-category="sustain" data-index="5" type="button">
-            <div class="progress">
+            <span class="progress">
               <span class="nav-item-label link">SUSTAIN</span> 
-              <div class="bar"><span></span></div>
-            </div>
+              <span class="bar"><span></span></span>
+            </span>
         </button>
         <button class="nav-item no-decoration" data-category="conclusion" data-index="6" type="button">
-            <div class="progress">
+            <span class="progress">
               <span class="nav-item-label link">CONCLUSION</span> 
-              <div class="bar"><span></span></div>
-            </div>
+              <span class="bar"><span></span></span>
+            </span>
         </button>
         <button id="skip-back-btn"><img src="app/images/skip.svg" alt="Skip Backwards" id="skip-backward"></button>
         
         <button id="play-pause-btn" aria-label="Play / Pause">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.57121 29.24029" id="play-pause">
-            <g id="3d7ec389-8ef2-4ada-9305-0db905c00d6d" data-name="Layer 2">
-              <g id="b2da4421-b72a-404d-b3db-90ab8d86c94c" data-name="Layer 1">
+            <g>
+              <g>
                 <g id="pause" data-name="pause">
                   <rect x="15.96875" width="1.59375" height="29.24023" fill="#fff"/>
                   <rect width="1.59375" height="29.24023" fill="#fff"/>
@@ -285,13 +289,13 @@
 
         <button id="skip-forward-btn"><img src="app/images/skip.svg" alt="Skip Forward" id="skip-forward"></button>
         <button id="sound-btn" aria-label="Volume">
-          <div id="sound-bar">
+          <span id="sound-bar">
             <span class="bar soundbar"></span>
             <span class="bar soundbar2"></span>
             <span class="bar soundbar3"></span>
             <span class="bar soundbar3"></span>
             <span class="bar soundbar2"></span>
-          </div>  
+          </span>  
         </button>
         
     </nav>
@@ -301,8 +305,8 @@
     <div id="prev-next" class="absolute-center">
       <button id="prev" class="fixed-left">
         <svg class="prev-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
-          <g id="2d7b02ce-dd7e-40c6-91a0-5baa6080f45a" data-name="Layer 2">
-            <g id="87ef83fb-6d88-4c03-ba7b-e8a099656c83" data-name="Layer 1">
+          <g>
+            <g>
               <rect x="9.05074" y="9.07047" width="41.14017" height="41.14017" transform="translate(-12.2833 29.6266) rotate(-45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1" opacity="0.2" style="isolation: isolate"/>
               <polyline class="prev-arrow" points="29.899 59.015 0.561 29.64 29.961 0.265" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
               <path class="icon" d="M29.4826,21.4604V19.33955l-4.88013,3.22778,4.88013,3.22772V23.48134a5.5065,5.5065,0,1,1-6.36688,5.43561,5.45577,5.45577,0,0,1,.53809-2.37842l-1.80273-.86523a7.4385,7.4385,0,0,0-.73535,3.24365A7.50928,7.50928,0,1,0,29.4826,21.4604Z" fill="#fff"/>
@@ -313,8 +317,8 @@
       </button>
       <button id="next" class="fixed-right">
         <svg class="next-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.24165 59.28028">
-          <g id="d1488e8f-7a9a-49ad-a62e-9e1e30658c15" data-name="Layer 2">
-            <g id="057968e3-af58-4d2b-84e2-8f929ce4535a" data-name="Layer 1">
+          <g>
+            <g>
               <g>
                 <rect x="9.05074" y="9.07019" width="41.14017" height="41.14017" transform="translate(29.63458 -12.26365) rotate(45)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1" opacity="0.2"/>
                 <polygon class="icon" points="27.405 37.547 36.466 30.701 27.405 23.856 27.405 37.547" fill="#fff"/>
@@ -334,21 +338,21 @@
 
     <div id="vision-popup" role="dialog">
       <video src="https://d1er2yqj1gxa5k.cloudfront.net/aetnacare-full.mp4" id="aetnacare-full-video"></video>
-      <button id="close-fs-video"></button>
+      <button aria-label="Close" id="close-fs-video"></button>
     </div>
 
     <div id="disclaimer-popup" class="popup" role="dialog" aria-labelledby="disclaimer">
-      <a class="close-btn link">CLOSE</a>
+      <button aria-label="Close" class="close-btn link">CLOSE</button>
       <p class="headline-description is-normal">Health benefits and health insurance plans contain exclusions and limitations.</p>
       <p id="disclaimer" class="is-bold headline-description add-margin-top">Disclaimer:</p>
       <p class="headline-description is-normal">Aetna is the brand name used for products and services provided by one or more of the Aetna group of subsidiary companies, including Aetna Life Insurance Company and its affiliates (Aetna).</p>
       <p>
-      <a href="www.loremipsumdolor.com" target="_blank"><p class="headline-description is-normal">www.loremipsumdolor.com</p></a>
+      <p class="headline-description is-normal"><a href="www.loremipsumdolor.com" target="_blank">www.loremipsumdolor.com</a></p>
       <p class="headline-description is-normal">90.36.920.1 (3/17)</p>
     </div>
 
     <div id="contact-popup" class="popup" role="dialog" aria-labelledby="contact">
-      <a class="close-btn link">CLOSE</a>
+      <button aria-label="Close" class="close-btn link">CLOSE</button>
       <p id="contact" class="headline-description is-normal is-bold">Contact Us:</p>
       <p class="headline-description">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <a href="tel:215000000" target="_blank" class="phone-link"><p class="add-margin-top headline-description"><span class="is-bold">Phone:</span> (215) 000 - 0000</p></a>
