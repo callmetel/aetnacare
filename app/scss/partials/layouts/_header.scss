@@ -1,11 +1,24 @@
+
 header{
 	width:100vw;
-	// height: 8vh;
 	top: 3.4vh;
-	// background: rgba(0,0,0,0.2);
 	z-index: 100;
 	cursor: pointer;
 	@include transition(all .35s ease-in-out);
+
+	&.mobile-header{
+		top: 0;
+		height: 54px;
+		background: white;
+		opacity:1!important;
+		z-index:1;
+		width:100vw;
+		display: block;
+
+		&.hide-navbar{
+			@include transform(translate(-50%, -54px)!important);
+		}
+	}
 
 	&:hover{
 		opacity:1!important;
@@ -72,15 +85,13 @@ header{
 					cursor: pointer;
 				}
 			}
-			span{
+			.link{
 				opacity: 0;
 				@include transform(translateX(8px));
 				@include transition(all .45s $ease-in-out-quad);
 				display: inline-block;
 				vertical-align: middle;
 				cursor: pointer;
-			}
-			.link{
 				letter-spacing: 0.06em;
 				vertical-align: middle;
 				border: 0;
@@ -94,23 +105,17 @@ header{
 
 				&.no-decoration{
 					opacity:.85;
-					@include transition(opacity .45s ease-in-out);
-					&:first-of-type{
-						margin-right: 1vw;
-					}
-					&:nth-of-type(2){
-						margin-left: 1vw;
-						margin-right: 1vw;
-					}
-					&:last-of-type{
-						margin-left: 1vw;
-						margin-right: 1vw;
-					}	
+					@include transition(opacity .25s ease-in-out);
+					margin-left: 1vw;
+					margin-right: 1vw;
 					&:hover{
 						opacity:1;
 					}
 				}
-				
+				&:focus{
+					background-color: rgba(0,0,0,.7);
+				}
+
 			}
 			.social-icon{
 				height: 2vh;
@@ -124,12 +129,121 @@ header{
 				}
 			}
 			&.show-links{
-				span{
+				.link{
 					@include transform(translateX(0)!important);
 					opacity:1;
 				}
 			}
-		}	
+		}
+	}
+
+	.logo{
+		z-index: 100;
+	}
+	#header-links{
+		z-index: 102;
+	}
+
+	#mobile-menu{
+		width:100%;
+		text-align: center;
+
+		#mobile-logo{
+			height: 15px;
+			width: auto;
+			left: 3.8vw;
+
+			@include media($xs-mobile){
+				left: 22px;
+			}
+			@include media($v-iphone-6-plus){
+				left: 22px;
+			}
+		}
+		.absolute-right{
+			right: 3.8vw;
+			cursor: pointer;
+			z-index: 1000;
+
+			@include media($xs-mobile){
+				right: 22px;
+			}
+			@include media($v-iphone-6-plus){
+				right: 22px;
+			}
+
+			#mobile-burger{
+				@include transition(all .45s $ease-in-out-quad);
+				display: inline-block;
+				vertical-align: middle;
+				border: 0;
+				float: right;
+				appearance: none!important;
+			    -webkit-appearance: none!important;
+			    -moz-appearance: none!important;
+
+				svg{
+					width:2vw;
+					height:2vw;
+					min-width: 30px;
+					min-height: 30px;
+					cursor: pointer;
+				}
+			}
+		}
+
+		.menu{
+			width:100%;
+			height:400px;
+			opacity: 0;
+			display: none;
+			background: $darkgrey;
+
+			a{
+				display: block;
+
+				.nav-title{
+					display: block;
+					margin-top:-2px;
+					color: $grey;
+					@include transition(color .25s ease-in-out);
+				}
+				.nav-number{
+					display: block;
+					color: $grey;
+					@include transition(color .25s ease-in-out);
+				}
+				.divider{
+					display: block;
+					width: 25%;
+					height: 1px;
+					background: transparent;
+					margin: 5px auto;
+					margin-bottom: 10px;
+					@include transition(background .25s ease-in-out);
+				}
+
+				&:nth-of-type(6){
+					.divider{	
+						margin-top:8px!important;
+					}
+				}
+				&:nth-of-type(7){
+					.divider{	
+						margin-bottom:0px!important;
+					}
+				}
+
+				&:hover, &.is-active{
+					.nav-title, .nav-number{
+						color:  white!important;
+					}
+					.divider{
+						background: white!important;
+					}
+				}
+			}
+		}
 	}
 	
 }

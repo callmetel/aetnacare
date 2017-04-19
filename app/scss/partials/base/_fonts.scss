@@ -95,11 +95,11 @@ $headline-p: normal normal 300 19.2px/29.6px $OSLight;
 $lg-headline-p: normal normal 300 22.4px/35.2px $OSLight;
 $xl-headline-p: normal normal 300 25.6px/40.8px $OSLight;
 
-$sm-subheadline: normal normal 700 18px/24px $DTBold;
-$md-subheadline: normal normal 700 24px/32px $DTBold;
-$subheadline: normal normal 700 28.8px/38.4px $DTBold;
-$lg-subheadline: normal normal 700 33.6px/44.8px $DTBold;
-$xl-subheadline: normal normal 700 38.4px/51.2px $DTBold;
+$sm-subheadline: normal normal 700 18px/24px $OSBold;
+$md-subheadline: normal normal 700 24px/32px $OSBold;
+$subheadline: normal normal 700 28.8px/38.4px $OSBold;
+$lg-subheadline: normal normal 700 33.6px/44.8px $OSBold;
+$xl-subheadline: normal normal 700 38.4px/51.2px $OSBold;
 
 $sm-link: normal normal 300 7.5px/10.5px $OSBold;
 $md-link: normal normal 300 10px/13px $OSBold;
@@ -114,7 +114,7 @@ $lg-smallcopy: normal normal 300 14px/16px $OS;
 $xl-smallcopy: normal normal 300 16px/18px $OS;
 
 
-$sm-content-p: normal normal 300 13.5px/19px $OS;
+$sm-content-p: normal normal 300 14px/19px $OS;
 $md-content-p: normal normal 300 18px/27px $OS;
 $content-p: normal normal 300 21.6px/26.6px $OS;
 $lg-content-p: normal normal 300 25.2px/40.8px $OS;
@@ -126,6 +126,8 @@ $disclaimer: normal normal 300 16.8px/28.6px $OS;
 $lg-disclaimer: normal normal 300 19.6px/34.2px $OS;
 $xl-disclaimer: normal normal 300 22.4px/39.8px $OS;
 
+$xxs-title: normal normal 700 14px/14px $DTBold;
+$xs-title: normal normal 700 20px/24px $DTBold;
 $sm-title: normal normal 700 18px/22px $DTBold;
 $md-title: normal normal 700 24px/28px $DTBold;
 $title: normal normal 700 28.8px/32.8px $DTBold;

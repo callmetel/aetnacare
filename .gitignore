@@ -1,0 +1,7 @@
+app/videos/aetnacarefull.mp4
+app/videos/*
+app/.sass-cache/*
+app/audio/*
+app/bower_components/*
+npm-debug.log
+.DS_Store

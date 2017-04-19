@@ -1,12 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.57121 29.24029">
-  <title>play-pause-2</title>
-  <g id="3d7ec389-8ef2-4ada-9305-0db905c00d6d" data-name="Layer 2">
-    <g id="b2da4421-b72a-404d-b3db-90ab8d86c94c" data-name="Layer 1">
-      <rect x="15.96875" width="1.59375" height="29.24023" fill="#fff"/>
-      <rect width="1.59375" height="29.24023" fill="#fff"/>
-      <g id="e56e26e2-1f45-4420-9fda-47a891edac5d" data-name="ce87ae65-ad83-4552-9235-6da75accc532">
-        <polygon points="0.006 29.24 0.006 0.001 17.571 14.382 0.006 29.24" fill="#fff"/>
-      </g>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 17.5712109 19.8652897" enable-background="new 0 0 17.5712109 19.8652897" xml:space="preserve">
+<title>play-pause-2</title>
+<g id="_x33_d7ec389-8ef2-4ada-9305-0db905c00d6d">
+	<g id="b2da4421-b72a-404d-b3db-90ab8d86c94c">
+		<g>
+			<rect x="0" fill="#FFFFFF" width="3.1666667" height="19.8652306"/>
+			<rect x="14.375" fill="#FFFFFF" width="3.1666667" height="19.8652306"/>
+		</g>
+		<g id="e56e26e2-1f45-4420-9fda-47a891edac5d">
+			<polygon fill="#FFFFFF" points="0.0060042,19.8650742 0.0060042,0.0006794 17.583334,9.7708445 			"/>
+		</g>
+	</g>
+</g>
 </svg>

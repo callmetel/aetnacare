@@ -4,7 +4,7 @@ section{
 	opacity:0;
 	text-align: center;
 	height:auto;
-	
+
 	&.is-active{
 		display: inherit;
 		visibility: visible;
@@ -14,7 +14,7 @@ section{
 		text-align: center;
 		color:white;
 	}
-	
+
 	&#introduction{
 		width:49.19vw;
 		@include media($lg-mobile) {
@@ -42,37 +42,77 @@ section{
 			margin-bottom: 4.74vh;
 			display: block;
 		}
-		#journey-btn{
-			width:13vw;
-			height: 3.45vw;
-			min-width: 180px;
-			min-height: 48px;
+		#start-buttons{
+			width: auto;
+			height: auto;
 			margin-left: auto;
 			margin-right: auto;
-			cursor: pointer;
-			color: white;
-			border: 0;
-			appearance: none!important;
-		    -webkit-appearance: none!important;
-		    -moz-appearance: none!important;
+			display: block;
 
-			@include media($xs-mobile){
-				width: 180px;
-				height: 48px;
+			#journey-btn{
+				width: auto;
+				height: auto;
+				margin-left: auto;
+				margin-right: auto;
+				cursor: pointer;
+				color: white;
+				border: 0;
+				appearance: none!important;
+			    -webkit-appearance: none!important;
+			    -moz-appearance: none!important;
+			    display: block;
+
+				span{
+					width: 100%;
+					@include transform(translate(-50%,-50%));
+				}
+
+				svg{
+					width: 13vw;
+				    height: 3.45vw;
+				    min-width: 180px;
+				    min-height: 48px;
+				    display: block;
+				    @include media($xs-mobile){
+						width: 180px;
+						height: 48px;
+					}
+					@include media($v-iphone-6-plus){
+						width: 50vw;
+						min-height: 52px;
+					}
+				}
 			}
-			@include media($v-iphone-6-plus){
-				width: 50vw;
-				min-height: 52px;
-			}
+
+			#vision-btn{
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				color: white;
+				text-decoration: underline!important;
+			}	
+		}
+		
+	}
+
+	&#support{
+		#support-btn{
+			width: 15vw;
+			height: 4vw;
+			text-align: left;
+			cursor: pointer;
 
 			span{
 				width: 100%;
-				@include transform(translate(-50%,-50%));
+				margin-top: 0!important;
+				margin: 0 auto;
+				text-align: center;
+				@include transform(translate(-50%,-60%));
+				color: white;
 			}
 		}
 	}
-
-	&#conclusion{
+	&#sustain{
 		#restart-btn{
 			width:13vw;
 			text-align: left;
@@ -86,34 +126,6 @@ section{
 				@include transform(translate(-50%,-60%));
 				color: white;
 			}
-		}
-		div.content{
-			a{
-				// display: none;
-				display: block;
-
-				img{
-					display: inline-block;
-					vertical-align: middle;
-					margin-right: 10px;
-					// height: 25px;
-					&#phone-icon{
-						margin-top: 4.28vh;
-					}
-				}
-				p{
-					display: inline-block;
-					vertical-align: middle;
-				}
-				&:nth-of-type(2){
-					p.content{
-						margin-top: 0;
-					}
-				}	
-			}
-		}
-		.divider:last-of-type{
-			margin-bottom: 4.28vh;
 		}
 	}
 
@@ -234,7 +246,7 @@ section{
 					margin-top:4.28vh;
 				}
 			}
-			h3{
+			h2{
 				color: white;
 				&.faded{
 					color: rgba(255,255,255,0.4);

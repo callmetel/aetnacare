@@ -3,15 +3,15 @@
 	width: 100vw;
 	height: 100vh;
 	@include position(fixed, 0 0 null null);
-	opacity: .27;
+	opacity: .37;
 
 	.video{
-		@include position(fixed, 50% 0 0 50%);
+		@include position(fixed, 0 0 0 50%);
 	    min-width: 100%;
 	    width: auto;
 	    height: auto;
 	    display: inherit;
-	    @include transform(translateX(-50%) translateY(-50%));
+	    @include transform(translateX(-50%) translateY(0));
 	    background-size: cover;
 	    min-height: 100%;
 	    opacity:0;

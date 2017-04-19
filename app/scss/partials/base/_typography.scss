@@ -13,12 +13,12 @@ div{
 	margin: 0;
 }
 
-h2.headline{
+.headline{
 	font: $md-headline;
 	letter-spacing: -0.01em;
-	
+
 	@include media($short-lg-desktop){
-		font: $headline!important;
+		font: $lg-headline!important;
 	}
 	@include media($xl-desktop){
 		font: $xl-headline;
@@ -30,28 +30,13 @@ h2.headline{
 		font: $headline;
 	}
 	@include media($lg-mobile){
-		font: $headline;
-	}
-	@include media($md-mobile){
 		font: $md-headline;
-	}
-	@include media($mobile){
-		font: $md-headline;
-	}
-	@include media($sm-mobile){
-		font: $md-headline;
-	}
-	@include media($xs-mobile){
-		font: $sm-headline;
-	}
-	@include media($v-iphone-6-plus){
-		font: $sm-headline;
 	}
 }
 
 p.headline-description{
 	font: $md-headline-p;
-	
+
 	@include media($short-lg-desktop){
 		font: $headline-p!important;
 	}
@@ -84,9 +69,9 @@ p.headline-description{
 	}
 }
 
-p.heading{
+.heading{
 	font: $md-heading-p;
-	
+
 	@include media($short-lg-desktop){
 		font: $heading-p!important;
 	}
@@ -121,7 +106,7 @@ p.heading{
 
 .subheadline{
 	font: $md-subheadline;
-	
+
 	@include media($short-lg-desktop){
 		font: $subheadline!important;
 	}
@@ -158,7 +143,7 @@ p.heading{
 	font: $md-link;
 	text-transform: uppercase;
 	letter-spacing: .1em;
-	
+
 	@include media($short-lg-desktop){
 		font: $link!important;
 	}
@@ -193,7 +178,7 @@ p.heading{
 
 p.small-copy{
 	font: $md-smallcopy;
-	
+
 	@include media($short-lg-desktop){
 		font: $smallcopy!important;
 	}
@@ -228,7 +213,7 @@ p.small-copy{
 
 p.content{
 	font: $md-content-p;
-	
+
 	@include media($short-lg-desktop){
 		font: $content-p!important;
 	}
@@ -263,7 +248,7 @@ p.content{
 
 p.disclaimer{
 	font: $md-disclaimer;
-	
+
 	@include media($short-lg-desktop){
 		font: $disclaimer!important;
 	}
@@ -296,9 +281,10 @@ p.disclaimer{
 	}
 }
 
-h3.title{
+.title{
 	font: $md-title;
-	
+	font-size: 1.17em;
+
 	@include media($short-lg-desktop){
 		font: $title!important;
 	}
@@ -329,4 +315,21 @@ h3.title{
 	@include media($v-iphone-6-plus){
 		font: $sm-title;
 	}
+}
+
+.nav-title{
+	font: $xs-title;
+}
+.nav-number{
+	font:$link;
+	font-family: $OSLight!important;
+
+}
+
+h1.mobile-headline, h2.mobile-headline{
+	font:$md-title;
+}
+
+h2.mobile-sec-headline{
+	font:$sm-title;
 }

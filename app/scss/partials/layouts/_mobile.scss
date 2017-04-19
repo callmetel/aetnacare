@@ -1,0 +1,275 @@
+#mobile{
+	width:100%;
+	height:auto!important;
+	display: block;
+	position: static!important;
+
+	section{
+		width:100%;
+		height: auto;
+		display: block!important;
+		opacity:1!important;
+		visibility: visible!important;
+
+		div.hero{
+			width:100%;
+			height: 335px;
+			display: block;
+			position: relative;
+
+			div.background{
+				width:100%;
+				height:100%;
+				@include position(absolute, 0 0 0 0);
+				z-index: -1;
+
+				&:before{
+					content:'';
+					display: block;
+					width:100%;
+					height:100%;
+					background-color: rgba(0,0,0,.57);
+				}
+			}
+		}
+
+
+		div.mobile-content{
+			padding: 40px 3.8vw;
+
+			@include media($xs-mobile){
+				padding: 40px 24px;
+			}
+
+			h2.mobile-sec-headline{
+				color: black;
+				letter-spacing: -.02em; 
+				text-align: left;
+			}
+			div.divider{
+				width:40%;
+				height:1px;
+				background: $ltgray;
+				margin: 0;
+				margin-top: 20px;
+			}
+			p{
+				color: black;
+				font: $sm-content-p;
+				text-align: left;
+			}
+			ul{
+				list-style: initial;
+				color: black;
+				text-align: left;
+				padding-left: 20px;
+				margin-top: 20px;
+
+				li{
+					list-style: initial;
+					color: black;
+				}
+			}
+		}
+		div.mobile-content > p{
+			margin-top:20px;
+		}
+
+		&#mobile-intro{
+			margin-top: 54px;
+			
+			.background{
+				background-image: url('../images/bg-vision.png');
+				background-size: cover;	
+				@include transition(background .75s ease-in-out);
+				&:before{
+					@include transition(background .45s ease-in-out);
+				}
+			}
+			div.hero{
+				width: 100vw;
+				overflow: hidden;
+				@include transition(background .45s ease-in-out);
+
+				h1.mobile-headline{
+					padding-top: 130px;
+				}
+				span{
+					&:first-of-type{
+						margin-top: 20px;
+						display: block;
+						font:$link;
+						letter-spacing: .1em;
+					}
+					&.warning{
+						@include position(absolute, null null 2.9vw 2.9vw);
+						@include media($xs-mobile){
+							@include position(absolute, null null 24px 24px);
+						}
+						text-align: left;
+						font:$md-link;
+						font-family: $OS!important;
+						letter-spacing: .08em;
+					}
+				}
+				button#play-vision-btn{
+					margin-top: 17px;
+					svg{
+						display: block;
+						width:35px;
+						height:35px;
+					}
+				}
+				video#vision-video{
+					@include position(absolute, 0 0 0 0);
+					z-index: -20;
+					height: 100%;
+					width: 100vw;
+					opacity:0;
+					display: none;
+					@include transition(all .85s ease-in-out);
+				}
+				&.video-active{
+					.background{
+						background:white!important;	
+						&:before{
+							background:white!important;			
+						}
+					}
+					
+				}	
+			}
+			div.mobile-content{
+				h2.mobile-sec-headline{
+					text-align: center;
+				}
+				div.divider{
+					margin: 0 auto;
+					margin-top: 20px;
+				}
+				p{
+					text-align: center;
+				}
+			}
+		}
+		&#mobile-journey{
+			div.hero{
+				.background{
+					background-image: url('../images/bg-journey.png');
+					background-size: cover;	
+				}
+				h2.mobile-headline{
+					width:70%;
+					@include position(absolute, 50% null null 50%);
+					@include transform(translate(-50%,-50%));
+				}	
+			}
+		}
+		&#mobile-identify{
+			div.hero{
+				.background{
+					background-image: url('../images/bg-identify.png');
+					background-size: cover;	
+				}
+				h2.mobile-headline{
+					width:70%;
+					@include position(absolute, 50% null null 50%);
+					@include transform(translate(-50%,-50%));
+				}	
+			}
+		}
+		&#mobile-connect{
+			div.hero{
+				.background{
+					background-image: url('../images/bg-connect.png');
+					background-size: cover;	
+				}
+				h2.mobile-headline{
+					width:70%;
+					@include position(absolute, 50% null null 50%);
+					@include transform(translate(-50%,-50%));
+				}	
+			}
+		}
+		&#mobile-guide{
+			div.hero{
+				.background{
+					background-image: url('../images/bg-guide.png');
+					background-size: cover;	
+				}
+				h2.mobile-headline{
+					width:70%;
+					@include position(absolute, 50% null null 50%);
+					@include transform(translate(-50%,-50%));
+				}	
+			}
+		}
+		&#mobile-support{
+			div.hero{
+				.background{
+					background-image: url('../images/bg-support.png');
+					background-size: cover;	
+				}
+				h2.mobile-headline{
+					width:70%;
+					@include position(absolute, 50% null null 50%);
+					@include transform(translate(-50%,-50%));
+				}	
+			}
+		}
+		&#mobile-sustain{
+			div.hero{
+				.background{
+					background-image: url('../images/bg-sustain.png');
+					background-size: cover;	
+				}
+				h2.mobile-headline{
+					width:70%;
+					@include position(absolute, 50% null null 50%);
+					@include transform(translate(-50%,-50%));
+				}	
+			}
+		}
+	}
+
+	footer{
+		background: $darkgrey;
+
+		div.mobile-content{
+			padding: 40px 3.8vw;
+
+			@include media($xs-mobile){
+				padding: 40px 24px;
+			}
+
+			p{
+				color: white;
+				font: $sm-content-p;
+				text-align: left;
+
+				a{
+					text-decoration: none;
+					p{
+						color: white;
+						font: $sm-content-p;
+						text-align: left;
+					}
+				}
+			}
+			div.divider{
+				width:100%;
+				height:1px;
+				background: $ltgray;
+				margin: 0;
+				margin-top: 20px;
+			}
+			span{
+				margin-top: 20px;
+				display: block;
+				font:$md-link;
+				font-family: $OS!important;
+			}
+
+		}
+	}
+}
